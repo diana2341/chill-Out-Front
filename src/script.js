@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //==================================================================================
 function createRange() {
-// let rangeDiv= document.createElement("div")
-// rangeDiv.className="slidecontainer"
-// rangeDiv.innerHTML=`
-// <input type="range"  id="myRange" min="0" max="1"  step="0.01">
-// `
-// document.body.appendChild(rangeDiv)
+    // let rangeDiv= document.createElement("div")
+    // rangeDiv.className="slidecontainer"
+    // rangeDiv.innerHTML=`
+    // <input type="range"  id="myRange" min="0" max="1"  step="0.01">
+    // `
+    // document.body.appendChild(rangeDiv)
     let iRange = document.getElementById("controls")
     let rangeInput = document.createElement("input")
     rangeInput.setAttribute("type","range")
