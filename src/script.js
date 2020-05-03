@@ -15,15 +15,15 @@ function createRange() {
 // <input type="range"  id="myRange" min="0" max="1"  step="0.01">
 // `
 // document.body.appendChild(rangeDiv)
-let iRange = document.getElementById("controls")
-let rangeInput = document.createElement("input")
-rangeInput.setAttribute("type","range")
-rangeInput.setAttribute("id","volumeSlider")
-rangeInput.setAttribute("min","0")
-rangeInput.setAttribute("max","1")
-rangeInput.setAttribute("step","0.01")
-rangeInput.style.cursor = "pointer"
-iRange.appendChild(rangeInput)
+    let iRange = document.getElementById("controls")
+    let rangeInput = document.createElement("input")
+    rangeInput.setAttribute("type","range")
+    rangeInput.setAttribute("id","volumeSlider")
+    rangeInput.setAttribute("min","0")
+    rangeInput.setAttribute("max","1")
+    rangeInput.setAttribute("step","0.01")
+    rangeInput.style.cursor = "pointer"
+    iRange.appendChild(rangeInput)
 
 }
 //==================================================================================
