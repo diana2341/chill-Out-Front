@@ -49,6 +49,7 @@ input[type=range] {
     width: 90px;
     height: auto;
     padding-top:40px;  
+    
   }
   #rain{
     display: block;
