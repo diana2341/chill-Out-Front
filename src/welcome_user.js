@@ -5,6 +5,7 @@
 
 function loginSetup() {
   const body = document.querySelector('body')
+  console.log(body)
 
   const top_section = document.createElement('section')
   top_section.id = 'top-section'
@@ -17,6 +18,7 @@ function loginSetup() {
   top_section.append(h1)
 
   const login_form = document.createElement('form')
+  
   login_form.id = 'login-form'
   login_form.innerHTML = `
     <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
