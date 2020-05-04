@@ -36,13 +36,20 @@ input[type=range] {
   }
 
   /* --------------volume range css end---------------------------*/
-  #volumeSlider{
+  /* #volumeSlider{
     margin-left: auto;
     position: relative;
     top: 150px;
     right:20px
+  } */
+   
+  .icon{
+    display: block;
+    overflow:auto;
+    width: 90px;
+    height: auto;
+    padding-top:40px;  
   }
-
   #rain{
     display: block;
 
