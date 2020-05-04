@@ -47,6 +47,8 @@ ambientIcon.forEach((item, i) => {
   
   console.log(ambientIcon);
 }
+// //==================================================================================
+
 function loadImageIcon(item){
     let controlsdiv = document.getElementById("controls")  
     let iconDiv= document.createElement("div")
@@ -65,34 +67,7 @@ function loadImageIcon(item){
 
 
 
-// //==================================================================================
-// function imageIcon() {
-    
-//     let iRange = document.getElementById("controls")
-//     let rainImg = document.createElement("img")
-//     rainImg.setAttribute("id","rain")
-//     rainImg.src = "images/rainy.png" 
-//     rainImg.style.cursor = "pointer"
-    
-//     iRange.appendChild(rainImg)
-// }
-// //==================================================================================
-function sounds() {
-    // let iRange = document.getElementById("controls")
 
-    // let rainSound = document.createElement("audio")
-    // rainSound.setAttribute("id","rainNoise")
-    // rainSound.preload = "auto"
-    // rainSound.volume = 1
-    // rainSound.innerHTML = `
-    // <source src="audio/rain_1.ogg" type="audio/ogg">
-    // `
-    // rainSound.loop = true
-    // iRange.appendChild(rainSound)
-
-
-
-}
 // //==================================================================================
 function imagePlayAudion() {
     let img = document.getElementsByClassName("icon") 
@@ -156,15 +131,4 @@ let controlsdiv = document.getElementById("controls")
         }
 
     })
-}
-
-function setVolume() {
-    let rainSound = document.getElementById("rainNoise")
-
-    let slider = document.getElementById("volumeSlider")
-
-    slider.oninput = (e) => {
-        let volume = e.target.value
-        rainSound.volume = volume
-    }
 }
