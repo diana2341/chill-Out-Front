@@ -3,7 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // imageIcon()
     // sounds()
     imagePlayAudion()
-    // setVolume()
+
+    setVolume()
+    loginSetup()
+
+
+
     // createBackground()
     // // makepic()
     makeCanvas()
