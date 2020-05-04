@@ -1,5 +1,6 @@
 Css 
 
+
 input[type=range] {
     height: 27px;
     -webkit-appearance: none;
@@ -32,8 +33,37 @@ input[type=range] {
   .slidecontainer{
     height: center;
 
+  }#login-form {
+    align-self: flex-start;
+    position: static;
+    /* display: grid; */
+    
+    justify-items: center;
+    align-items: center;
+}
 
-  }
+
+
+  /* .item1 {
+    grid-area: myArea;
+  } */
+  
+  /* .grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea myArea';
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+  } */
+/*   
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  } */
+
+
 
   /* --------------volume range css end---------------------------*/
   #volumeSlider{

@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setVolume()
     // createBackground()
     // // makepic()
+    loginSetup()
     makeCanvas()
+
+    
 
 
 })
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //==================================================================================
 function createRange() {
-  
+
     let controlsUl = document.getElementById("controls")    
     let rangeInput = document.createElement("input")
     rangeInput.setAttribute("type","range")
