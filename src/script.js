@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // createRange() 
-    // imageIcon()
-    // sounds()
-    imagePlayAudion()
+    
     loginSetup()
-
-
-
-    // createBackground()
-    // // makepic()
-    makeCanvas()
+    imagePlayAudion()
     ambientIconArray()
     volume()
-    toggleBackgroundSetup()
+
+    addBackground()
+    toggleBackground()
+    // toggleBackgroundSetup
+
 
 })
-    // "images/cafe.png",
-    // "images/cat.png",
-    // "images/night.png",
-    // "images/fire.png",
+
+
+    // ------"images/cafe.png",
+    // ------"images/cat.png",
+    // ------"images/night.png",
+    // ------"images/fire.png",
     // "images/road.png",
     // "images/wind.png"
+    //--------windchimes
+    
 function ambientIconArray(){ 
     let ambientIcon = [{
         image:"images/bird.png",
@@ -56,7 +56,7 @@ function loadImageIcon(item){
     let sound_list = document.querySelector(".sound-list")  
     let sound_container = document.createElement("div")
     sound_container.dataset.id = item.id
-    sound_container.className = "sound-container"
+    sound_container.className = "audio-container"
 
     sound_container.innerHTML=`
         <div class="inner">
@@ -111,9 +111,11 @@ function togglePlay(sound) {
 
 
 function volume(){
-    let sound_list = document.querySelector(".sound-list")   
 
-    sound_list.addEventListener("input",function(event){
+    // let controlsdiv = document.getElementById("sound-container")  
+
+    document.addEventListener("input",function(event){
+
         let slider=document.getElementsByClassName("volumeSlider")
         let audio = document.getElementsByTagName("audio") 
 
@@ -132,3 +134,29 @@ function volume(){
 
     })
 }
+
+
+
+
+function toggleBackground() {
+    document.addEventListener("submit",function(event){
+      let signin=document.getElementsByClassName("login_container")[0]
+    var x = document.querySelector("#root");
+    if(event.target){
+        x.style.visibility="visible"
+    
+    signin.style.display = 'none'
+
+    }
+
+  
+
+     })
+  }
+
+
+
+
+
+
+

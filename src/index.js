@@ -1,10 +1,11 @@
-function makeCanvas() {
-    let canvas = document.getElementsByTagName("canvas")[0]
-    let ctx = canvas.getContext('2d')
-    console.log(canvas)
-}
+// function makeCanvas() {
+//     let canvas = document.getElementsByTagName("canvas")[0]
+//     let ctx = canvas.getContext('2d')
+//     console.log(canvas)
+// }
 
 function addBackground(){
+    let bg=document.querySelector(".background")
     let img= document.createElement("div")
     
     img.innerHTML=`
@@ -47,7 +48,33 @@ function addBackground(){
         </div>
     </div> 
         `
-    document.body.appendChild(img)
+    bg.appendChild(img)
 
 }
-requestAnimationFrame(addBackground);
+// requestAnimationFrame(addBackground);
+
+
+// function togglButton () {
+    // let buttonBar= document.querySelector(".button-bar")
+    // const toggle = document.createElement("button")
+    // toggle.textContent = "Night Mode On"
+    //   console.log( buttonBar)
+    // toggle.addEventListener('click', (e) => {
+  
+      
+  
+    //   if (toggle.id === "background-toggle-day") {
+    //     body.className = "body-night"
+    //     canvas.id = "my-canvas-night"
+    //     toggle.textContent = "Night Mode On"
+    //     toggle.id = 'background-toggle-night'
+        
+    //   } else if (toggle.id === "background-toggle-night") {
+        
+    //     body.className = "body-day" // why is this super slow? 
+    //     canvas.id = "my-canvas-day"
+    //     toggle.textContent = "Day Mode On"
+    //     toggle.id = 'background-toggle-day'
+    //   } 
+    // })
+//   }

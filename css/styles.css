@@ -52,7 +52,22 @@ input[type=range]::-webkit-slider-thumb {
 
 
 /* login css end */
+.sound-list {
+    /* width: 500px; */
+    display: flex;
+    align-items: flex-start;
+  justify-content: center;
+  }
+  .audio-container{
+    display: inline-block;
+    padding: 1em;
+    margin-top: -200px;
 
+
+    /* border: 1px solid red; */
+
+
+  }
 
 
 
@@ -61,44 +76,34 @@ input[type=range]::-webkit-slider-thumb {
     overflow:auto;
     width: 90px;
     height: auto;
-    padding-top:40px;  
+    /* padding-top:40px;   */
     
 }
-
+/* .sound-container{
+    display: flex;
+} */
 
 /* --------------canavas css end---------------------------*/
-.sound-list{
+/* .sound-list{
 display: block;
 margin-left: auto;
 margin-right: auto;
 width: 30%;
 padding-top:250px;
-}
+} */
 
 
 
 html, body {
 margin: 0;
 height: 100%;
-font-family: Arial, Helvetica, sans-serif;
-color: rgb(226, 169, 255);
-}
 
-.body-night {
-    margin: 0;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(226, 169, 255);
-}
 
-.body-day {
-    margin: 0;
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-}
+    background: linear-gradient(var(--color-sky-light), var(--color-sky-dark));
 
-#my-canvas-night {
+}
+/* canvas {
+
     width: 100%;
     height: 100%;
     display: absolute;
@@ -106,36 +111,22 @@ color: rgb(226, 169, 255);
     top: 0;
     left: 0;
     z-index: -9999;
-    background: linear-gradient(var(--color-sky-dark), var(--color-sky-light));
+
     
-    /* find canvas el.style.backgournd = " " */
-}
-
-#my-canvas-day {
-    width: 100%;
-    height: 100%;
-    display: absolute;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -9999;
-    background: linear-gradient(var(--color-flame-orange), var(--color-sky-light));
-}
+    
+    
+} */
     /* --------------canvas css end---------------------------*/
 
 :root {
-    --color-sky-dark: #130F40;
-    --color-sky-light: #F8B9AE;
+    --color-sky-light: #545d9b;
+    --color-sky-dark: rgb(214, 155, 78);
     --color-tree-dark: #365E57;
     --color-rock-dark: #2F484F;
     --color-rock-light: #917472;
-    --color-flame-yellow: #FDE26C;
-    --color-flame-orange: #FDA263;
-
-    --color-sky-light-blue: #04619F;
-
-    --color-sky-day: #FDA263;
-}
+    --color-flame-yellow: rgb(221, 27, 27);
+    --color-flame-orange: rgb(223, 177, 79);
+    }
 
   * {
 
@@ -149,7 +140,7 @@ color: rgb(226, 169, 255);
     *:before,
     *:after {
     content: "";
-    position: absolute;
+    /* display: flex; */
 }
 
 button {
@@ -217,16 +208,26 @@ button {
 
 
 .container {
-
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* position: relative; */
-    left: 900px;
-    position:absolute;
-    bottom:0;
-
+position: relative;
+left: 900px;
+top:400px;
 } 
+
+
+.title{
+    /* text-align: center; */
+    position: relative;
+    top: -400px;
+    left: 550px;
+
+}
+.play-controls{
+    /* text-align: center; */
+    position: relative;
+    top: -300px;
+    left: 600px;
+
+}
 
 
 .campfire-wrapper {
@@ -616,3 +617,52 @@ svg path {
     stroke-dashoffset: 600;
     }
 }
+#login-title  { 
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 50%;
+}
+#login-form  { 
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 40%;
+    opacity: 1;
+    transition: opacity 5s; 
+
+}
+#login-form.fade  {
+
+      opacity: 0;
+
+
+}
+
+
+   
+/* ///==================================================== */
+
+/* .section {
+    height: 100%;
+    padding-top: 10px;
+
+} */
+#root {
+    /* height: 100%;
+    padding-top: 10px; */
+    visibility: hidden;
+
+
+}
+
+/* ///==================================================== */ 
+
+
+  
