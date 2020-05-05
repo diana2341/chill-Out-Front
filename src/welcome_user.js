@@ -4,18 +4,19 @@
 
 
 function loginSetup() {
-  const body = document.querySelector('body')
-  console.log(body)
+  // const body = document.querySelector('body')
+  const login_container = document.querySelector('.login_container')
+  console.log("login-conatiner",login_container)
 
-  const top_section = document.createElement('section')
-  top_section.id = 'top-section'
-  body.append(top_section)
+  const div = document.createElement('div')
+  div.id = 'inner-login'
+  login_container.append(div)
 
   const h1 = document.createElement('h1')
-  h1.id = 'login-h1'
+  h1.id = 'login-title'
   // if user exists say login else say create username
   h1.textContent = 'User Login'
-  top_section.append(h1)
+  div.append(h1)
 
   const login_form = document.createElement('form')
   
@@ -25,7 +26,7 @@ function loginSetup() {
     <input type="submit" value="Login" id="login-form-submit">
   `
 
-  top_section.append(login_form)
+  div.append(login_form)
   // const login_btn = document.querySelector('#login-form-submit')
 
   login_form.addEventListener('submit', (e) => {

@@ -52,18 +52,19 @@ function ambientIconArray(){
 // //==================================================================================
 
 function loadImageIcon(item){
-    let controlsdiv = document.getElementById("controls")  
-    let iconDiv= document.createElement("div")
-    iconDiv.dataset.id = item.id
+    let sound_list = document.querySelector(".sound-list")  
+    let sound_container = document.createElement("div")
+    sound_container.dataset.id = item.id
+    sound_container.className = "sound-container"
 
-    iconDiv.innerHTML=`
-        <span>
-        <img class="icon" src=${item.image}>
-        <audio loop><source src=${item.audio}></audio>
-        <input type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;"><br>
-        </span>
+    sound_container.innerHTML=`
+        <div class="inner">
+            <img class="icon" src=${item.image}>
+            <audio loop><source src=${item.audio}></audio>        
+            <input type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
+        </div>
     `
-    controlsdiv.appendChild(iconDiv)
+    sound_list.appendChild(sound_container)
 }
 
 
