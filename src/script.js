@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addBackground()
     toggleBackground()
+    playPause()
     // toggleBackgroundSetup
 
 
@@ -154,6 +155,30 @@ function toggleBackground() {
      })
   }
 
+
+  function playPause(){
+
+      let listen=document.querySelector(".play-controls")
+
+      listen.addEventListener("click",function(event){
+                   let audio = document.getElementsByTagName("audio") 
+ 
+     let pauseButton= document.getElementById("pause")
+      let playButton= document.getElementById("play") 
+          console.log(event.target)
+          if(event.target==playButton){
+          Array.from(audio).forEach(function(song){
+            song.play()
+
+          })
+        }
+        if(event.target===pauseButton){
+            Array.from(audio).forEach(function(song){
+                song.pause() 
+          }) 
+      }})
+
+  }
 
 
 
