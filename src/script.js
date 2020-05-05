@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     makeCanvas()
     ambientIconArray()
     volume()
+    toggleBackgroundSetup()
 
 })
     // "images/cafe.png",
@@ -110,9 +111,9 @@ function togglePlay(sound) {
 
 
 function volume(){
-    let controlsdiv = document.getElementById("controls")  
+    let sound_list = document.querySelector(".sound-list")   
 
-    controlsdiv.addEventListener("input",function(event){
+    sound_list.addEventListener("input",function(event){
         let slider=document.getElementsByClassName("volumeSlider")
         let audio = document.getElementsByTagName("audio") 
 
