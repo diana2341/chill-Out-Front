@@ -1,27 +1,24 @@
-Css
 
 input[type=range] {
     height: 27px;
-    -webkit-appearance: none;
-    margin: 0px;
-    width: 20%;
-}
-
-input[type=range]:focus {
+    /* -webkit-appearance: none; */
+    margin:  0;
+    width: 70%;
+  }
+  /* i changed code obove to fix  */
+  input[type=range]:focus {
     outline: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
+  }
+  input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 1px;
+    height: 0px;
     cursor: pointer;
     box-shadow: 0px 0px 0px #000000;
-    /* background: #C6C5D1; */
-    border-radius: 50px;
+    background: #C6C5D1;
+    /* border-radius: 50px; */
     border: 0px solid #000000;
-}
-
-input[type=range]::-webkit-slider-thumb {
+  }
+  input[type=range]::-webkit-slider-thumb {
     box-shadow: 0px 0px 0px #000000;
     border: 1px solid #A19D9F;
     height: 20px;
@@ -31,17 +28,13 @@ input[type=range]::-webkit-slider-thumb {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8.5px;
-}
+  }
+  .slidecontainer{
+    height: auto;
 
-.slidecontainer {
-    height: center;
+  }
 
 
-}
-/* --------------volume range css end---------------------------*//*
-#volumeSlider{
-
-*/
 
 
 
@@ -56,6 +49,12 @@ html, body {
 
 }
 
+html, body {
+margin: 0;
+height: 100%;
+
+    background: linear-gradient(var(--color-sky-light), var(--color-sky-dark));
+
 
 .body-night {
     margin: 0;
@@ -65,6 +64,7 @@ html, body {
     background: linear-gradient(var(--color-night-blue), var(--color-sky-yellow));
 }
 
+
 .body-day {
     margin: 0;
     height: 100%;
@@ -72,6 +72,7 @@ html, body {
     color: black;
     background: linear-gradient(var(--color-day-orange), var(--color-sky-yellow));
 }
+
 
 
 :root {
@@ -109,6 +110,7 @@ html, body {
     content: "";
     /* display: flex; */
 }
+
 
 /*
 //////////////////
@@ -182,6 +184,7 @@ button {
 
 }
 
+
 .container {
     position: relative;
     left: 900px;
@@ -237,5 +240,6 @@ button {
 
 
 
+/* ///==================================================== */
 
 
