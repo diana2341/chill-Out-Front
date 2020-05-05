@@ -167,16 +167,7 @@ button {
     transform: translate(-50%, -50%);
 }
 
-.header {
-    height: 10rem;
-    display: flex;
-}
 
-.right-container {
-    position: absolute;
-    right: 10px;
-    top: 5px;
-}
 
 .title {
     position: absolute;
