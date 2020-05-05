@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginOverlaySetup()
     toggleNightmode()
-    buttonBarSetup()
+    // buttonBarSetup()
 
 
 
@@ -185,6 +185,8 @@ function loginOverlaySetup() {
       }})
 
   }
+
+ 
 
 
 
