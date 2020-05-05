@@ -1,14 +1,15 @@
-function makeCanvas() {
-    let canvas = document.getElementsByTagName("canvas")[0]
-    let ctx = canvas.getContext('2d')
-    console.log(canvas)
-}
+// function makeCanvas() {
+//     let canvas = document.getElementsByTagName("canvas")[0]
+//     let ctx = canvas.getContext('2d')
+//     console.log(canvas)
+// }
 
 function addBackground(){
+    let bg=document.querySelector(".background")
     let img= document.createElement("div")
     
     img.innerHTML=`
-         <div class="container" >
+        <div class="container" >
 
         <div class="campfire-wrapper">
         <div class="tree-container-back">
@@ -47,7 +48,7 @@ function addBackground(){
         </div>
     </div> 
         `
-    document.body.appendChild(img)
+    bg.appendChild(img)
 
 }
-requestAnimationFrame(addBackground);
+// requestAnimationFrame(addBackground);

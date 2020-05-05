@@ -2,19 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
     loginSetup()
     imagePlayAudion()
-    makeCanvas()
     ambientIconArray()
     volume()
+    addBackground()
+    toggleBackground()
 
 })
 
 
-    // "images/cafe.png",
-    // "images/cat.png",
-    // "images/night.png",
-    // "images/fire.png",
+    // ------"images/cafe.png",
+    // ------"images/cat.png",
+    // ------"images/night.png",
+    // ------"images/fire.png",
     // "images/road.png",
     // "images/wind.png"
+    //--------windchimes
     
 function ambientIconArray(){ 
     let ambientIcon = [{
@@ -106,7 +108,7 @@ function togglePlay(sound) {
 
 
 function volume(){
-    let controlsdiv = document.getElementById("sound-container")  
+    // let controlsdiv = document.getElementById("sound-container")  
 
     document.addEventListener("input",function(event){
         let slider=document.getElementsByClassName("volumeSlider")
@@ -127,6 +129,25 @@ function volume(){
 
     })
 }
+
+
+
+
+function toggleBackground() {
+    document.addEventListener("submit",function(event){
+      let signin=document.getElementsByClassName("login_container")[0]
+    var x = document.querySelector("#root");
+    if(event.target){
+        x.style.visibility="visible"
+    
+    signin.style.display = 'none'
+
+    }
+
+  
+
+     })
+  }
 
 
 
