@@ -55,7 +55,7 @@ function loadImageIcon(item){
     let sound_list = document.querySelector(".sound-list")  
     let sound_container = document.createElement("div")
     sound_container.dataset.id = item.id
-    sound_container.className = "sound-container"
+    sound_container.className = "audio-container"
 
     sound_container.innerHTML=`
         <div class="inner">
@@ -110,9 +110,9 @@ function togglePlay(sound) {
 
 
 function volume(){
-    let controlsdiv = document.getElementById("controls")  
+    let controlsdiv = document.getElementById("sound-container")  
 
-    controlsdiv.addEventListener("input",function(event){
+    document.addEventListener("input",function(event){
         let slider=document.getElementsByClassName("volumeSlider")
         let audio = document.getElementsByTagName("audio") 
 

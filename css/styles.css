@@ -52,7 +52,25 @@ input[type=range]::-webkit-slider-thumb {
 
 
 /* login css end */
+.sound-list {
+    /* width: 500px; */
+  display:flex;
+  /* flex-wrap: wrap; */
+  
+  /* height: 200px; */
+  align-content: center;
+  justify-content: center;
+  padding-top: 20%;
+   
+  }
+  .audio-container{
+    display: inline-block;
+    padding: 1em;
 
+    /* border: 1px solid red; */
+
+
+  }
 
 
 
@@ -64,16 +82,18 @@ input[type=range]::-webkit-slider-thumb {
     padding-top:40px;  
     
 }
-
+/* .sound-container{
+    display: flex;
+} */
 
 /* --------------canavas css end---------------------------*/
-.sound-list{
+/* .sound-list{
 display: block;
 margin-left: auto;
 margin-right: auto;
 width: 30%;
 padding-top:250px;
-}
+} */
 
 
 
