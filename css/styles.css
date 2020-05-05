@@ -123,8 +123,7 @@ height: 100%;
     --color-rock-light: #917472;
     --color-flame-yellow: rgb(221, 27, 27);
     --color-flame-orange: rgb(223, 177, 79);
-
-}
+    }
 
   * {
 
@@ -138,22 +137,16 @@ height: 100%;
     *:before,
     *:after {
     content: "";
-    display: flex;
+    /* display: flex; */
 }
 
 .container {
-
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* position: relative; */
-    position: relative;
-  left: 900px;
-  top:400px;
-
-
-
+position: relative;
+left: 900px;
+top:400px;
 } 
+
+
 .title{
     /* text-align: center; */
     position: relative;
@@ -168,6 +161,7 @@ height: 100%;
     left: 600px;
 
 }
+
 
 .campfire-wrapper {
     width: 500px;

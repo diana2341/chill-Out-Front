@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     volume()
     addBackground()
     toggleBackground()
+    // toggleBackgroundSetup
 
 })
 
