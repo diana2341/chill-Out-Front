@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     imagePlayAudion()
     ambientIconArray()
     volume()
+
     addBackground()
     toggleBackground()
     // toggleBackgroundSetup
+
 
 })
 
@@ -109,9 +111,11 @@ function togglePlay(sound) {
 
 
 function volume(){
+
     // let controlsdiv = document.getElementById("sound-container")  
 
     document.addEventListener("input",function(event){
+
         let slider=document.getElementsByClassName("volumeSlider")
         let audio = document.getElementsByTagName("audio") 
 
