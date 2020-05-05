@@ -117,26 +117,26 @@ function togglePlay(sound) {
 
 
 
-function volume(){
+function volume() {
 
     // let controlsdiv = document.getElementById("sound-container")  
 
     document.addEventListener("input",function(event){
 
-        let slider=document.getElementsByClassName("volumeSlider")
+        let slider = document.getElementsByClassName("volumeSlider")
         let audio = document.getElementsByTagName("audio") 
 
-        if(event.target===slider[0]) {
-            audio[0].volume=event.target.value    
+        if(event.target === slider[0]) {
+            audio[0].volume = event.target.value    
         }
-        if(event.target===slider[1]) {
+        if(event.target === slider[1]) {
             audio[1].volume=event.target.value    
         }
-        if(event.target===slider[2]) {
-            audio[2].volume=event.target.value    
+        if(event.target === slider[2]) {
+            audio[2].volume = event.target.value    
         }
-        if(event.target===slider[3]) {
-            audio[3].volume=event.target.value    
+        if(event.target === slider[3]) {
+            audio[3].volume = event.target.value    
         }
 
     })
@@ -147,19 +147,17 @@ function volume(){
 
 function loginOverlaySetup() {
     document.addEventListener("submit",function(event){
-      let signin=document.getElementsByClassName("login_container")[0]
+    let signin = document.getElementsByClassName("login_container")[0]
     var x = document.querySelector("#root");
-    if(event.target){
-        x.style.visibility="visible"
     
-    signin.style.display = 'none'
+    if(event.target) {
 
-    }
+        x.style.visibility = "visible"
+        signin.style.display = 'none'
 
-  
-
-     })
-  }
+        }
+    })
+}
 
 
   function playPause(){
