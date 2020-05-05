@@ -1,3 +1,20 @@
+const soundDictionary = {
+    bird: {
+        image: "images/bird.png",
+        audio: "audio/birds.fade.ogg"
+    },
+    light_rain: {
+        image: "images/rainy.png",
+        audio: "audio/rain_1.off"
+    }, 
+    heavy_rain: {
+        image: "images/bird.png",
+        audio: "audio/birds.fade.ogg"
+    },
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     
     loginSetup()
@@ -27,8 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // "images/road.png",
     // "images/wind.png"
     //--------windchimes
+
+    // save volume of each sound 
+    // on load: find the sound from collection of sound and set volume
+    // create a const. similar to ambientICon []
     
 function ambientIconArray(){ 
+
+
+
+
     let ambientIcon = [{
         image:"images/bird.png",
         audio:"audio/birds.fade.ogg",
@@ -160,29 +185,29 @@ function loginOverlaySetup() {
 }
 
 
-  function playPause(){
+function playPause(){
 
-      let listen=document.querySelector(".play-controls")
+    let listen=document.querySelector(".play-controls")
 
-      listen.addEventListener("click",function(event){
-                   let audio = document.getElementsByTagName("audio") 
- 
-     let pauseButton= document.getElementById("pause")
-      let playButton= document.getElementById("play") 
-          console.log(event.target)
-          if(event.target==playButton){
-          Array.from(audio).forEach(function(song){
+    listen.addEventListener("click",function(event){
+        let audio = document.getElementsByTagName("audio") 
+
+        let pauseButton= document.getElementById("pause")
+        let playButton= document.getElementById("play") 
+        console.log(event.target)
+        if(event.target==playButton){
+        Array.from(audio).forEach(function(song){
             song.play()
 
-          })
+            })
         }
+        
         if(event.target===pauseButton){
             Array.from(audio).forEach(function(song){
                 song.pause() 
-          }) 
-      }})
-
-  }
+        }) 
+    }})
+}
 
 
 
