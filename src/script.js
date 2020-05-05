@@ -4,11 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
     imagePlayAudion()
     ambientIconArray()
     volume()
-
+    
     addBackground()
-    toggleBackground()
+
+ 
     playPause()
     // toggleBackgroundSetup
+
+    loginOverlaySetup()
+    toggleNightmode()
+    buttonBarSetup()
+
 
 
 })
@@ -139,7 +145,7 @@ function volume(){
 
 
 
-function toggleBackground() {
+function loginOverlaySetup() {
     document.addEventListener("submit",function(event){
       let signin=document.getElementsByClassName("login_container")[0]
     var x = document.querySelector("#root");
