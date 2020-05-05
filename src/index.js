@@ -8,7 +8,7 @@ function addBackground(){
     let img= document.createElement("div")
     
     img.innerHTML=`
-        <div class="container" >
+         <div class="container" >
 
         <div class="campfire-wrapper">
         <div class="tree-container-back">

@@ -1,25 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // createRange() 
-    // imageIcon()
-    // sounds()
-    imagePlayAudion()
+    
     loginSetup()
-
-
-
-    // createBackground()
-    // // makepic()
+    imagePlayAudion()
     makeCanvas()
     ambientIconArray()
     volume()
 
 })
+
+
     // "images/cafe.png",
     // "images/cat.png",
     // "images/night.png",
     // "images/fire.png",
     // "images/road.png",
     // "images/wind.png"
+    
 function ambientIconArray(){ 
     let ambientIcon = [{
         image:"images/bird.png",
@@ -131,3 +127,10 @@ function volume(){
 
     })
 }
+
+
+
+
+
+
+

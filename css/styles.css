@@ -60,7 +60,7 @@ input[type=range]::-webkit-slider-thumb {
   /* height: 200px; */
   align-content: center;
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 40%;
    
   }
   .audio-container{
@@ -139,7 +139,7 @@ canvas {
     *:before,
     *:after {
     content: "";
-    position: absolute;
+    /* position: absolute; */
 }
 
 .container {
@@ -148,9 +148,14 @@ canvas {
     /* justify-content: center;
     align-items: center; */
     /* position: relative; */
-    left: 900px;
-    position:absolute;
-    bottom:0;
+    display:flex;
+    /* flex-wrap: wrap; */
+    
+    /* height: 200px; */
+    /* align-content: center; */
+    justify-content: center;
+    margin-left: 60%;
+
 
 } 
 
@@ -542,3 +547,40 @@ svg path {
     stroke-dashoffset: 600;
     }
 }
+#login-title  { 
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 50%;
+}
+#login-form  { 
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 40%;
+
+}
+   
+/* ///==================================================== */
+
+.section {
+    height: 100%;
+    padding-top: 10px;
+
+}
+.section1 {
+    height: 100%;
+    padding-top: 10px;
+
+}
+
+/* ///==================================================== */ */
+
+
+  
