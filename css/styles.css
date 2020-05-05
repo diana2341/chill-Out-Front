@@ -80,8 +80,25 @@ padding-top:250px;
 html, body {
 margin: 0;
 height: 100%;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(226, 169, 255);
 }
-canvas {
+
+.body-night {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(226, 169, 255);
+}
+
+.body-day {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+#my-canvas-night {
     width: 100%;
     height: 100%;
     display: absolute;
@@ -89,22 +106,35 @@ canvas {
     top: 0;
     left: 0;
     z-index: -9999;
-    background: linear-gradient(var(--color-sky-light), var(--color-sky-dark));
+    background: linear-gradient(var(--color-sky-dark), var(--color-sky-light));
     
-    
-    
+    /* find canvas el.style.backgournd = " " */
+}
+
+#my-canvas-day {
+    width: 100%;
+    height: 100%;
+    display: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    background: linear-gradient(var(--color-flame-orange), var(--color-sky-light));
 }
     /* --------------canvas css end---------------------------*/
 
 :root {
-    --color-sky-light: #3240a8;
-    --color-sky-dark: #F8B9AE;
+    --color-sky-dark: #130F40;
+    --color-sky-light: #F8B9AE;
     --color-tree-dark: #365E57;
     --color-rock-dark: #2F484F;
     --color-rock-light: #917472;
     --color-flame-yellow: #FDE26C;
     --color-flame-orange: #FDA263;
 
+    --color-sky-light-blue: #04619F;
+
+    --color-sky-day: #FDA263;
 }
 
   * {
@@ -121,6 +151,70 @@ canvas {
     content: "";
     position: absolute;
 }
+
+button {
+    cursor: pointer;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* .center-horizontally {
+    margin: auto;
+} */
+
+.play-controls {
+    text-align: center;
+    position: relative;
+}
+
+.inner-play-controls {
+    object-position: center;
+}
+
+.header {
+    height: 10rem;
+    display: flex;
+}
+
+.right-container {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.background-toggle {
+
+}
+
+.login_container {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+}
+
+#login-form-submit {
+    cursor: pointer;
+}
+
+.title {
+    position: absolute;
+    top: 35px;
+
+    text-align: center;
+
+}
+
+#login-title {
+    font-size: 18px;
+}
+
 
 .container {
 
