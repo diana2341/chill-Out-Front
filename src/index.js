@@ -5,7 +5,7 @@
 // }
 
 function addBackground(){
-    let bg=document.querySelector(".background")
+    let bg=document.querySelector(".background-animation")
     let img= document.createElement("div")
     
     img.innerHTML=`
