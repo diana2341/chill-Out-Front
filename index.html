@@ -8,56 +8,56 @@
     <script src="https://kit.fontawesome.com/5059a7a4e4.js" crossorigin="anonymous"></script>
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/background-animation.css" rel="stylesheet" type="text/css">
     
     <script src="src/index.js"  ></script>
 
     <script src="src/script.js"  ></script>
     <script src="src/welcome_user.js"  ></script>
-    <script src="src/toggle-background.js"  ></script>
+    <script src="src/toggle-nightmode.js"  ></script>
     
 </head>
 
-<body >
+<body class="body-night">
+    <div class="login_container" id =></div>
+<!--end of section one login pg  -->
 
-
-        <div class="login_container" id =></div>
- <!--end of section one log in pg  -->
-
-    
-
-      <div id="root">
+    <div id="root">
         <div id="app-container">
-            <div class="background">
-                <!-- <canvas id="my-canvas" width="800" height="1200"></canvas> -->
+            <div class="background-animation">
+    
             </div>
-
-            <div class="title">
+            <div class="header" >
+                <div class="right-container">
+                    <button class="toggle-button" id="background-toggle-night"></button>
+                </div>
+            </div>
+            <div class="title center">
                 <h1 >Illucid Beats</h1>
                 <p > tagline</p>
 
             </div>
             <div class="play-controls" >
-                <button id='play'>play</button>
-
-                <button id='pause'>pause</button>
+                <div class="inner-controls">
+                    <button id='play'>play</button>
+                    <button id='pause'>pause</button>
+                </div>  
             </div>
             <div class="button-bar center">
-
+                <div class="inner-button-bar">
+                    <button>save</button>
+                    <button>reset</button>
+                    <button>presets</button>
+                </div>
             </div>
             <div class="sound-list">
-                <div class="sound-container"> 
-                  
+                <!-- audio-containers created in js go here 
+                see loadImageIcon()-->
 
-
-                </div>
-                
             </div>
-
         </div>
+    </div>
 
-
-  </div>
-</div>
 
 
 </body>
