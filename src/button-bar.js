@@ -6,7 +6,7 @@ function buttonBarSetup() {
   button_bar.addEventListener('click', (e) => {
     
     if (e.target.id === 'save') {
-      console.log('i save stuff:')
+      // console.log('i save stuff:')
     }
     if (e.target.id === 'reset') {
       console.log('i reset all the volumes to zero:' )

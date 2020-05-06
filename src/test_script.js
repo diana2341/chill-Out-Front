@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playPause()
     toggleNightmode()
     // clickIconToPlay()
+    newMix()
 })
 
 
@@ -87,13 +88,15 @@ function loadImageIcon(image, audio){
     // sound_container.dataset.id = item.id
     sound_container.className = "audio-container"
 
+    let path_name = /[^audio/]([^.]+)/.exec(`${audio}`)[0]
     sound_container.innerHTML=`
         <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
-            <audio loop><source src=${audio}></audio>        
+            <audio data-file-path="${path_name}" loop><source src=${audio}></audio>        
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
+        
     // document.getElementsByClassName('inner').style.cursor = "pointer"
     sound_list.appendChild(sound_container)
 
@@ -102,6 +105,8 @@ function loadImageIcon(image, audio){
 
 function togglePlay(sound) {
     if (sound.paused) {
+        // sound.currentTime = 0;
+
         sound.play();
     }
     else {
