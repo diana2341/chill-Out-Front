@@ -6,7 +6,7 @@
 function loginSetup() {
   // const body = document.querySelector('body')
   const login_container = document.querySelector('.login_container')
-  console.log("login-conatiner",login_container)
+  // console.log("login-conatiner",login_container)
 
   const div = document.createElement('div')
   div.id = 'inner-login'
@@ -31,19 +31,19 @@ function loginSetup() {
 
   login_form.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(e.target)
-    console.log("target",e.target.children[0])
+    // console.log(e.target)
+    // console.log("target",e.target.children[0])
 
     const input = e.target.username
 
     const username = input.value
 
-    console.log(username)
+    // console.log(username)
 
     const new_username = {
       username
     }
-    console.log(new_username)
+    // console.log(new_username)
     login_form.reset()
 
     const options = {

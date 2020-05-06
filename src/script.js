@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     addBackground()
 
- 
+
     playPause()
     // toggleBackgroundSetup
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 function ambientIconArray(){ 
 
-
+console.log(soundDictionary)
 
 
     let ambientIcon = [{
@@ -80,7 +80,7 @@ function ambientIconArray(){
         loadImageIcon(item)
     });
 
-    console.log(ambientIcon);
+    // console.log(ambientIcon);
 }
 // //==================================================================================
 
@@ -194,7 +194,7 @@ function playPause(){
 
         let pauseButton= document.getElementById("pause")
         let playButton= document.getElementById("play") 
-        console.log(event.target)
+        // console.log(event.target)
         if(event.target==playButton){
         Array.from(audio).forEach(function(song){
             song.play()
