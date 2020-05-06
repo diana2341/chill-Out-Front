@@ -168,7 +168,6 @@ button {
 }
 
 
-
 .title {
     position: absolute;
     top: 35px;
@@ -178,20 +177,15 @@ button {
 }
 
 
-.container {
-    position: relative;
-    left: 900px;
-    top:400px;
-}
-
 
 .play-controls {
     text-align: center;
-    position: relative;
-    top: -300px;
-    left: auto;
-    right: auto;
-
+    position: absolute;
+    /* top: 300px; */
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
 }
 
 .inner-controls {
@@ -199,7 +193,8 @@ button {
 }
 
 .button-bar {
-    text-align: center;
+    /* text-align: center; */
+    margin: 0;
 }
 
 .inner-buttons-bar {
@@ -208,20 +203,21 @@ button {
 
 .sound-list {
     /* width: 500px; */
-    display: flex;
+    position: absolute;
+    
+    /* display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .audio-container{
     display: inline-block;
     padding: 1em;
-    margin-top: -200px;
+    /* margin-top: -200px; */
 }
 
 
 .icon{
-    text-align: center;
     display: block;
     overflow:auto;
     width: 90px;

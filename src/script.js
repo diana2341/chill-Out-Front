@@ -107,10 +107,11 @@ function loadImageIcon(item){
 function imagePlayAudion() {
     let img = document.getElementsByClassName("icon") 
     let audio = document.getElementsByTagName("audio") 
-
+    
 
     document.addEventListener("click", (event) => {
         if (event.target === img[0]) {
+            console.log("audio0", audio[0])
             togglePlay(audio[0])   
         }
         if (event.target === img[1]) {
