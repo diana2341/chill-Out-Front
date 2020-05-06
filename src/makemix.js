@@ -40,20 +40,83 @@ if(!audio[1].paused) {
 
 }
 
+
+
+// function buttonForm(){
+//     let saveBtn=document.getElementById("save")
+// saveBtn.addEventListener("click",function(event){
+//     var x = document.getElementById("myDIV");
+//     x.style.visibility="visible"
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// })
+// }
+// function buttonForm(){
+//     let saveBtn=document.getElementById("save")
+
+
+
+
+//   saveBtn.addEventListener('click', function(event){
+//     const form = document.createElement("form")
+//     form.innerHTML = `
+//       <label>Title: </label>
+//       <input type="text" name="title">
+//       <br>
+//       <label>Image URL: </label>
+//       <input type="text" name="imageUrl">
+//       <br>
+//       <label>Year: </label>
+//       <input type="text" name="year">
+//       <br>
+//       <input type="submit">
+//     `
+
+//     document.body.replaceChild(form, saveBtn)
+//   })
+// }
+
+
+
+function createMixForm(){
+    let x = document.getElementById("myDIV");
+   
+    let form=document.createElement("form")
+     form.id="mixForm"
+    form.innerHTML=`
+   
+       <label>Mix name: </label>
+        <input type="text" name="mixname">
+         <input type="submit">
+    `
+    x.appendChild(form)
+
+
+
+}
 function addMix(){
+    let mixForm=document.getElementById("mixForm")
+   mixForm.addEventListener("submit",function(event){
+event.preventDefault()
+
+let mixTitle= event.target.mixname.value
+
+   
+
     fetch("http://localhost:3000/api/v1/mixes",{
         method: 'POST',
-      body: JSON.stringify({user_id}),
+      body: JSON.stringify({mixTitle}),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     })
     .then(r => r.json())
+    .then((resp)=>console.log(resp))
     .catch(err => console.log("error:", err))
-
+})
   
 }
-
-
-

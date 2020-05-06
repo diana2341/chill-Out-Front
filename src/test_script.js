@@ -40,8 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
     volume()
     playPause()
     toggleNightmode()
+    createMixForm()
+    addMix()
     // clickIconToPlay()
     newMix()
+
 })
 
 
