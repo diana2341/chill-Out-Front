@@ -15,27 +15,32 @@ function newMix(){
 
   let saveBtn = document.getElementById("save")
 
-  saveBtn.addEventListener("click",function(event) {
-  let audio = document.querySelectorAll('audio')
+  saveBtn.addEventListener("click", (e) {
+  let audio_collection = document.querySelectorAll('audio')
+
+  audio_collection.forEach((audio) => {
+
+  })
+
 
   if(!audio[0].paused) {
   console.log(slider[0].value)
   }
   if(!audio[1].paused) {
     console.log(slider[1].value)
-    }
-    if(!audio[2].paused) {
-        console.log(slider[2].value)
-        }
-        if(!audio[3].paused) {
-            console.log(slider[3].value)
-        }
-            if(!audio[4].paused) {
-                console.log(slider[4].value)
-            }
-                if(!audio[5].paused) {
-                    console.log(slider[5].value)
-                }
+  }
+  if(!audio[2].paused) {
+  console.log(slider[2].value)
+  }
+  if(!audio[3].paused) {
+      console.log(slider[3].value)
+  }
+  if(!audio[4].paused) {
+      console.log(slider[4].value)
+  }
+  if(!audio[5].paused) {
+      console.log(slider[5].value)
+  }
 
     
   })

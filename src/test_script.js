@@ -1,12 +1,12 @@
 const soundDictionary = {
-    bird_volume: {
-        image: "images/bird.png",
-        audio: "audio/birds.fade.ogg"
-    },
     light_rain_volume: {
         image: "images/rainy.png",
         audio: "audio/light-rain.mp3"
     }, 
+    bird_volume: {
+        image: "images/bird.png",
+        audio: "audio/birds.fade.ogg"
+    },
     large_fire_volume: {
         image: "images/fire.png",
         audio: "audio/fire-large-flame.mp3"
@@ -20,32 +20,36 @@ const soundDictionary = {
         audio: "audio/ocean-wave.mp3"
     },
     strong_wind_volume: {
+        // too strong 
         image: "images/wind-bold.png",
         audio: "audio/wind-strong.mp3"
     },
     forest_volume: {
+        // also pretty loud windy more than forest
         image: "images/forest.png",
         audio: "audio/forest-windy-bird.mp3"
     },
     heavy_rain_volume: {
-        image: "images/wind-bold.png",
-        audio: "audio/wind-strong.mp3"
+        // like this one
+        image: "images/thunder.png",
+        audio: "audio/rain-concrete.mp3"
     },
     campfire_volume: {
-        image: "images/wind-bold.png",
-        audio: "audio/wind-strong.mp3"
+        image: "images/fire.png",
+        audio: "audio/campfire.mp3"
     },
     river_volume: {
         image: "images/river.png",
         audio: "audio/river.mp3"
     },
     light_wind_volume: {
-        image: "images/wind-bold.png",
-        audio: "audio/wind-strong.mp3"
+        // i like this one
+        image: "images/wind-simple.png",
+        audio: "audio/rain-light-in-nature.mp3"
     },
     coffee_shop_volume: {
-        image: "images/wind-bold.png",
-        audio: "audio/wind-strong.mp3"
+        image: "images/cafe.png",
+        audio: "audio/birds.fade.ogg"
     }
 
 }
@@ -62,13 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSetup()
     playPause()
     toggleNightmode()
-    // clickIconToPlay()
-    imagePlayAudion()
+    clickIconToPlay()
+    // imagePlayAudion()
 
     newMix()
-
-
-    
 
 })
 
@@ -79,42 +80,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function clickIconToPlay () {
     let sound_list = document.querySelector(".sound-list") 
-    let audio_tag_collection = document.querySelectorAll('audio')
-    // console.log(audio_tag_collection)
-    // console.log("parentNode[0]",audio_tag_collection[0].parentNode)
 
     sound_list.addEventListener("click", (e) => { 
 
-        let target_audio_container = e.target.parentNode.parentNode
-        if(e.target.className === 'icon') {
-            // if (e.target.)
-            // console.log("target's Parent =", e.target.parentNode)
-            
-            // if the clicked image's parent node has data-audio-key === audio tag's parentNode data-audio-key then play that audio
-            audio_tag_collection.forEach((audio) => {
-                
-                togglePlay(audio)
+        const audio_container = e.target.parentNode.parentNode
+        // get grandparent container that has dataset id
+        const imageTag = audio_container.children[0].children[0]
+        
+        const audioTag = audio_container.children[0].children[1]
+        const volumeInput = audio_container.children[0].children[2]
 
-                
-            })
+        if(e.target.className === 'icon') {
+            // if (audio_container)
+            const image_key = imageTag.parentNode.parentNode.dataset.audioKey 
+            const grandparent_key = audio_container.dataset.audioKey
+            
+            if (image_key === grandparent_key) {
+                const audio = audio_container.querySelector('audio')
+                console.log("tageted",audio)
+
+                togglePlay(audio)
+            }
         }
     })
 }
 
 
-
 // //==================================================================================
 
 function renderAudioContainers(){ 
-    // prop_names = Object.getOwnPropertyNames(soundDictionary)
+
     console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-        // console.log("audio_key=", audio_key)
-        // console.log("audio=", audio_path)        
-        // console.log('image= ', image_path)
+
         createAudioContainer(audio_key, audio_path, image_path)
     }
 
@@ -128,8 +129,6 @@ function createAudioContainer(key, audio, image){
     sound_container.className = "audio-container"
     sound_container.dataset.audioKey = key
 
-
-
     sound_container.innerHTML=`
         <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
@@ -141,7 +140,7 @@ function createAudioContainer(key, audio, image){
 
     sound_list.appendChild(sound_container)
 
-  // linking volume slider to audio file. dataset.purpose="large_fire_volume"
+  // linking volume slider to audio file. 
 }
 
 function togglePlay(sound) {
@@ -170,41 +169,12 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-function imagePlayAudion() {
-let img = document.getElementsByClassName("icon") 
-let audio = document.getElementsByTagName("audio") 
-
-
-document.addEventListener("click", (event) => {
-        if (event.target === img[0]) {
-            togglePlay(audio[0])   
-        }
-        if (event.target === img[1]) {
-            togglePlay(audio[1])   
-        }
-        if (event.target === img[2]) {
-            togglePlay(audio[2])   
-        }
-        if (event.target === img[3]) {
-            togglePlay(audio[3])   
-        }
-        if (event.target === img[4]) {
-            togglePlay(audio[4])   
-        }
-        if (event.target === img[5]) {
-            togglePlay(audio[5])   
-        }
-    })
-}
-
-
-// //==================================================================================
 
 
 
 function volume() {
 
-document.addEventListener("input",function(event){
+    document.addEventListener("input",function(event){
     console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
@@ -221,6 +191,30 @@ document.addEventListener("input",function(event){
         }
         if(event.target === slider[3]) {
             audio[3].volume = event.target.value    
+        }
+        if(event.target === slider[4]) {
+            audio[4].volume = event.target.value    
+        }
+        if(event.target === slider[5]) {
+            audio[5].volume = event.target.value    
+        }
+        if(event.target === slider[6]) {
+            audio[6].volume = event.target.value    
+        }
+        if(event.target === slider[7]) {
+            audio[7].volume = event.target.value    
+        }
+        if(event.target === slider[8]) {
+            audio[8].volume = event.target.value    
+        }
+        if(event.target === slider[9]) {
+            audio[9].volume = event.target.value    
+        }
+        if(event.target === slider[10]) {
+            audio[10].volume = event.target.value    
+        }
+        if(event.target === slider[11]) {
+            audio[11].volume = event.target.value    
         }
 
     })
