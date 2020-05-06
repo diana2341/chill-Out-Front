@@ -54,15 +54,6 @@ function addMix(){
 
   
 }
-document.querySelector([data-audio-key])
 
-let heavy_rain_volume = 
 
-`
-{ 
-    user_id: ${user_id},
-    mix_name: ${title},
-    heavy_rain_volume: 1,
-    fire_volume: 0.5
-}
-`
+
