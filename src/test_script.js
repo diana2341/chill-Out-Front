@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginOverlaySetup()
     buttonBarSetup()
 
+
     renderAudioContainers()
     volume()
     playPause()
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     
+
 })
 
 function getAudioKey () {
@@ -58,6 +60,7 @@ function getAudioKey () {
   // save volume of each sound 
   // on load: find the sound from collection of sound and set volume
   // create a const. similar to ambientICon []
+
 
 
 
@@ -84,6 +87,7 @@ function clickIconToPlay () {
 }
 
 
+
 // //==================================================================================
 
 function renderAudioContainers(){ 
@@ -108,6 +112,7 @@ function createAudioContainer(key, audio, image){
 
     sound_container.className = "audio-container"
 
+
     // let path_name = /[^/]([^.]+)/.exec(`${audio}`)[0]
 
     sound_container.innerHTML=`
@@ -118,6 +123,7 @@ function createAudioContainer(key, audio, image){
         </div>
         `
 
+
     sound_list.appendChild(sound_container)
 
   // linking volume slider to audio file. dataset.purpose="large_fire_volume"
@@ -125,6 +131,8 @@ function createAudioContainer(key, audio, image){
 
 function togglePlay(sound) {
     if (sound.paused) {
+        // sound.currentTime = 0;
+
         sound.play();
     }
     else {
@@ -147,26 +155,32 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-// function imagePlayAudion() {
-// let img = document.getElementsByClassName("icon") 
-// let audio = document.getElementsByTagName("audio") 
+function imagePlayAudion() {
+let img = document.getElementsByClassName("icon") 
+let audio = document.getElementsByTagName("audio") 
 
 
-// document.addEventListener("click", (event) => {
-//         if (event.target === img[0]) {
-//             togglePlay(audio[0])   
-//         }
-//         if (event.target === img[1]) {
-//             togglePlay(audio[1])   
-//         }
-//         if (event.target === img[2]) {
-//             togglePlay(audio[2])   
-//         }
-//         if (event.target === img[3]) {
-//             togglePlay(audio[3])   
-//         }
-//     })
-// }
+document.addEventListener("click", (event) => {
+        if (event.target === img[0]) {
+            togglePlay(audio[0])   
+        }
+        if (event.target === img[1]) {
+            togglePlay(audio[1])   
+        }
+        if (event.target === img[2]) {
+            togglePlay(audio[2])   
+        }
+        if (event.target === img[3]) {
+            togglePlay(audio[3])   
+        }
+        if (event.target === img[4]) {
+            togglePlay(audio[4])   
+        }
+        if (event.target === img[5]) {
+            togglePlay(audio[5])   
+        }
+    })
+}
 
 
 // //==================================================================================
