@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSetup()
     loginOverlaySetup()
     buttonBarSetup()
-    // imagePlayAudion()
+    imagePlayAudion()
     ambientIconArray()
     volume()
     playPause()
     toggleNightmode()
-    clickIconToPlay()
+    // clickIconToPlay()
 })
 
 
@@ -64,19 +64,19 @@ function ambientIconArray(){
 //     loadImageIcon(item)
 // });
 
-function clickIconToPlay () {
-    let sound_list = document.querySelector(".sound-list") 
-    let audio_array = document.querySelectorAll('audio')
-    console.log(audio_array)
+// function clickIconToPlay () {
+//     let sound_list = document.querySelector(".sound-list") 
+//     let audio_array = document.querySelectorAll('audio')
+//     console.log(audio_array)
 
-    sound_list.addEventListener("click", (e) => { 
-        if(e.target.className === 'icon') {
-            audio_array.forEach((audio) => {
-                togglePlay(audio)
-            })
-        }
-    })
-}
+//     sound_list.addEventListener("click", (e) => { 
+//         if(e.target.className === 'icon') {
+//             audio_array.forEach((audio) => {
+//                 togglePlay(audio)
+//             })
+//         }
+//     })
+// }
 
 
 // //==================================================================================
@@ -112,26 +112,32 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-// function imagePlayAudion() {
-// let img = document.getElementsByClassName("icon") 
-// let audio = document.getElementsByTagName("audio") 
+function imagePlayAudion() {
+let img = document.getElementsByClassName("icon") 
+let audio = document.getElementsByTagName("audio") 
 
 
-// document.addEventListener("click", (event) => {
-//         if (event.target === img[0]) {
-//             togglePlay(audio[0])   
-//         }
-//         if (event.target === img[1]) {
-//             togglePlay(audio[1])   
-//         }
-//         if (event.target === img[2]) {
-//             togglePlay(audio[2])   
-//         }
-//         if (event.target === img[3]) {
-//             togglePlay(audio[3])   
-//         }
-//     })
-// }
+document.addEventListener("click", (event) => {
+        if (event.target === img[0]) {
+            togglePlay(audio[0])   
+        }
+        if (event.target === img[1]) {
+            togglePlay(audio[1])   
+        }
+        if (event.target === img[2]) {
+            togglePlay(audio[2])   
+        }
+        if (event.target === img[3]) {
+            togglePlay(audio[3])   
+        }
+        if (event.target === img[4]) {
+            togglePlay(audio[4])   
+        }
+        if (event.target === img[5]) {
+            togglePlay(audio[5])   
+        }
+    })
+}
 
 
 // //==================================================================================
