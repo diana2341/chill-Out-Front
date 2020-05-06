@@ -209,19 +209,6 @@ document.addEventListener("input",function(event){
 
 
 
-function loginOverlaySetup() {
-    document.addEventListener("submit",function(event){
-    let signin = document.getElementsByClassName("login_container")[0]
-    var x = document.querySelector("#root");
-
-    if(event.target) {
-
-        x.style.visibility = "visible"
-        signin.style.display = 'none'
-
-        }
-    })
-}
 
 
 function playPause(){
