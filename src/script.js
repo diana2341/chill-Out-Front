@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+        stars()
+
     loginSetup()
     imagePlayAudion()
     ambientIconArray()
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleNightmode()
     // buttonBarSetup()
 
-
+    title()
 
 })
 
