@@ -33,17 +33,16 @@ const soundDictionary = {
 document.addEventListener("DOMContentLoaded", () => {
 
     addBackground()
-    loginSetup()
     loginOverlaySetup()
     buttonBarSetup()
-
-
     renderAudioContainers()
     volume()
+    loginSetup()
     playPause()
     toggleNightmode()
     clickIconToPlay()
-    getAudioKey()
+    // addUsernameToDom()
+    // addUsernameToDom()
 
 
 
@@ -51,37 +50,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-function getAudioKey () {
-    // fn to find the keys to then put in data set 
-
-    let audio_keys = Object.keys(soundDictionary)
-}
-
   // save volume of each sound 
   // on load: find the sound from collection of sound and set volume
   // create a const. similar to ambientICon []
 
-
-
-
-
-
+function methodName (arguments) {
+    // body
+}
 
 function clickIconToPlay () {
     let sound_list = document.querySelector(".sound-list") 
-    let audio_array = document.querySelectorAll('audio')
-    // console.log(audio_array)
-    console.log(audio_array[3].volume)
+    let audio_tag_collection = document.querySelectorAll('audio')
+    // console.log(audio_tag_collection)
+    console.log("parentNode[0]",audio_tag_collection[0].parentNode)
 
     sound_list.addEventListener("click", (e) => { 
-        console.log(e.target)
+
         if(e.target.className === 'icon') {
             
-            console.log("data-audio", e.target.parentNode)
+            console.log("target's Parent =", e.target.parentNode)
             // togglePlay()
-            audio_array.forEach((audio) => {
-                togglePlay(audio)
-            })
+            // if the clicked image's parent node has data-audio-key === audio tag's parentNode data-audio-key then play that audio
+            // audio_tag_collection.forEach((audio) => {
+            //     if ()
+                
+
+            //     togglePlay(audio)
+            // })
         }
     })
 }
@@ -91,15 +86,15 @@ function clickIconToPlay () {
 // //==================================================================================
 
 function renderAudioContainers(){ 
-    prop_names = Object.getOwnPropertyNames(soundDictionary)
+    // prop_names = Object.getOwnPropertyNames(soundDictionary)
     console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-        console.log("audio_key=", audio_key)
-        console.log("audio=", audio_path)        
-        console.log('image= ', image_path)
+        // console.log("audio_key=", audio_key)
+        // console.log("audio=", audio_path)        
+        // console.log('image= ', image_path)
         createAudioContainer(audio_key, audio_path, image_path)
     }
 
@@ -116,9 +111,9 @@ function createAudioContainer(key, audio, image){
     // let path_name = /[^/]([^.]+)/.exec(`${audio}`)[0]
 
     sound_container.innerHTML=`
-        <div class="inner" >
+        <div data-audio-key="${key}" class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
-            <audio data-audio-key="${key}" loop><source src=${audio}></audio>        
+            <audio loop><source src=${audio}></audio>        
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
@@ -155,32 +150,32 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-function imagePlayAudion() {
-let img = document.getElementsByClassName("icon") 
-let audio = document.getElementsByTagName("audio") 
+// function imagePlayAudion() {
+// let img = document.getElementsByClassName("icon") 
+// let audio = document.getElementsByTagName("audio") 
 
 
-document.addEventListener("click", (event) => {
-        if (event.target === img[0]) {
-            togglePlay(audio[0])   
-        }
-        if (event.target === img[1]) {
-            togglePlay(audio[1])   
-        }
-        if (event.target === img[2]) {
-            togglePlay(audio[2])   
-        }
-        if (event.target === img[3]) {
-            togglePlay(audio[3])   
-        }
-        if (event.target === img[4]) {
-            togglePlay(audio[4])   
-        }
-        if (event.target === img[5]) {
-            togglePlay(audio[5])   
-        }
-    })
-}
+// document.addEventListener("click", (event) => {
+//         if (event.target === img[0]) {
+//             togglePlay(audio[0])   
+//         }
+//         if (event.target === img[1]) {
+//             togglePlay(audio[1])   
+//         }
+//         if (event.target === img[2]) {
+//             togglePlay(audio[2])   
+//         }
+//         if (event.target === img[3]) {
+//             togglePlay(audio[3])   
+//         }
+//         if (event.target === img[4]) {
+//             togglePlay(audio[4])   
+//         }
+//         if (event.target === img[5]) {
+//             togglePlay(audio[5])   
+//         }
+//     })
+// }
 
 
 // //==================================================================================

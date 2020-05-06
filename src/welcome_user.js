@@ -1,7 +1,7 @@
 // make a div container 
 // make input field 
 // fetch post to users
-
+const url = 'http://localhost:3000/api/v1'
 
 function loginSetup() {
   // const body = document.querySelector('body')
@@ -54,10 +54,26 @@ function loginSetup() {
         'Accept': 'application/json'
       }
     }
-    const url = 'http://localhost:3000/api/v1'
+    
 
     fetch(`${url}/users`, options)
     .then(r => r.json())
+    .then(user => {
+      
+      console.log(user)
+      // should be all user objects  
+      const welcomeUser = document.querySelector('.left-container')
+      welcomeUser.dataset.user_id = user.id
+      console.log(welcomeUser)
+
+      const p = document.createElement('p')
+
+      p.innerHTML = `
+        Welcome, ${user.username}
+      `
+      welcomeUser.append(p)
+
+    })
     .catch(err => console.log("error:", err))
 
   })
@@ -65,5 +81,35 @@ function loginSetup() {
 
 }
 
+// function addUsernameToDom () {
+
+
+
+//   fetch(`${url}/users`)
+//     .then(res=>res.json())
+//     .then(users => {
+
+//     const currentUser = users.find(user => {
+      
+//       // if (user.username === )
+//       console.log(user)
+//       console.log("current_user_id===",user.id)
+//       console.log("current_username===",user.username)
+
+//       // let welcomeUser = document.querySelector('.left-container')
+//       // console.log(welcomeUser)
+//       // welcomeUser.dataset.user_id = user.id
+
+//       // let p = document.createElement('p')
+
+//       // p.innerHTML = `
+//       //   Welcome, ${user.username}
+//       // `
+//       // welcomeUser.append(p)
+
+//     })
+//     // console.log(currentUser)
+//   })
+// }
 
 
