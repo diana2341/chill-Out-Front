@@ -79,7 +79,7 @@ function loginSetup() {
     // finds current user_id and username and creates welcome sign / stores user_id on page. 
     /////////////////////
       const welcomeUser = document.querySelector('.left-container')
-      welcomeUser.dataset.user_id = user.id
+      welcomeUser.dataset.userId = user.id
 
       const p = document.createElement('p')
 
