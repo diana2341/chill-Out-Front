@@ -63,7 +63,7 @@ function loginSetup() {
       username
     }
 
-    login_form.reset()
+    // login_form.reset()
 
     const options = {
       method: 'POST',

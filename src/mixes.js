@@ -40,20 +40,20 @@ function newMix(){
 
 }
 
-function addMix(){
-  fetch("http://localhost:3000/api/v1/mixes",{
-      method: 'POST',
-    body: JSON.stringify(new_mix),
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-  })
-  .then(r => r.json())
-  .catch(err => console.log("error:", err))
+// function addMix(){
+//   fetch("http://localhost:3000/api/v1/mixes",{
+//       method: 'POST',
+//     body: JSON.stringify(new_mix),
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//     }
+//   })
+//   .then(r => r.json())
+//   .catch(err => console.log("error:", err))
 
 
-}
+// }
 // document.querySelector([data-audio-key])
 
 // let heavy_rain_volume = 
