@@ -127,10 +127,8 @@ function createAudioContainer(key, audio, image){
 
     sound_container.className = "audio-container"
     sound_container.dataset.audioKey = key
-    
 
 
-    // let path_name = /[^/]([^.]+)/.exec(`${audio}`)[0]
 
     sound_container.innerHTML=`
         <div class="inner" >
