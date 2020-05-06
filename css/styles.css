@@ -221,6 +221,7 @@ button {
 
 
 .icon{
+    text-align: center;
     display: block;
     overflow:auto;
     width: 90px;

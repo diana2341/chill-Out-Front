@@ -7,18 +7,23 @@ const soundDictionary = {
         image: "images/rainy.png",
         audio: "audio/light-rain.mp3"
     }, 
+    fire_large: {
+        image: "images/fire.png",
+        audio: "audio/fire-large-flame.mp3"
+    },
     thunder: {
         image: "images/thunder-cloud.png",
         audio: "audio/thunder.fade.ogg"
     },
     wave: {
-        image: "images/wave-simple.png",
+        image: "images/wave.png",
         audio: "audio/ocean-wave.mp3"
     },
     wind_strong: {
         image: "images/wind-bold.png",
         audio: "audio/wind-strong.mp3"
     },
+    
 
 }
 
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSetup()
     loginOverlaySetup()
     buttonBarSetup()
-    imagePlayAudion()
+    // imagePlayAudion()
     ambientIconArray()
     volume()
     playPause()
@@ -70,6 +75,7 @@ function clickIconToPlay () {
         if(e.target.className === 'icon') {
 
             audio_values.forEach((obj) => {
+                console.log("in an array:", obj.audio)
                 togglePlay(obj.audio)
             })
         }
@@ -86,7 +92,7 @@ function loadImageIcon(image, audio){
     sound_container.className = "audio-container"
 
     sound_container.innerHTML=`
-        <div style="cursor:pointer" class="inner" >
+        <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
             <audio loop><source src=${audio}></audio>        
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
@@ -98,34 +104,6 @@ function loadImageIcon(image, audio){
 
 }
 
-
-
-
-// //==================================================================================
-function imagePlayAudion() {
-let img = document.getElementsByClassName("icon") 
-let audio = document.getElementsByTagName("audio") 
-
-
-document.addEventListener("click", (event) => {
-        if (event.target === img[0]) {
-            togglePlay(audio[0])   
-        }
-        if (event.target === img[1]) {
-            togglePlay(audio[1])   
-        }
-        if (event.target === img[2]) {
-            togglePlay(audio[2])   
-        }
-        if (event.target === img[3]) {
-            togglePlay(audio[3])   
-        }
-    })
-}
-
-
-// //==================================================================================
-
 function togglePlay(sound) {
     if (sound.paused) {
         sound.play();
@@ -134,6 +112,54 @@ function togglePlay(sound) {
         sound.pause();
     }
 };
+
+
+
+// //==================================================================================
+// function imagePlayAudion() {
+// let img = document.getElementsByClassName("icon") 
+// let audio = document.getElementsByTagName("audio") 
+
+
+// document.addEventListener("click", (event) => {
+//         if (event.target === img[0]) {
+//             togglePlay(audio[0])   
+//         }
+//         if (event.target === img[1]) {
+//             togglePlay(audio[1])   
+//         }
+//         if (event.target === img[2]) {
+//             togglePlay(audio[2])   
+//         }
+//         if (event.target === img[3]) {
+//             togglePlay(audio[3])   
+//         }
+//     })
+// }
+
+
+// //==================================================================================
+
+
+
+// function togglePlay(audio) {
+//     let playPromise = audio.play();
+
+//     if (playPromise !== undefined) {
+//         playPromise.then(_ => {
+//         // Automatic playback started!
+//         // Show playing UI.
+//         // We can now safely pause video...
+//         audio.pause();
+//         })
+//         .catch(error => {
+//         // Auto-play was prevented
+//         // Show paused UI.
+//         });
+//     } else {
+//         audio.play()
+//     }
+// }
 
 // //==================================================================================
 
@@ -183,26 +209,26 @@ function loginOverlaySetup() {
 
 function playPause(){
 
-let listen=document.querySelector(".play-controls")
+    let listen = document.querySelector(".play-controls")
 
-listen.addEventListener("click",function(event){
-    let audio = document.getElementsByTagName("audio") 
+    listen.addEventListener("click",function(event){
+        let audio = document.getElementsByTagName("audio") 
 
-    let pauseButton= document.getElementById("pause")
-    let playButton= document.getElementById("play") 
-    // console.log(event.target)
-    if(event.target==playButton){
-    Array.from(audio).forEach(function(song){
-        song.play()
-
-        })
-    }
-    
-    if(event.target===pauseButton){
+        let pauseButton = document.getElementById("pause")
+        let playButton = document.getElementById("play") 
+        // console.log(event.target)
+        if(event.target === playButton) {
         Array.from(audio).forEach(function(song){
-            song.pause() 
-    }) 
-}})
+            song.play()
+
+            })
+        }
+        
+        if(event.target === pauseButton){
+            Array.from(audio).forEach(function(song){
+                song.pause() 
+        }) 
+    }})
 }
 
 
