@@ -1,9 +1,20 @@
 /* background-animation css */
 
+/* .container {
+  position: relative;
+  left: 900px;
+  top:400px;
+  don't need this and it also blocks other things
+} */
+
 .campfire-wrapper {
   width: 500px;
   height: 400px;
-  position: relative;
+  
+  position: absolute; 
+  right: 10px;
+  bottom: 5px;
+  /* sticks to bottom right corner on page resize */
   }
   
   .tree-container-front,

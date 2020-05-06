@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function ambientIconArray(){ 
     let audio_values = Object.values(soundDictionary)
 
-
     audio_values.forEach((obj) => {
-        console.log(obj.image)
         let image_path = obj.image
         let audio_path = obj.audio
         loadImageIcon(image_path, audio_path)
@@ -68,15 +66,13 @@ function ambientIconArray(){
 
 function clickIconToPlay () {
     let sound_list = document.querySelector(".sound-list") 
-    let audio_values = Object.values(soundDictionary) 
-    console.log("in clickIconToPlay", audio_values)
+    let audio_array = document.querySelectorAll('audio')
+    console.log(audio_array)
 
-    sound_list.addEventListener("click", (e) => {
+    sound_list.addEventListener("click", (e) => { 
         if(e.target.className === 'icon') {
-
-            audio_values.forEach((obj) => {
-                console.log("in an array:", obj.audio)
-                togglePlay(obj.audio)
+            audio_array.forEach((audio) => {
+                togglePlay(audio)
             })
         }
     })
@@ -139,30 +135,6 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-
-
-
-// function togglePlay(audio) {
-//     let playPromise = audio.play();
-
-//     if (playPromise !== undefined) {
-//         playPromise.then(_ => {
-//         // Automatic playback started!
-//         // Show playing UI.
-//         // We can now safely pause video...
-//         audio.pause();
-//         })
-//         .catch(error => {
-//         // Auto-play was prevented
-//         // Show paused UI.
-//         });
-//     } else {
-//         audio.play()
-//     }
-// }
-
-// //==================================================================================
-
 
 
 
