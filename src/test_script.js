@@ -82,6 +82,7 @@ function clickIconToPlay () {
 // //==================================================================================
 
 function loadImageIcon(image, audio){
+    // create audio container for method
     let sound_list = document.querySelector(".sound-list")  
     let sound_container = document.createElement("div")
     // sound_container.dataset.id = item.id
@@ -97,7 +98,7 @@ function loadImageIcon(image, audio){
     // document.getElementsByClassName('inner').style.cursor = "pointer"
     sound_list.appendChild(sound_container)
 
-
+// linking volume slider to audio file. dataset.purpose="large_fire_volume"
 }
 
 function togglePlay(sound) {
@@ -109,6 +110,18 @@ function togglePlay(sound) {
     }
 };
 
+
+// click save 
+// capture volume number of each slider 
+// keys of body need to correspond to backend table 
+// post the data to our mix table 
+// that creates new mix record (instance)
+
+// click load 
+// look the mix_id - bind the mix-id to the dom NEED TO KNOW MIX ID
+// like a collection_select  - value= mix_id  // or it shows up on page with a play button. // store mix_id on the button somewhere
+// fetch the mix record from backend - comes in as json 
+// run volume adjuster method on click of play. would be in the .then callback. 
 
 
 // //==================================================================================
@@ -149,7 +162,7 @@ document.addEventListener("input",function(event){
             audio[0].volume = event.target.value    
         }
         if(event.target === slider[1]) {
-            audio[1].volume=event.target.value    
+            audio[1].volume = event.target.value    
         }
         if(event.target === slider[2]) {
             audio[2].volume = event.target.value    
