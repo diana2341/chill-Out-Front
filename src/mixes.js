@@ -13,9 +13,11 @@
 function newMix(){
   let slider = document.getElementsByClassName("volumeSlider")
 
-  let saveBtn=document.getElementById("save")
-  saveBtn.addEventListener("click",function(event){
+  let saveBtn = document.getElementById("save")
+
+  saveBtn.addEventListener("click",function(event) {
   let audio = document.querySelectorAll('audio')
+
   if(!audio[0].paused) {
   console.log(slider[0].value)
   }
@@ -57,6 +59,14 @@ function addMix(){
 // document.querySelector([data-audio-key])
 
 // let heavy_rain_volume = 
+
+// connects a slider with a phrase in a dataset-purpose 
+
+// let key = event.target.dataset.key
+// let body  = {}
+// body[purpose] = 5.5
+// body[key] = e.target.dataset.key
+
 
 // `
 // { 
