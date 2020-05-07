@@ -121,6 +121,9 @@ function renderAudioContainers(){
 
 }
 
+//
+//
+
 function createAudioContainer(key, audio, image){
 
     let sound_list = document.querySelector(".sound-list")  
@@ -136,11 +139,7 @@ function createAudioContainer(key, audio, image){
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
-
-
     sound_list.appendChild(sound_container)
-
-  // linking volume slider to audio file. 
 }
 
 function togglePlay(sound) {
@@ -220,10 +219,8 @@ function volume() {
     })
 }
 
-
-
-
-
+//
+//
 
 function playPause(){
 
