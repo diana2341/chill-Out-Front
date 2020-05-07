@@ -49,14 +49,29 @@ function addListenerToMixList () {
 }
 
 function playMix (mix) {
-  console.log("selected mix ==",mix)
-  console.log("bird_volume", mix.bird_volume)
-  
-  let bird_volume_container = document.querySelector('[data-audio-key="large_fire_volume"]')
-  let audioTag = bird_volume_container.children[0].children[1]
-  let volumeInput = bird_volume_container.children[0].children[2]
 
-        // const imageTag = bird_volume_container.children[0].children[0]
+  console.log(mix)
+  console.log('clicked')
+  // console.log("selected mix ==",mix)
+  // console.log("bird_volume", mix.bird_volume)
+  
+  let bird_volume_container = document.querySelector('[data-audio-key="bird_volume"]')
+  let sound = parseFloat(bird_volume_container.children[0].children[1].volume)
+  let slider = parseFloat(bird_volume_container.children[0].children[2].value)
+
+  console.log("before sound",sound)
+  console.log("before slider",slider)
+  // audioTag.volume is audio vol
+  // volumeInputTag.value = slider vol
+
+  sound = mix.bird_volume
+  slider = mix.bird_volume
+  console.log("audio",sound)
+  console.log("slider",slider)
+
+  // let sound_list = document.querySelector(".sound-list")  
+  
+  // renderAudioContainers()
 
 
   // get bird_volume audio_container to start
