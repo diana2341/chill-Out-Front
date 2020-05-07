@@ -11,21 +11,27 @@ function renderSavedMixes (mixes) {
   mixes.forEach(mix => {
     console.log(mixes)
     
-    let li = document.createElement('li')
+    const li = document.createElement('li')
     li.dataset.id = mix.id
     li.dataset.userId = mix.user_id
-    // li.dataset.creator = mix.user_id.username
-
-    // console.log(li)
-
     li.textContent = mix.mix_name
+    let play_saved_mix_button = document.createElement('button')
+    play_saved_mix_button.className = "play-saved-mix"
+    play_saved_mix_button.textContent = "Play"
+    li.append(play_saved_mix_button)
 
     mix_list.append(li)
+
+    
+    // li.dataset.creator = mix.user_id.username can do another fetch to add the username i guess
   });
+  console.log(mix_list)
 
 
 }
 
+
+// make a click listener on 
 
 // function fetchUserMixes(){
 
