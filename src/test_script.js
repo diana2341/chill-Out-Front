@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleNightMode()
 
 
+    fetchSavedMixes()
+
     // imagePlayAudion()
     // createMixForm()
     // addMix()
@@ -112,7 +114,7 @@ function clickIconToPlay () {
             
             if (image_key === grandparent_key) {
                 const audio = audio_container.querySelector('audio')
-                console.log("tageted",audio)
+                // console.log("targeted",audio)
 
                 togglePlay(audio)
             }

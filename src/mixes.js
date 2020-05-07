@@ -4,6 +4,7 @@ function renderMixForm() {
   let form = document.createElement("form")
   form.id = "mix-form"
 
+  
   form.innerHTML = `
 
     <label>Mix name: </label>
@@ -12,6 +13,7 @@ function renderMixForm() {
   `
   
   form_container.append(form)
+  form.reset()
 }
 
 //
