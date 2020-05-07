@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clickIconToPlay()
     // imagePlayAudion()
 
-    newMix()
+    saveNewMix()
 
 })
 
@@ -175,7 +175,7 @@ function togglePlay(sound) {
 function volume() {
 
     document.addEventListener("input",function(event){
-    console.log("clicked")
+    // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
