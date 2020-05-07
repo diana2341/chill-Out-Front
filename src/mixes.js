@@ -15,37 +15,64 @@ function newMix(){
 
   let saveBtn = document.getElementById("save")
 
-  saveBtn.addEventListener("click", (e) {
-  let audio_collection = document.querySelectorAll('audio')
+  saveBtn.addEventListener("click", (e) => {
+    let audio_collection = document.querySelectorAll('audio')
+    let audio = document.querySelectorAll('audio')
+    
+    let light_rain_volume = audio[0].parentNode.parentNode.dataset.audioKey
+    body[light_rain_volume] = slider[0].value
 
-  audio_collection.forEach((audio) => {
-
+    if(!audio[0].paused) {
+      console.log(slider[0].value)
+      let key = document.querySelector('.audio-container').dataset.audioKey
+        console.log(key)
+      }
+      if(!audio[1].paused) {
+        console.log(slider[1].value)
+        
+      }
+      if(!audio[2].paused) {
+      console.log(slider[2].value)
+      }
+      if(!audio[3].paused) {
+          console.log(slider[3].value)
+      }
+      if(!audio[4].paused) {
+          console.log(slider[4].value)
+      }
+      if(!audio[5].paused) {
+          console.log(slider[5].value)
+      }
+  
+      let key = document.querySelector('.audio-container').dataset.audioKey
+        console.log(key)
+  
   })
+}
+  //   audio_collection.forEach((audio) => {
+
+  //     let key = document.querySelector('.audio-container').dataset.audioKey
+  //     console.log(key)
+  //     console.log("vol==",audio.volume)
+  //     // if(!audio.paused) {
+  
+  //     // }
+
+  //   })
+  // }) 
+
+  // const audio_container = e.target.parentNode.parentNode
+  // const audioTag = audio_container.children[0].children[1]
 
 
-  if(!audio[0].paused) {
-  console.log(slider[0].value)
-  }
-  if(!audio[1].paused) {
-    console.log(slider[1].value)
-  }
-  if(!audio[2].paused) {
-  console.log(slider[2].value)
-  }
-  if(!audio[3].paused) {
-      console.log(slider[3].value)
-  }
-  if(!audio[4].paused) {
-      console.log(slider[4].value)
-  }
-  if(!audio[5].paused) {
-      console.log(slider[5].value)
-  }
+
+
+
 
     
-  })
+  // })
 
-}
+
 
 function addMix(){
   fetch("http://localhost:3000/api/v1/mixes",{

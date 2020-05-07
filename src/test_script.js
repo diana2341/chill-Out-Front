@@ -115,7 +115,7 @@ function renderAudioContainers(){
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-
+        
         createAudioContainer(audio_key, audio_path, image_path)
     }
 
