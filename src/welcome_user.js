@@ -6,16 +6,17 @@ const url = 'http://localhost:3000/api/v1'
 
 
 function loginOverlaySetup() {
-  document.addEventListener("submit",function(event){
-  let signin = document.getElementsByClassName("login_container")[0]
-  var x = document.querySelector("#root");
 
-  if(event.target) {
+  document.addEventListener("submit", (event) => {
+    let login_container = document.querySelector('.login_container')
+    var x = document.querySelector("#root");
 
-      x.style.visibility = "visible"
-      signin.style.display = 'none'
+    if(event.target) {
 
-      }
+        x.style.visibility = "visible"
+        login_container.style.display = 'none'
+
+        }
   })
 }
 
@@ -29,11 +30,11 @@ function loginSetup() {
   div.id = 'inner-login'
   login_container.append(div)
 
-  // const h1 = document.createElement('h1')
-  // h1.id = 'login-title'
+  const h1 = document.createElement('h1')
+  h1.id = 'login-title'
   // if user exists say login else say create username
-  // h1.textContent = 'User Login'
-  // div.append(h1)
+  h1.textContent = 'User Login'
+  div.append(h1)
 
   const login_form = document.createElement('form')
   

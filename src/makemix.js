@@ -122,9 +122,6 @@ function createMixForm(){
          <input type="submit">
     `
     x.appendChild(form)
-
-
-
 }
 
 let audio=(function (){ 
