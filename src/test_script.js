@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetchUserMixes()
 
     toggleNightMode()
-
+    // addListenerToMixList()
 
     fetchSavedMixes()
 
@@ -220,6 +220,14 @@ function togglePlay(sound) {
 //         }
 //     })
 
+function sliderMovesVolume () {
+    audio_collection = document.querySelectorAll('audio')
+    slider_collection = document.querySelectorAll('.volumeSlider')
+
+    slider_collection.forEach(slider => {
+        // for each slider audio.volume = slider.value
+    });
+}
 
 
 

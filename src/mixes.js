@@ -49,6 +49,7 @@ function saveNewMix() {
         Object.assign(new_mix, {[audio_name] : volume_input})
       }
     })
+    const mix_list = document.getElementById('user-mix-display')
 
     fetch(`${url}/mixes`, {
       method: 'POST',
@@ -59,12 +60,23 @@ function saveNewMix() {
       }
     })
     .then(r => r.json())
+    .then(addNewMixToList)
+    
     .catch(err => console.log("error:", err))
     form.reset()
   })
 
 } 
 
+
+function addNewMixToList () {
+  
+  const mix_list = document.getElementById('user-mix-display')
+
+  mix_list.innerHTML = ''
+
+  fetchSavedMixes()
+}
 // 
 
 // click save 

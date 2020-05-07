@@ -1,13 +1,17 @@
 function fetchSavedMixes () {
   fetch(`${url}/mixes`)
   .then(r => r.json())
-  .then(mixes => renderSavedMixes(mixes))
+  .then(mixes => {
+
+    renderSavedMixes(mixes)
+    
+  })
 
 }
 
 function renderSavedMixes (mixes) {
-  const mix_list = document.getElementById('user-mix-display')
-  console.log(mixes)
+
+  let mix_list = document.getElementById('user-mix-display')
 
   mixes.forEach(mix => {
 
@@ -15,14 +19,20 @@ function renderSavedMixes (mixes) {
     const li = document.createElement('li')
     // li.className
     li.dataset.mixId = mix.id
-    li.dataset.userId = mix.user_id
-    li.textContent = mix.mix_name
 
+    li.dataset.userId = mix.user_id
+    // li.textContent = mix.mix_name
+
+    li.innerHTML=`
+    
+      ${mix.mix_name}
+      <button class="play-saved-mix">Play</button>
+      `
     // create play button append to li
-    let play_saved_mix_button = document.createElement('button')
-    play_saved_mix_button.className = "play-saved-mix"
-    play_saved_mix_button.textContent = "Play"
-    li.append(play_saved_mix_button)
+    // let play_saved_mix_button = document.createElement('button')
+    // play_saved_mix_button.className = "play-saved-mix"
+    // play_saved_mix_button.textContent = "Play"
+    // li.append(play_saved_mix_button)
 
     // append li to list
     mix_list.append(li)
@@ -31,8 +41,27 @@ function renderSavedMixes (mixes) {
   addListenerToMixList()
 }
 
+
+// function listMixes(mix){
+//   let mixUl = document.getElementById("mixes")
+  
+//      let mixLi = document.createElement("li")
+
+//      mixLi.dataset.id = mix.id
+
+//      mixLi.innerHTML=`
+    
+//       title:${mix.mix_name}
+//       <button class ="uploadedMixes" >play</button>
+//       `
+     
+//      mixUl.appendChild(mixLi)
+  
+//   }
+
 function addListenerToMixList () {
   const mix_list = document.getElementById('user-mix-display')
+  
 
   mix_list.addEventListener('click', (e) => {
 
@@ -51,6 +80,7 @@ function addListenerToMixList () {
 function playMix (mix) {
 
   console.log(mix)
+  console.log(mix.id)
   console.log('clicked')
   // console.log("selected mix ==",mix)
   // console.log("bird_volume", mix.bird_volume)
