@@ -60,15 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addBackground()
     loginOverlaySetup()
+    loginSetup()
     buttonBarSetup()
     renderAudioContainers()
     volume()
-    loginSetup()
     playPause()
-    toggleNightmode()
+    toggleNightMode()
     clickIconToPlay()
-    // imagePlayAudion()
-
+    renderMixForm()
     saveNewMix()
 
 })
