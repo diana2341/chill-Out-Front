@@ -41,9 +41,6 @@ function saveNewMix() {
   
         Object.assign(new_mix, {[audio_name] : volume_input})
       }
-
-      
-
     })
 
     fetch(`${url}/mixes`, {
