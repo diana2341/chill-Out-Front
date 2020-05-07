@@ -178,7 +178,6 @@ function togglePlay(sound) {
 function imagePlayAudion() {
 let img = document.getElementsByClassName("icon") 
 let audio = document.getElementsByTagName("audio") 
-
 document.addEventListener("click", (event) => {
         if (event.target === img[0]) {
             togglePlay(audio[0])   
