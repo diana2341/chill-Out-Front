@@ -17,14 +17,14 @@ function resetButtonSetup() {
       
       // console.log('volume sliders:', sliders)
 
-        sliders.forEach(slider => {
+      sliders.forEach(slider => {
         slider.value = 0
 
         audios.forEach(audio => {
             audio.volume = 0
-        });
+        })
         
-      });
+      })
 
     }
 
