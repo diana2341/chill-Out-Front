@@ -1,4 +1,71 @@
-	// click save 
+function renderMixForm() {
+  let form_container = document.getElementById("save-mix-form");
+
+  let form = document.createElement("form")
+  form.id = "mix-form"
+
+  form.innerHTML = `
+
+    <label>Mix name: </label>
+    <input id="mix-title-input" type="text" name="mix-name" placeholder="your mix name here">
+    <input id="save-mix" type="submit" value="save">
+  `
+  
+  form_container.append(form)
+}
+
+//
+//
+
+// how to stop it from saving if things are paused but volume is set and u want to still save those volumes... can't really have both. 
+// do we allow it to save even if a thing was paused ? probs works better if u exclude the option to have saved mix that is 0 across the board. 
+function saveNewMix() {
+  let saveBtn = document.getElementById("save-mix")
+
+  saveBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    
+    const form = document.getElementById('mix-form')
+    let audio_collection = document.querySelectorAll('audio')
+    const user_id = parseInt(document.querySelector('.left-container').dataset.userId, 10)
+    let mix_name = document.getElementById('mix-title-input').value
+    
+
+    let new_mix = {
+      mix_name : mix_name,
+      user_id : user_id,
+    }
+
+    
+    audio_collection.forEach((audio) => {
+
+      if (!audio.paused) {
+        let audio_name = audio.parentNode.parentNode.dataset.audioKey
+        let volume_input = parseFloat(audio.parentNode.children[2].value)
+  
+        Object.assign(new_mix, {[audio_name] : volume_input})
+      }
+    })
+
+    fetch(`${url}/mixes`, {
+      method: 'POST',
+      body: JSON.stringify(new_mix),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    })
+    .then(r => r.json())
+    .catch(err => console.log("error:", err))
+    form.reset()
+  })
+
+} 
+
+// 
+
+// click save 
 // capture volume number of each slider 
 // keys of body need to correspond to backend table 
 // post the data to our mix table 
@@ -9,81 +76,3 @@
 // like a collection_select  - value= mix_id  // or it shows up on page with a play button. // store mix_id on the button somewhere
 // fetch the mix record from backend - comes in as json 
 // run volume adjuster method on click of play. would be in the .then callback. 
-
-// function newMix(){
-//   let slider = document.getElementsByClassName("volumeSlider")
-
-//   let saveBtn = document.getElementById("save")
-
-//   saveBtn.addEventListener("click", function(e) {
-//   let audio = document.querySelectorAll('audio')
-
-//   // audio_collection.forEach((audio) => {}
-
-//   // })
-
-
-//   if(!audio[0].paused) {
-//   console.log(slider[0].value)
-//   }
-//   if(!audio[1].paused) {
-//     console.log(slider[1].value)
-//   }
-//   if(!audio[2].paused) {
-//   console.log(slider[2].value)
-//   }
-//   if(!audio[3].paused) {
-//       console.log(slider[3].value)
-//   }
-//   if(!audio[4].paused) {
-//       console.log(slider[4].value)
-//   }
-//   if(!audio[5].paused) {
-//       console.log(slider[5].value)
-//   }
-
-    
-//   })
-
-// }
-
-// function addMix(){
-//   fetch("http://localhost:3000/api/v1/mixes",{
-//       method: 'POST',
-//     body: JSON.stringify(new_mix),
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Accept': 'application/json'
-//     }
-//   })
-//   .then(r => r.json())
-//   .catch(err => console.log("error:", err))
-
-
-// }
-// document.querySelector([data-audio-key])
-
-// let heavy_rain_volume = 
-
-// connects a slider with a phrase in a dataset-purpose 
-
-// let key = event.target.dataset.key
-// let body  = {}
-// body[purpose] = 5.5
-// body[key] = e.target.dataset.key
-
-
-// `
-// { 
-//   user_id: ${user_id},
-//   mix_name: ${title},
-//   heavy_rain_volume: 1,
-//   fire_volume: 0.5
-// }
-// `
-
-// const newToy = {
-//   name: toyForm.name.value,
-//   image: toyForm.image.value,
-//   likes: 0
-// }
