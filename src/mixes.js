@@ -32,12 +32,17 @@ function saveNewMix() {
       user_id : user_id,
     }
 
+    
     audio_collection.forEach((audio) => {
+      
+      if (!audio.paused) {
+        let audio_name = audio.parentNode.parentNode.dataset.audioKey
+        let volume_input = parseFloat(audio.parentNode.children[2].value)
+  
+        Object.assign(new_mix, {[audio_name] : volume_input})
+      }
 
-      let audio_name = audio.parentNode.parentNode.dataset.audioKey
-      let volume_input = parseFloat(audio.parentNode.children[2].value)
-
-      Object.assign(new_mix, {[audio_name] : volume_input})
+      
 
     })
 
