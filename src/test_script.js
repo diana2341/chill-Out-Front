@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playPause()
     toggleNightmode()
     imagePlayAudion()
-    newMix()
+    // newMix()
     createMixForm()
     addMix()
     // clickIconToPlay()
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // addUsernameToDom()
 
     newMix()
+    getMixes()
 
 })
 
@@ -203,7 +204,6 @@ document.addEventListener("click", (event) => {
 
 
 // //==================================================================================
-
 
 
 function volume() {
