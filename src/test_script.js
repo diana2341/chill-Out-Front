@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleNightmode()
     imagePlayAudion()
     newMix()
+    createMixForm()
+    addMix()
     // clickIconToPlay()
     // addUsernameToDom()
     // addUsernameToDom()
@@ -89,7 +91,7 @@ function clickIconToPlay () {
 
 function renderAudioContainers(){ 
     // prop_names = Object.getOwnPropertyNames(soundDictionary)
-    console.log('start')
+    // console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
@@ -187,7 +189,7 @@ document.addEventListener("click", (event) => {
 function volume() {
 
 document.addEventListener("input",function(event){
-    console.log("clicked")
+    // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
@@ -203,6 +205,12 @@ document.addEventListener("input",function(event){
         }
         if(event.target === slider[3]) {
             audio[3].volume = event.target.value    
+        }
+        if(event.target === slider[4]) {
+            audio[4].volume = event.target.value    
+        }
+        if(event.target === slider[5]) {
+            audio[5].volume = event.target.value    
         }
 
     })
