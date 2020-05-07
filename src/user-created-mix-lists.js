@@ -7,21 +7,75 @@ function fetchSavedMixes () {
 
 function renderSavedMixes (mixes) {
   const mix_list = document.getElementById('user-mix-display')
+  console.log(mixes)
 
   mixes.forEach(mix => {
-    console.log(mixes)
-    
+
+    // create li set attributes
     const li = document.createElement('li')
     li.dataset.id = mix.id
     li.dataset.userId = mix.user_id
     li.textContent = mix.mix_name
+
+    // create play button append to li
     let play_saved_mix_button = document.createElement('button')
     play_saved_mix_button.className = "play-saved-mix"
     play_saved_mix_button.textContent = "Play"
     li.append(play_saved_mix_button)
 
+    // append li to list
     mix_list.append(li)
 
+
+    // set constants for each mix
+    let mix_name = mix.mix_name
+
+    let bird_volume = mix.bird_volume 
+    let campfire_volume = mix.campfire_volume
+    let coffee_shop_volume = mix.coffee_shop_volume
+
+    let forest_volume = mix.forest_volume
+    let heavy_rain_volume = mix.heavy_rain_volume
+
+    let large_fire_volume = mix.large_fire_volume
+    let light_rain_volume = mix.light_rain_volume
+    let light_wind_volume = mix.light_wind_volume
+    
+    let river_volume = mix.river_volume
+    let strong_wind_volume = mix.strong_wind_volume
+    let thunder_volume = mix.thunder_volume
+    let wave_volume = mix.wave_volume
+
+
+    let bird_volume_obj = {
+      bird_volume : mix.bird_volume 
+    }
+    console.log("bird obj", Object.keys(bird_volume_obj)[0])
+
+/// if (Object.keys(bird_volume_obj)[0] === audio_container.dataset.audioKey )
+    // then get child of audio_container and set slider input to bird_volume and maybe also audio volume too. probs 
+  
+
+    let campfire_volume_obj = mix.campfire_volume
+    let coffee_shop_volume_obj = mix.coffee_shop_volume
+
+    let forest_volume_obj = mix.forest_volume
+    let heavy_rain_volume_obj = mix.heavy_rain_volume
+
+    let large_fire_volume_obj = mix.large_fire_volume
+    let light_rain_volume_obj = mix.light_rain_volume
+    let light_wind_volume_obj = mix.light_wind_volume
+    
+    let river_volume_obj = mix.river_volume
+    let strong_wind_volume_obj = mix.strong_wind_volume
+    let thunder_volume_obj = mix.thunder_volume
+    let wave_volume_obj = mix.wave_volume
+
+    console.log("type of bird volume", typeof(bird_volume))
+    // console.log(Object.keys(mix))
+
+
+    // if (e.target.mix.bird_volume === dataset.audioKey ===  )
     
     // li.dataset.creator = mix.user_id.username can do another fetch to add the username i guess
   });
@@ -29,6 +83,8 @@ function renderSavedMixes (mixes) {
 
 
 }
+
+
 
 
 // make a click listener on 
