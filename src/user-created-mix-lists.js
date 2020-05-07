@@ -7,25 +7,170 @@ function fetchSavedMixes () {
 
 function renderSavedMixes (mixes) {
   const mix_list = document.getElementById('user-mix-display')
+  console.log(mixes)
 
   mixes.forEach(mix => {
-    console.log(mixes)
-    
-    let li = document.createElement('li')
-    li.dataset.id = mix.id
+
+    // create li set attributes
+    const li = document.createElement('li')
+    // li.className
+    li.dataset.mixId = mix.id
     li.dataset.userId = mix.user_id
-    // li.dataset.creator = mix.user_id.username
-
-    // console.log(li)
-
     li.textContent = mix.mix_name
 
+    // create play button append to li
+    let play_saved_mix_button = document.createElement('button')
+    play_saved_mix_button.className = "play-saved-mix"
+    play_saved_mix_button.textContent = "Play"
+    li.append(play_saved_mix_button)
+
+    // append li to list
     mix_list.append(li)
-  });
 
-
+  })
+  addListenerToMixList()
 }
 
+function addListenerToMixList () {
+  const mix_list = document.getElementById('user-mix-display')
+
+  mix_list.addEventListener('click', (e) => {
+
+    if (e.target.className === "play-saved-mix") {
+
+      console.log("clicked play")
+      let mix_id = e.target.parentNode.dataset.mixId
+
+      fetch(`${url}/mixes/${mix_id}`)
+      .then(r => r.json())
+      .then(mix => playMix(mix))
+    }
+  })
+}
+
+function playMix (mix) {
+
+  console.log(mix)
+  console.log('clicked')
+  // console.log("selected mix ==",mix)
+  // console.log("bird_volume", mix.bird_volume)
+  
+  let bird_volume_container = document.querySelector('[data-audio-key="bird_volume"]')
+  let sound = parseFloat(bird_volume_container.children[0].children[1].volume)
+  let slider = parseFloat(bird_volume_container.children[0].children[2].value)
+
+  console.log("before sound",sound)
+  console.log("before slider",slider)
+  // audioTag.volume is audio vol
+  // volumeInputTag.value = slider vol
+
+  sound = mix.bird_volume
+  slider = mix.bird_volume
+  console.log("audio",sound)
+  console.log("slider",slider)
+
+  // let sound_list = document.querySelector(".sound-list")  
+  
+  // renderAudioContainers()
+
+
+  // get bird_volume audio_container to start
+}
+
+
+// bird_volume: 1
+// campfire_volume: 0
+// coffee_shop_volume: 0
+// created_at: "2020-05-07T13:30:39.407Z"
+// forest_volume: 0
+// heavy_rain_volume: 1
+// id: 6
+// large_fire_volume: 0
+// light_rain_volume: 1
+// light_wind_volume: 0
+// mix_name: "metal"
+// river_volume: 0
+// strong_wind_volume: 0.05
+// thunder_volume: 1
+// updated_at: "2020-05-07T13:30:39.407Z"
+// user_id: 2
+// wave_volume: 0
+
+  // click envetn on the play button 
+  // get id from from the parentNode 
+  // fetch at  url/mixes/:id 
+  // i now have 1 mix 
+  // go through the mix object 
+  // grab bird_song_volume mix.bird_volume 
+  // varible that holds the bird_sound_node then set to that 
+  
+
+//     // set constants for each mix
+//     let mix_name = mix.mix_name
+
+//     let bird_volume = mix.bird_volume 
+//     let campfire_volume = mix.campfire_volume
+//     let coffee_shop_volume = mix.coffee_shop_volume
+
+//     let forest_volume = mix.forest_volume
+//     let heavy_rain_volume = mix.heavy_rain_volume
+
+//     let large_fire_volume = mix.large_fire_volume
+//     let light_rain_volume = mix.light_rain_volume
+//     let light_wind_volume = mix.light_wind_volume
+    
+//     let river_volume = mix.river_volume
+//     let strong_wind_volume = mix.strong_wind_volume
+//     let thunder_volume = mix.thunder_volume
+//     let wave_volume = mix.wave_volume
+
+
+//     let bird_volume_obj = {
+//       bird_volume : mix.bird_volume 
+//     }
+//     console.log("bird obj", Object.keys(bird_volume_obj)[0]) // a string
+
+// /// if (Object.keys(bird_volume_obj)[0] === audio_container.dataset.audioKey )
+//     // then get child of audio_container and set slider input to bird_volume_obj.bird_volume, and also audio volume too i think. 
+//     // then do the logic in the play button function if needed
+
+//     console.log("am i string ===", typeof(Object.keys({campfire_volume : mix.campfire_volume})[0]))
+
+//     // do i need to do this like thi or can i just check if "it equals the string value"
+
+//     let campfire_volume_obj = {campfire_volume : mix.campfire_volume}
+
+//     let coffee_shop_volume_obj = {coffee_shop_volume : mix.coffee_shop_volume}
+
+//     let forest_volume_obj = mix.forest_volume
+//     let heavy_rain_volume_obj = mix.heavy_rain_volume
+
+//     let large_fire_volume_obj = mix.large_fire_volume
+//     let light_rain_volume_obj = mix.light_rain_volume
+//     let light_wind_volume_obj = mix.light_wind_volume
+    
+//     let river_volume_obj = mix.river_volume
+//     let strong_wind_volume_obj = mix.strong_wind_volume
+//     let thunder_volume_obj = mix.thunder_volume
+//     let wave_volume_obj = mix.wave_volume
+
+//     // console.log("type of bird volume", typeof(bird_volume))
+//     // console.log(Object.keys(mix))
+
+
+//     // if (e.target.mix.bird_volume === dataset.audioKey ===  )
+    
+//     // li.dataset.creator = mix.user_id.username can do another fetch to add the username i guess
+//   });
+//   console.log(mix_list)
+
+
+
+
+
+
+
+// make a click listener on 
 
 // function fetchUserMixes(){
 
