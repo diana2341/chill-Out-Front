@@ -66,23 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     volume()
     playPause()
 
-  
-  
-    toggleNightmode()
-    imagePlayAudion()
+
+
+    // imagePlayAudion()
     // newMix()
-    createMixForm()
-    addMix()
-    // clickIconToPlay()
-    // addUsernameToDom()
-    // addUsernameToDom()
-
+    // createMixForm()
+    // addMix()
     newMix()
-    getMixes()
+    // getMixes()
 
-  
-  
-  
+
+    fetchUserMixes()
+    
     toggleNightMode()
     clickIconToPlay()
     renderMixForm()
@@ -189,27 +184,27 @@ function togglePlay(sound) {
 // //==================================================================================
 
 
-document.addEventListener("click", (event) => {
-        if (event.target === img[0]) {
-            togglePlay(audio[0])   
-        }
-        if (event.target === img[1]) {
-            togglePlay(audio[1])   
-        }
-        if (event.target === img[2]) {
-            togglePlay(audio[2])   
-        }
-        if (event.target === img[3]) {
-            togglePlay(audio[3])   
-        }
-        if (event.target === img[4]) {
-            togglePlay(audio[4])   
-        }
-        if (event.target === img[5]) {
-            togglePlay(audio[5])   
-        }
-    })
-}
+// document.addEventListener("click", (event) => {
+//         if (event.target === img[0]) {
+//             togglePlay(audio[0])   
+//         }
+//         if (event.target === img[1]) {
+//             togglePlay(audio[1])   
+//         }
+//         if (event.target === img[2]) {
+//             togglePlay(audio[2])   
+//         }
+//         if (event.target === img[3]) {
+//             togglePlay(audio[3])   
+//         }
+//         if (event.target === img[4]) {
+//             togglePlay(audio[4])   
+//         }
+//         if (event.target === img[5]) {
+//             togglePlay(audio[5])   
+//         }
+//     })
+
 
 
 
