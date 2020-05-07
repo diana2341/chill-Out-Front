@@ -39,12 +39,22 @@ function loginSetup() {
   const login_form = document.createElement('form')
   
   login_form.id = 'login-form'
+  login_form.setAttribute("autocomplete","off")
+
   login_form.innerHTML = `
-    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-    <input type="submit" value="Login" id="login-form-submit">
+  <div class="form__group field">
+
+    <input type="text" class="form__field" placeholder="Username" name="username" id="username-field"  >
+    <label for="username" class="form__label">username</label>
+
+    <input type="submit" value="Login" id="login-form-submit" style="display: none">
+    </div>
+
   `
 
     div.append(login_form)
+
+    
 
 //////////////////////////////
 // add submit listener ///

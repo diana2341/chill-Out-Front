@@ -70,9 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     renderMixForm()
     saveNewMix()
-    // fetchUserMixes()
+    fetchUserMixes()
 
     toggleNightMode()
+    
 
 
     // imagePlayAudion()
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // newMix()
     // getMixes()
 
-    
+    audioList()
 
 
 
@@ -132,6 +133,12 @@ function renderAudioContainers(){
         let image_path = soundDictionary[key].image
         
         createAudioContainer(audio_key, audio_path, image_path)
+        let audio_container = document.querySelector(`[data-audio-key="${audio_key}"]`)
+        let volumeInput = audio_container.children[0].children[2]
+        volumeInput.value = 0
+        // console.log(audio_container.children[0].children[2].value)
+        let audioTag = audio_container.children[0].children[1]
+        audioTag.volume = 0
     }
 
 }
@@ -140,7 +147,6 @@ function renderAudioContainers(){
 //
 
 function createAudioContainer(key, audio, image){
-
     let sound_list = document.querySelector(".sound-list")  
     let sound_container = document.createElement("div")
 
@@ -151,7 +157,7 @@ function createAudioContainer(key, audio, image){
         <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
             <audio loop><source src=${audio}></audio>        
-            <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
+            <input style="cursor:pointer" type="range"  class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
     sound_list.appendChild(sound_container)

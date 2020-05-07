@@ -3,7 +3,8 @@ function fetchUserMixes(){
   fetch("http://localhost:3000/api/v1/mixes")
   .then((resp)=>resp.json())
   .then((data)=>{
-      mixList(data)
+      // mixList(data)
+      console.log(data)
       data.forEach(function(mixes){
       listMixes(mixes)
 
@@ -12,10 +13,10 @@ function fetchUserMixes(){
   }
   
   function listMixes(mixes){
-    let mixUl=document.getElementById("mixes")
+    let mixUl=document.querySelector("#mixesLi")
     
     let mixLi=document.createElement("li")
-    mixLi.dataset.id=mixes.id
+    // mixLi.dataset.id=mixes.id
 
     // uploadmixes class is the play button on the lists
     mixLi.innerHTML=`
@@ -40,7 +41,7 @@ function fetchUserMixes(){
   
   }
   function mixList(mixes){
-    let miUl=document.getElementById("mixes")
+    let miUl=document.getElementById("user-mix-display")
 
   miUl.addEventListener("click",function(event){
       let rain=parseFloat(document.getElementById("rain-volume").innerHTML)
@@ -61,14 +62,6 @@ function fetchUserMixes(){
     newArray=Array.from(audio)
     console.log( newArray)
     
-  //      newArray.forEach(function(song){
-  //    audio[0].volume=rain//rain
-  //    audio[1].volume=bird//bird
-  //    audio[2].volume=fire//fire
-  //    audio[3].volume=thunder//thunder
-  //    audio[4].volume=wave//waves
-  //             // song.play()
-  
-  //     }) 
+
   })
   }

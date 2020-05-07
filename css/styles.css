@@ -60,7 +60,7 @@ height: 100%;
     margin: 0;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(226, 169, 255);
+    color: rgb(4, 0, 5);
     background: linear-gradient(var(--color-night-blue), var(--color-sky-yellow));
 }
 
@@ -84,9 +84,13 @@ height: 100%;
     --color-flame-yellow: rgb(221, 27, 27);
     --color-flame-orange: rgb(223, 177, 79);
 
-    --color-day-orange: #FDA263;
+    /* --color-day-orange: #FDA263;
     --color-sky-yellow: rgb(214, 155, 78);
-    --color-night-blue: #545d9b;
+    --color-night-blue: #545d9b; */
+
+    --color-day-orange: #FDA263;
+    --color-sky-yellow: rgb(18, 23, 53);
+    --color-night-blue: #515fbb;
 }
 
 #root {
@@ -105,11 +109,11 @@ height: 100%;
     transition: all 0.2s ease;
 }
 
-*:before,
+/* *:before,
 *:after {
     content: "";
     /* display: flex; */
-}
+} */
 
 
 /*
