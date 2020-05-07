@@ -7,8 +7,8 @@ function renderMixForm() {
   form.innerHTML = `
 
     <label>Mix name: </label>
-    <input id="mix-title-input" type="text" name="mix-name">
-    <input type="submit" placeholder="your mix name here">
+    <input id="mix-title-input" type="text" name="mix-name" placeholder="your mix name here">
+    <input id="save-mix" type="submit">
   `
   form_container.append(form)
 }
@@ -20,6 +20,7 @@ function saveNewMix() {
   let saveBtn = document.getElementById("save")
 
   saveBtn.addEventListener("click", (e) => {
+    e.preventDefault()
 
     let audio_collection = document.querySelectorAll('audio')
     const user_id = parseInt(document.querySelector('.left-container').dataset.userId, 10)
