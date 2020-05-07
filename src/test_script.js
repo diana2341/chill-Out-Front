@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     newMix()
     getMixes()
-
+    mixList()
 })
 
   // save volume of each sound 
@@ -178,7 +178,6 @@ function togglePlay(sound) {
 function imagePlayAudion() {
 let img = document.getElementsByClassName("icon") 
 let audio = document.getElementsByTagName("audio") 
-
 
 document.addEventListener("click", (event) => {
         if (event.target === img[0]) {
