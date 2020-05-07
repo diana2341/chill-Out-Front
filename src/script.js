@@ -16,16 +16,17 @@ const soundDictionary = {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
-    loginSetup()
+        addBackground()
+            playPause()
+
     imagePlayAudion()
+
+    loginSetup()
     ambientIconArray()
     volume()
     
-    addBackground()
 
 
-    playPause()
     // toggleBackgroundSetup
 
     loginOverlaySetup()

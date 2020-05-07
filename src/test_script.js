@@ -66,10 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSetup()
     playPause()
     toggleNightmode()
-    clickIconToPlay()
-    // imagePlayAudion()
+    imagePlayAudion()
+    // newMix()
+    createMixForm()
+    addMix()
+    // clickIconToPlay()
+    // addUsernameToDom()
+    // addUsernameToDom()
 
     newMix()
+    getMixes()
 
 })
 
@@ -109,8 +115,8 @@ function clickIconToPlay () {
 // //==================================================================================
 
 function renderAudioContainers(){ 
-
-    console.log('start')
+    // prop_names = Object.getOwnPropertyNames(soundDictionary)
+    // console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
@@ -169,13 +175,41 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
+function imagePlayAudion() {
+let img = document.getElementsByClassName("icon") 
+let audio = document.getElementsByTagName("audio") 
 
+
+document.addEventListener("click", (event) => {
+        if (event.target === img[0]) {
+            togglePlay(audio[0])   
+        }
+        if (event.target === img[1]) {
+            togglePlay(audio[1])   
+        }
+        if (event.target === img[2]) {
+            togglePlay(audio[2])   
+        }
+        if (event.target === img[3]) {
+            togglePlay(audio[3])   
+        }
+        if (event.target === img[4]) {
+            togglePlay(audio[4])   
+        }
+        if (event.target === img[5]) {
+            togglePlay(audio[5])   
+        }
+    })
+}
+
+
+// //==================================================================================
 
 
 function volume() {
 
-    document.addEventListener("input",function(event){
-    console.log("clicked")
+document.addEventListener("input",function(event){
+    // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
@@ -197,24 +231,6 @@ function volume() {
         }
         if(event.target === slider[5]) {
             audio[5].volume = event.target.value    
-        }
-        if(event.target === slider[6]) {
-            audio[6].volume = event.target.value    
-        }
-        if(event.target === slider[7]) {
-            audio[7].volume = event.target.value    
-        }
-        if(event.target === slider[8]) {
-            audio[8].volume = event.target.value    
-        }
-        if(event.target === slider[9]) {
-            audio[9].volume = event.target.value    
-        }
-        if(event.target === slider[10]) {
-            audio[10].volume = event.target.value    
-        }
-        if(event.target === slider[11]) {
-            audio[11].volume = event.target.value    
         }
 
     })

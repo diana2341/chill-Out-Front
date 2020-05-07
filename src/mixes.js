@@ -10,57 +10,57 @@
 // fetch the mix record from backend - comes in as json 
 // run volume adjuster method on click of play. would be in the .then callback. 
 
-function newMix(){
-  let slider = document.getElementsByClassName("volumeSlider")
+// function newMix(){
+//   let slider = document.getElementsByClassName("volumeSlider")
 
-  let saveBtn = document.getElementById("save")
+//   let saveBtn = document.getElementById("save")
 
-  saveBtn.addEventListener("click", (e) {
-  let audio_collection = document.querySelectorAll('audio')
+//   saveBtn.addEventListener("click", function(e) {
+//   let audio = document.querySelectorAll('audio')
 
-  audio_collection.forEach((audio) => {
+//   // audio_collection.forEach((audio) => {}
 
-  })
+//   // })
 
 
-  if(!audio[0].paused) {
-  console.log(slider[0].value)
-  }
-  if(!audio[1].paused) {
-    console.log(slider[1].value)
-  }
-  if(!audio[2].paused) {
-  console.log(slider[2].value)
-  }
-  if(!audio[3].paused) {
-      console.log(slider[3].value)
-  }
-  if(!audio[4].paused) {
-      console.log(slider[4].value)
-  }
-  if(!audio[5].paused) {
-      console.log(slider[5].value)
-  }
+//   if(!audio[0].paused) {
+//   console.log(slider[0].value)
+//   }
+//   if(!audio[1].paused) {
+//     console.log(slider[1].value)
+//   }
+//   if(!audio[2].paused) {
+//   console.log(slider[2].value)
+//   }
+//   if(!audio[3].paused) {
+//       console.log(slider[3].value)
+//   }
+//   if(!audio[4].paused) {
+//       console.log(slider[4].value)
+//   }
+//   if(!audio[5].paused) {
+//       console.log(slider[5].value)
+//   }
 
     
-  })
+//   })
 
-}
+// }
 
-function addMix(){
-  fetch("http://localhost:3000/api/v1/mixes",{
-      method: 'POST',
-    body: JSON.stringify(new_mix),
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-  })
-  .then(r => r.json())
-  .catch(err => console.log("error:", err))
+// function addMix(){
+//   fetch("http://localhost:3000/api/v1/mixes",{
+//       method: 'POST',
+//     body: JSON.stringify(new_mix),
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//     }
+//   })
+//   .then(r => r.json())
+//   .catch(err => console.log("error:", err))
 
 
-}
+// }
 // document.querySelector([data-audio-key])
 
 // let heavy_rain_volume = 
