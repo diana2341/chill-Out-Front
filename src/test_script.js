@@ -88,6 +88,7 @@ function clickIconToPlay () {
         
         const audioTag = audio_container.children[0].children[1]
         const volumeInput = audio_container.children[0].children[2]
+        //// user later for refactoring the volume function /////
 
         if(e.target.className === 'icon') {
             // if (audio_container)
