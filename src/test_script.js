@@ -61,27 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
     addBackground()
     loginOverlaySetup()
     loginSetup()
-    buttonBarSetup()
     renderAudioContainers()
+    clickIconToPlay()
     volume()
+    resetButtonSetup()
     playPause()
 
+    
+    renderMixForm()
+    saveNewMix()
+    // fetchUserMixes()
+
+    toggleNightMode()
 
 
     // imagePlayAudion()
-    // newMix()
     // createMixForm()
     // addMix()
-    newMix()
+    // newMix()
     // getMixes()
 
-
-    fetchUserMixes()
     
-    toggleNightMode()
-    clickIconToPlay()
-    renderMixForm()
-    saveNewMix()
+
 
 
 })

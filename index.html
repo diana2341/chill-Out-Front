@@ -17,13 +17,14 @@
     <script src="src/index.js"  ></script>
 
     <!-- <script src="src/script.js"  ></script> -->
+    <!-- <script src="src/makemix.js"  ></script> -->
+    <!-- <script src="src/user-created-mix-lists.js"  ></script> -->
     <script src="src/test_script.js"  ></script>
+    <script src="src/mixes.js"  ></script>
+
     <script src="src/welcome_user.js"  ></script>
     <script src="src/toggle-nightmode.js"  ></script>
-    <script src="src/user-created-mix-lists.js"  ></script>
-    <script src="src/button-bar.js"  ></script>
-    <!-- <script src="src/makemix.js"  ></script> -->
-    <script src="src/mixes.js"  ></script>
+    <script src="src/resetButtonSetup.js"  ></script>
 
     
 </head>
@@ -54,22 +55,24 @@
                 <div class="inner-controls">
                     <button id='play'>play</button>
                     <button id='pause'>pause</button>
+                    <button id="reset">reset</button>
                 </div>  
             </div>
             <div class="button-bar center">
                 <div class="inner-button-bar">
-                    <button id="save">save</button>
-                    <!-- ==========newww=========== -->
-
                     <div id="save-mix-form">
                     </div>
-                    <!-- ==========newww=========== -->
-                    <button id="reset">reset</button>
-                    <button id="presets">presets</button>
+                    
+                    <!-- <button id="presets">presets</button> -->
                 </div>
             </div>
+            <div class="user-created-mix-display">
+                <ul id="user-mix-display">
+                </ul>
+
+            </div>
             <div class="sound-list">
-                <ul id="mixes"></ul>
+                <!-- <ul id="mixes"></ul> -->
                 <!-- audio-containers created in js go here -->
 
             </div>

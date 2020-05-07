@@ -165,6 +165,7 @@ button {
     position: absolute;
     margin: 0;
     top: 100px;
+    font-size: 20;
 }
 
 .inner-buttons-bar {

@@ -40,15 +40,11 @@ function loginSetup() {
   
   login_form.id = 'login-form'
   login_form.innerHTML = `
-    <input type="text" name="username" id="username-field" class="login-form-field" >
-    <label for="text" class="label-name">
-    <span class="content-name">
-      username
-    </span>
-  </label>
+    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+    <input type="submit" value="Login" id="login-form-submit">
   `
 
-  div.append(login_form)
+    div.append(login_form)
 
 //////////////////////////////
 // add submit listener ///

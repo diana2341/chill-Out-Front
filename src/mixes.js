@@ -8,20 +8,25 @@ function renderMixForm() {
 
     <label>Mix name: </label>
     <input id="mix-title-input" type="text" name="mix-name" placeholder="your mix name here">
-    <input id="save-mix" type="submit">
+    <input id="save-mix" type="submit" value="save">
   `
+  
   form_container.append(form)
 }
 
 //
 //
 
+// how to stop it from saving if things are paused but volume is set and u want to still save those volumes... can't really have both. 
+// do we allow it to save even if a thing was paused ? probs works better if u exclude the option to have saved mix that is 0 across the board. 
 function saveNewMix() {
-  let saveBtn = document.getElementById("save")
+  let saveBtn = document.getElementById("save-mix")
 
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
+    
+    const form = document.getElementById('mix-form')
     let audio_collection = document.querySelectorAll('audio')
     const user_id = parseInt(document.querySelector('.left-container').dataset.userId, 10)
     let mix_name = document.getElementById('mix-title-input').value
@@ -34,7 +39,7 @@ function saveNewMix() {
 
     
     audio_collection.forEach((audio) => {
-      
+
       if (!audio.paused) {
         let audio_name = audio.parentNode.parentNode.dataset.audioKey
         let volume_input = parseFloat(audio.parentNode.children[2].value)
@@ -53,7 +58,9 @@ function saveNewMix() {
     })
     .then(r => r.json())
     .catch(err => console.log("error:", err))
+    form.reset()
   })
+
 } 
 
 
