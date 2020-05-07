@@ -209,11 +209,11 @@ let mix_name= event.target.mixname.value
 // console.log(mixTitle)
 let user_id = document.querySelector('.left-container').dataset.userId
 let key=document.querySelector(".audio-container").dataset.audioKey
-let  volume0=audio[0].volume=slider[1].value
-let  volume1=audio[1].volume=slider[2].value
-let  volume2=audio[2].volume=slider[3].value
-let  volume3=audio[3].volume=slider[4].value
-let  volume4=audio[4].volume=slider[5].value
+let  volume0=audio[0].volume=slider[1].value//rain
+let  volume1=audio[1].volume=slider[2].value//bird
+let  volume2=audio[2].volume=slider[3].value//fire
+let  volume3=audio[3].volume=slider[4].value//thunder
+let  volume4=audio[4].volume=slider[5].value//waves
 
 
 
@@ -224,17 +224,17 @@ let  volume4=audio[4].volume=slider[5].value
         mix_name,
           user_id,
           light_rain_volume:volume0,
-          heavy_rain_volume:volume1,
+          heavy_rain_volume:volume0,
           large_fire_volume:volume2,
-          campfire_volume:volume3,
+          campfire_volume:volume2,
           forest_volume:volume4,
-          river_volume:volume5,
-          strong_wind_volume:1,
-          light_wind_volume:1,
-          thunder_volume:1,
-          wave_volume:1,
-          coffee_shop_volume:1,
-          bird_volume:1
+          river_volume:0,
+          strong_wind_volume:0,
+          light_wind_volume:0,
+          thunder_volume:volume3,
+          wave_volume:volume4,
+          coffee_shop_volume:0,
+          bird_volume:volume1
 
     }),
       headers: {
@@ -243,7 +243,7 @@ let  volume4=audio[4].volume=slider[5].value
       }
     })
     .then(r => r.json())
-    .then(getMixes)
+    .then(listMixes)
     .catch(err => console.log("error:", err))
 })
   
@@ -259,18 +259,69 @@ function getMixes(){
 fetch("http://localhost:3000/api/v1/mixes")
 .then((resp)=>resp.json())
 .then((data)=>{
+    mixList(data)
     data.forEach(function(mixes){
      listMixes(mixes)
    
     })
 })
 }
+
 function listMixes(mixes){
-   let mixUl=document.getElementById("mixes")
+let mixUl=document.getElementById("mixes")
+
    let mixLi=document.createElement("li")
+   mixLi.dataset.id=mixes.id
    mixLi.innerHTML=`
+  
     title:${mixes.mix_name}
-   `
+    <button class ="uploadedMixes" >play</button>
+<li hidden id = "rain-volume" >${mixes.heavy_rain_volume}</li>
+<li hidden id = "fire-volume">${mixes.large_fire_volume}</li>
+<li hidden id = "fire2-volume">${mixes.campfire_volume}</li>
+<li hidden id = "forest-volume">${mixes.forest_volume}</li>
+<li hidden id = "river-volume">${mixes.river_volume}</li>
+<li hidden id = "wind-volume">${mixes.strong_wind_volume}</li>
+<li hidden id = "wind2-volume">${mixes.light_wind_volume}</li>
+<li hidden id = "thunder-volume">${mixes.thunder_volume}</li>
+<li hidden id = "wave-volume">${mixes.wave_volume}</li>
+<li hidden id = "coffee-volume">${mixes.coffee_shop_volume}<li>
+<li hidden id = "bird-volume">${mixes.bird_volume}</li>
+    `
+   
    mixUl.appendChild(mixLi)
 
+}
+function mixList(mixes){
+       let miUl=document.getElementById("mixes")
+         
+miUl.addEventListener("click",function(event){
+    let rain=parseFloat(document.getElementById("rain-volume").innerHTML)
+    let fire=parseFloat(document.getElementById("fire-volume").innerHTML)
+    let fire2=parseFloat(document.getElementById("fire2-volume").innerHTML)
+    let forest=parseFloat(document.getElementById("forest-volume").innerHTML)
+    let river=parseFloat(document.getElementById("river-volume").innerHTML)
+    let wind=parseFloat(document.getElementById("wind-volume").innerHTML)
+    let wind2=parseFloat(document.getElementById("wind2-volume").innerHTML)
+    let thunder=parseFloat(document.getElementById("thunder-volume").innerHTML)
+    let wave=parseFloat(document.getElementById("wave-volume").innerHTML)
+    let coffee=parseFloat(document.getElementById("coffee-volume").innerHTML)
+    let bird=parseFloat(document.getElementById("bird-volume").innerHTML)
+
+    let slider = document.getElementsByClassName("volumeSlider")
+    let audio = document.getElementsByTagName("audio") 
+
+ newArray=Array.from(audio)
+ console.log( newArray)
+  
+//      newArray.forEach(function(song){
+//    audio[0].volume=rain//rain
+//    audio[1].volume=bird//bird
+//    audio[2].volume=fire//fire
+//    audio[3].volume=thunder//thunder
+//    audio[4].volume=wave//waves
+//             // song.play()
+
+//     }) 
+})
 }
