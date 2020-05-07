@@ -2,11 +2,29 @@
 // make input field 
 // fetch post to users
 
+const url = 'http://localhost:3000/api/v1'
+
+
+function loginOverlaySetup() {
+
+  document.addEventListener("submit", (event) => {
+    let login_container = document.querySelector('.login_container')
+    var x = document.querySelector("#root");
+
+    if(event.target) {
+
+        x.style.visibility = "visible"
+        login_container.style.display = 'none'
+
+        }
+  })
+}
 
 function loginSetup() {
-  // const body = document.querySelector('body')
+//////////////////////////////
+// create login form ///
+//////////////////////////////
   const login_container = document.querySelector('.login_container')
-  // console.log("login-conatiner",login_container)
 
   const div = document.createElement('div')
   div.id = 'inner-login'
@@ -30,24 +48,22 @@ function loginSetup() {
   </label>
   `
 
-  div.append(login_form)
-  // const login_btn = document.querySelector('#login-form-submit')
+    div.append(login_form)
+
+//////////////////////////////
+// add submit listener ///
+//////////////////////////////
 
   login_form.addEventListener('submit', (e) => {
     e.preventDefault()
-    console.log(e.target)
-    console.log("target",e.target.children[0])
 
     const input = e.target.username
-
     const username = input.value
-
-    console.log(username)
 
     const new_username = {
       username
     }
-    console.log(new_username)
+
     login_form.reset()
 
     const options = {
@@ -58,16 +74,30 @@ function loginSetup() {
         'Accept': 'application/json'
       }
     }
-    const url = 'http://localhost:3000/api/v1'
-
+    /////////////////////////
+    // adds user to user db
+    ////////////////////////
     fetch(`${url}/users`, options)
     .then(r => r.json())
+    .then(user => {  
+    /////////////////////
+    // finds current user_id and username and creates welcome sign / stores user_id on page. 
+    /////////////////////
+      const welcomeUser = document.querySelector('.left-container')
+      welcomeUser.dataset.userId = user.id
+
+      const p = document.createElement('p')
+
+      p.innerHTML = `
+        Welcome, ${user.username}
+      `
+      welcomeUser.append(p)
+
+    })
     .catch(err => console.log("error:", err))
-
   })
-  
-
 }
+
 
 
 
