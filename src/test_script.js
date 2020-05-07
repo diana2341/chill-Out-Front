@@ -1,32 +1,58 @@
 const soundDictionary = {
-    bird: {
-        image: "images/bird.png",
-        audio: "audio/birds.fade.ogg"
-    },
-    light_rain: {
+    light_rain_volume: {
         image: "images/rainy.png",
         audio: "audio/light-rain.mp3"
     }, 
-    fire_large: {
+    bird_volume: {
+        image: "images/bird.png",
+        audio: "audio/birds.fade.ogg"
+    },
+    large_fire_volume: {
         image: "images/fire.png",
         audio: "audio/fire-large-flame.mp3"
     },
-    thunder: {
+    thunder_volume: {
         image: "images/thunder-cloud.png",
         audio: "audio/thunder.fade.ogg"
     },
-    wave: {
+    wave_volume: {
         image: "images/wave.png",
         audio: "audio/ocean-wave.mp3"
     },
-    wind_strong: {
+    strong_wind_volume: {
+        // too strong 
         image: "images/wind-bold.png",
         audio: "audio/wind-strong.mp3"
     },
-    
+    forest_volume: {
+        // also pretty loud windy more than forest
+        image: "images/forest.png",
+        audio: "audio/forest-windy-bird.mp3"
+    },
+    heavy_rain_volume: {
+        // like this one
+        image: "images/thunder.png",
+        audio: "audio/rain-concrete.mp3"
+    },
+    campfire_volume: {
+        image: "images/fire.png",
+        audio: "audio/campfire.mp3"
+    },
+    river_volume: {
+        image: "images/river.png",
+        audio: "audio/river.mp3"
+    },
+    light_wind_volume: {
+        // i like this one
+        image: "images/wind-simple.png",
+        audio: "audio/rain-light-in-nature.mp3"
+    },
+    coffee_shop_volume: {
+        image: "images/cafe.png",
+        audio: "audio/birds.fade.ogg"
+    }
 
 }
-
 
 
 
@@ -48,9 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // addUsernameToDom()
     // addUsernameToDom()
 
-
-
-    
+    newMix()
 
 })
 
@@ -58,33 +82,33 @@ document.addEventListener("DOMContentLoaded", () => {
   // on load: find the sound from collection of sound and set volume
   // create a const. similar to ambientICon []
 
-function methodName (arguments) {
-    // body
-}
 
 function clickIconToPlay () {
     let sound_list = document.querySelector(".sound-list") 
-    let audio_tag_collection = document.querySelectorAll('audio')
-    // console.log(audio_tag_collection)
-    console.log("parentNode[0]",audio_tag_collection[0].parentNode)
 
     sound_list.addEventListener("click", (e) => { 
 
-        if(e.target.className === 'icon') {
-            
-            console.log("target's Parent =", e.target.parentNode)
-            // togglePlay()
-            // if the clicked image's parent node has data-audio-key === audio tag's parentNode data-audio-key then play that audio
-            // audio_tag_collection.forEach((audio) => {
-            //     if ()
-                
+        const audio_container = e.target.parentNode.parentNode
+        // get grandparent container that has dataset id
+        const imageTag = audio_container.children[0].children[0]
+        
+        const audioTag = audio_container.children[0].children[1]
+        const volumeInput = audio_container.children[0].children[2]
 
-            //     togglePlay(audio)
-            // })
+        if(e.target.className === 'icon') {
+            // if (audio_container)
+            const image_key = imageTag.parentNode.parentNode.dataset.audioKey 
+            const grandparent_key = audio_container.dataset.audioKey
+            
+            if (image_key === grandparent_key) {
+                const audio = audio_container.querySelector('audio')
+                console.log("tageted",audio)
+
+                togglePlay(audio)
+            }
         }
     })
 }
-
 
 
 // //==================================================================================
@@ -96,9 +120,7 @@ function renderAudioContainers(){
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-        // console.log("audio_key=", audio_key)
-        // console.log("audio=", audio_path)        
-        // console.log('image= ', image_path)
+
         createAudioContainer(audio_key, audio_path, image_path)
     }
 
@@ -110,12 +132,10 @@ function createAudioContainer(key, audio, image){
     let sound_container = document.createElement("div")
 
     sound_container.className = "audio-container"
-
-
-    // let path_name = /[^/]([^.]+)/.exec(`${audio}`)[0]
+    sound_container.dataset.audioKey = key
 
     sound_container.innerHTML=`
-        <div data-audio-key="${key}" class="inner" >
+        <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
             <audio loop><source src=${audio}></audio>        
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
@@ -125,7 +145,7 @@ function createAudioContainer(key, audio, image){
 
     sound_list.appendChild(sound_container)
 
-  // linking volume slider to audio file. dataset.purpose="large_fire_volume"
+  // linking volume slider to audio file. 
 }
 
 function togglePlay(sound) {

@@ -13,27 +13,34 @@
 function newMix(){
   let slider = document.getElementsByClassName("volumeSlider")
 
-  let saveBtn=document.getElementById("save")
-  saveBtn.addEventListener("click",function(event){
-  let audio = document.querySelectorAll('audio')
+  let saveBtn = document.getElementById("save")
+
+  saveBtn.addEventListener("click", (e) {
+  let audio_collection = document.querySelectorAll('audio')
+
+  audio_collection.forEach((audio) => {
+
+  })
+
+
   if(!audio[0].paused) {
   console.log(slider[0].value)
   }
   if(!audio[1].paused) {
     console.log(slider[1].value)
-    }
-    if(!audio[2].paused) {
-        console.log(slider[2].value)
-        }
-        if(!audio[3].paused) {
-            console.log(slider[3].value)
-        }
-            if(!audio[4].paused) {
-                console.log(slider[4].value)
-            }
-                if(!audio[5].paused) {
-                    console.log(slider[5].value)
-                }
+  }
+  if(!audio[2].paused) {
+  console.log(slider[2].value)
+  }
+  if(!audio[3].paused) {
+      console.log(slider[3].value)
+  }
+  if(!audio[4].paused) {
+      console.log(slider[4].value)
+  }
+  if(!audio[5].paused) {
+      console.log(slider[5].value)
+  }
 
     
   })
@@ -57,6 +64,14 @@ function newMix(){
 // document.querySelector([data-audio-key])
 
 // let heavy_rain_volume = 
+
+// connects a slider with a phrase in a dataset-purpose 
+
+// let key = event.target.dataset.key
+// let body  = {}
+// body[purpose] = 5.5
+// body[key] = e.target.dataset.key
+
 
 // `
 // { 
