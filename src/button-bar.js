@@ -14,7 +14,7 @@ function buttonBarSetup() {
       let sliders = document.querySelectorAll('.volumeSlider')
       let audios = document.querySelectorAll("audio")
       
-      console.log('volume sliders:', sliders)
+      // console.log('volume sliders:', sliders)
 
         sliders.forEach(slider => {
         slider.value = 0

@@ -66,16 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loginSetup()
     playPause()
     toggleNightmode()
-    imagePlayAudion()
-    // newMix()
-    createMixForm()
-    addMix()
-    // clickIconToPlay()
-    // addUsernameToDom()
-    // addUsernameToDom()
+    clickIconToPlay()
+    // imagePlayAudion()
 
-    newMix()
-    getMixes()
+    saveNewMix()
 
 })
 
@@ -115,17 +109,20 @@ function clickIconToPlay () {
 // //==================================================================================
 
 function renderAudioContainers(){ 
-    // prop_names = Object.getOwnPropertyNames(soundDictionary)
-    // console.log('start')
+
+    console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-
+        
         createAudioContainer(audio_key, audio_path, image_path)
     }
 
 }
+
+//
+//
 
 function createAudioContainer(key, audio, image){
 
@@ -142,11 +139,7 @@ function createAudioContainer(key, audio, image){
             <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
-
-
     sound_list.appendChild(sound_container)
-
-  // linking volume slider to audio file. 
 }
 
 function togglePlay(sound) {
@@ -175,40 +168,12 @@ function togglePlay(sound) {
 
 
 // //==================================================================================
-function imagePlayAudion() {
-let img = document.getElementsByClassName("icon") 
-let audio = document.getElementsByTagName("audio") 
 
-
-document.addEventListener("click", (event) => {
-        if (event.target === img[0]) {
-            togglePlay(audio[0])   
-        }
-        if (event.target === img[1]) {
-            togglePlay(audio[1])   
-        }
-        if (event.target === img[2]) {
-            togglePlay(audio[2])   
-        }
-        if (event.target === img[3]) {
-            togglePlay(audio[3])   
-        }
-        if (event.target === img[4]) {
-            togglePlay(audio[4])   
-        }
-        if (event.target === img[5]) {
-            togglePlay(audio[5])   
-        }
-    })
-}
-
-
-// //==================================================================================
 
 
 function volume() {
 
-document.addEventListener("input",function(event){
+    document.addEventListener("input",function(event){
     // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
@@ -232,14 +197,30 @@ document.addEventListener("input",function(event){
         if(event.target === slider[5]) {
             audio[5].volume = event.target.value    
         }
+        if(event.target === slider[6]) {
+            audio[6].volume = event.target.value    
+        }
+        if(event.target === slider[7]) {
+            audio[7].volume = event.target.value    
+        }
+        if(event.target === slider[8]) {
+            audio[8].volume = event.target.value    
+        }
+        if(event.target === slider[9]) {
+            audio[9].volume = event.target.value    
+        }
+        if(event.target === slider[10]) {
+            audio[10].volume = event.target.value    
+        }
+        if(event.target === slider[11]) {
+            audio[11].volume = event.target.value    
+        }
 
     })
 }
 
-
-
-
-
+//
+//
 
 function playPause(){
 
