@@ -8,7 +8,7 @@ function audioList(){
    <input type="checkbox" id="slide" name="" value="" />
    <div class="container">
 
-       <label for="slide" class="toggle">☰</label>
+       <label for="slide" class="toggle">☰ <p id="saved"> ↖ Audio saved! Checkout these Mixes ♫</p> </label> 
        <nav class="sidebar"> 
 
        <ul id="mixesLi">

@@ -27,7 +27,9 @@ function saveNewMix() {
 
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault()
-
+let save=document.getElementById("saved")
+if (event.target)
+save.visibility="visible"
     
     const form = document.getElementById('mix-form')
     let audio_collection = document.querySelectorAll('audio')
