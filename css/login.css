@@ -102,3 +102,14 @@
 .form__field:required, .form__field:invalid {
   box-shadow: none;
 }
+
+/* =====new===== */
+.login_container{
+  height:100vh;
+  background: url("https://external-preview.redd.it/1ZBAIokLtVcHkjHFryTz9zsOgq8B33bn-6SwZwkmrDg.png?auto=webp&s=4b5062c0c6339591198df367deced85fba8eac92") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
