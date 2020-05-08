@@ -70,7 +70,7 @@ function saveNewMix() {
 
 function addNewMixToList () {
   
-  const mix_list = document.getElementById('user-mix-display')
+  const mix_list = document.getElementById('mixesLi')
 
   mix_list.innerHTML = ''
 

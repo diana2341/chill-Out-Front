@@ -121,8 +121,60 @@ height: 100%;
 // login css
 //////////////////
 */
+#play{
+    width: 50px;
+    height: 20px;
+    border:none;
+    border:solid 2px black;
+    border-radius: 5px;
+    background: rgba(255, 255, 255,0);
+    font-size: 13px;
+}
+#pause{
+    width: 50px;
+    height: 20px;
+    border:none;
+    border:solid 2px black;
+    border-radius: 5px;
+    background: rgba(255, 255, 255,0);
+    font-size: 13px;
+}
+#reset{
+    width: 50px;
+    height: 20px;
+    border:none;
+    border:solid 2px black;
+    border-radius: 5px;
+    background: rgba(255, 255, 255,0);
+    font-size: 13px;
+}
+#play:hover {
+    background:black;
+    color:white; 
+}
+#pause:hover {
+    background:black;
+    color:white; 
+}
+#reset:hover {
+    background:black;
+    color:white; 
+}
 
+.play-saved-mix {
+    width: 50px;
+    height: 20px;
+    border:none;
+    border:solid 2px black;
+    border-radius: 5px;
+    background: rgba(255, 255, 255,0);
+    font-size: 13px;
+}
 
+.play-saved-mix:hover {
+    background:black;
+    color:white; 
+}
 
 /* end login css */
 

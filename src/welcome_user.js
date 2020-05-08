@@ -6,6 +6,9 @@ const url = 'http://localhost:3000/api/v1'
 
 
 function loginOverlaySetup() {
+  let login_container = document.querySelector('.login_container')
+
+  login_container.style.backgroundImage = "url(images/project bg.png) initial"
 
   document.addEventListener("submit", (event) => {
     let login_container = document.querySelector('.login_container')

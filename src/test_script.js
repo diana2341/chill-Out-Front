@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     renderMixForm()
     saveNewMix()
-    fetchUserMixes()
+    // fetchUserMixes()
 
     toggleNightMode()
     // addListenerToMixList()
@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // addMix()
     // newMix()
     // getMixes()
+    audioList()
+    frontTitle()
 
 
       //notes: !!!!! make  a funcition that is for all audio containers get audio vol / get slider vol / where those audioKey match  set audio.volume = slider.value !!!!!

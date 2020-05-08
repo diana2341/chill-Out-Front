@@ -17,6 +17,7 @@ top: 20px;
 left: 20px;
 z-index: 1;
 cursor: pointer;
+
 }
 
 .sidebar {
@@ -31,12 +32,17 @@ width: auto;
 padding: .5em;
 background: rgb(82, 110, 204); 
 z-index: 1;
+overflow-y:auto;
+
 }
 
 .sidebar ul {
 list-style: none;
 margin: 0;
 padding: 0; 
+font-size: 1em;
+padding: .25em 1em;
+line-height: 1em;
 }
 
 .sidebar a:hover {
@@ -73,9 +79,12 @@ h1 {
 
 h1 span {
   position: relative;
-  top: 20px;
+  top: 9.5px;
+  left: 30%;
+transform: translateX(-30%);
+
   display: inline-block;
-  animation: bounce .3s ease infinite alternate;
+  animation: bounce .6s ease infinite alternate;
   font-family: 'Titan One', cursive;
   font-size: 80px;
   color: #FFF;
@@ -98,6 +107,11 @@ h1 span:nth-child(5) { animation-delay: .4s; }
 h1 span:nth-child(6) { animation-delay: .5s; }
 h1 span:nth-child(7) { animation-delay: .6s; }
 h1 span:nth-child(8) { animation-delay: .7s; }
+h1 span:nth-child(9) { animation-delay: .8s; }
+h1 span:nth-child(10) { animation-delay: .9s; }
+h1 span:nth-child(11) { animation-delay: .10s; }
+h1 span:nth-child(12) { animation-delay: .11s; }
+
 
 @keyframes bounce {
   100% {
@@ -115,4 +129,16 @@ h1 span:nth-child(8) { animation-delay: .7s; }
   }
 }
 
+/* =========bg image first pg ============ */
 
+
+
+  #mixesLI{
+    overflow:hidden; 
+    overflow-y:scroll;
+  }
+  /* make scrol menu */
+
+
+
+  
