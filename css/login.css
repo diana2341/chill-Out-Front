@@ -111,5 +111,11 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
+    position:fixed;
+    width: 100%;
+
+}
+.titleName{
+  position: relative;
+  padding-top: 100px;
 }

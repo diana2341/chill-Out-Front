@@ -60,7 +60,7 @@ function saveNewMix() {
       }
     })
     .then(r => r.json())
-    .then(listMixes)
+    .then(addNewMixToList)
     .catch(err => console.log("error:", err))
     form.reset()
   })

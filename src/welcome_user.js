@@ -33,11 +33,11 @@ function loginSetup() {
   div.id = 'inner-login'
   login_container.append(div)
 
-  const h1 = document.createElement('h1')
-  h1.id = 'login-title'
-  // if user exists say login else say create username
-  h1.textContent = 'User Login'
-  div.append(h1)
+  // const h1 = document.createElement('h1')
+  // h1.id = 'login-title'
+  // // if user exists say login else say create username
+  // h1.textContent = 'User Login'
+  // div.append(h1)
 
   const login_form = document.createElement('form')
   
@@ -48,7 +48,7 @@ function loginSetup() {
   <div class="form__group field">
 
     <input type="text" class="form__field" placeholder="Username" name="username" id="username-field"  >
-    <label for="username" class="form__label">username</label>
+    <label for="username" class="form__label">Please Enter a Username</label>
 
     <input type="submit" value="Login" id="login-form-submit" style="display: none">
     </div>
@@ -98,7 +98,8 @@ function loginSetup() {
       const p = document.createElement('p')
 
       p.innerHTML = `
-        Welcome, ${user.username}
+      <h1 id= "currentUser">Welcome <strong>${user.username}</strong></h1>
+
       `
       welcomeUser.append(p)
 
