@@ -17,3 +17,21 @@ function audioList(){
 `
 menu.appendChild(innermenu)
 }
+
+
+function frontTitle(){
+    let titlesec=document.querySelector(".login_container")
+    let header=document.createElement("h1")
+    header.innerHTML=`
+    <span>w</span>
+    <span>o</span>
+    <span>o</span>
+    <span>h</span>
+    <span>o</span>
+    <span>o</span>
+    <span>o</span>
+    <span>!</span>
+    `
+    titlesec.appendChild(header)
+    
+}

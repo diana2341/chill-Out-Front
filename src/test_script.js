@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // getMixes()
 
     audioList()
+    frontTitle()
 
 
 
