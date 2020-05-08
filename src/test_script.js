@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // getMixes()
     audioList()
     frontTitle()
-    // stars()
+    stars()
 
 
       //notes: !!!!! make  a funcition that is for all audio containers get audio vol / get slider vol / where those audioKey match  set audio.volume = slider.value !!!!!

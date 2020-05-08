@@ -51,3 +51,19 @@ function frontTitle(){
   
 }
 
+
+
+function stars(){
+  let log_container=document.getElementsByClassName("login_container")[0]
+let star= document.createElement("span")
+star.innerHTML=`
+  <div class="animation-wrapper">
+<div class="particle particle-1"></div>
+<div class="particle particle-2"></div>
+<div class="particle particle-3"></div>
+<div class="particle particle-4"></div>
+</div>
+`
+log_container.appendChild(star)
+;
+} 
