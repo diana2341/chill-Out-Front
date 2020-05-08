@@ -73,8 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchUserMixes()
 
     toggleNightMode()
-    
+    // addListenerToMixList()
 
+    fetchSavedMixes()
 
     // imagePlayAudion()
     // createMixForm()
@@ -82,8 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // newMix()
     // getMixes()
 
-    audioList()
-    frontTitle()
+
+      //notes: !!!!! make  a funcition that is for all audio containers get audio vol / get slider vol / where those audioKey match  set audio.volume = slider.value !!!!!
+    
 
 
 
@@ -114,7 +116,7 @@ function clickIconToPlay () {
             
             if (image_key === grandparent_key) {
                 const audio = audio_container.querySelector('audio')
-                console.log("tageted",audio)
+                // console.log("targeted",audio)
 
                 togglePlay(audio)
             }
@@ -127,17 +129,20 @@ function clickIconToPlay () {
 
 function renderAudioContainers(){ 
 
-    console.log('start')
+    // console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-        
+
         createAudioContainer(audio_key, audio_path, image_path)
+
         let audio_container = document.querySelector(`[data-audio-key="${audio_key}"]`)
+
         let volumeInput = audio_container.children[0].children[2]
         volumeInput.value = 0
         // console.log(audio_container.children[0].children[2].value)
+
         let audioTag = audio_container.children[0].children[1]
         audioTag.volume = 0
     }
@@ -148,7 +153,9 @@ function renderAudioContainers(){
 //
 
 function createAudioContainer(key, audio, image){
-    let sound_list = document.querySelector(".sound-list")  
+    // let val = audio.volume = 0
+    let sound_list = document.querySelector(".sound-list") 
+    
     let sound_container = document.createElement("div")
 
     sound_container.className = "audio-container"
@@ -213,6 +220,22 @@ function togglePlay(sound) {
 //         }
 //     })
 
+function sliderMovesVolume () {
+    // audio_collection = document.querySelectorAll('audio')
+    // slider_collection = document.querySelectorAll('.volumeSlider')
+    audio_containers = document.querySelectorAll('.audio-container')
+
+    audio_containers.forEach(container => {
+        // for each slider audio.volume = slider.value
+
+        let audioTag = container.children[0].children[1]
+        let volumeInput = container.children[0].children[2]
+
+        audioTag.volume = volumeInput.value
+
+    });
+}
+
 
 
 
@@ -220,7 +243,7 @@ function togglePlay(sound) {
 
 function volume() {
 
-    document.addEventListener("input",function(event){
+    document.addEventListener("input", (event) => {
     // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")

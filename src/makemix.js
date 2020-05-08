@@ -276,22 +276,12 @@ let mixUl=document.getElementById("mixes")
   
     title:${mixes.mix_name}
     <button class ="uploadedMixes" >play</button>
-<li hidden id = "rain-volume" >${mixes.heavy_rain_volume}</li>
-<li hidden id = "fire-volume">${mixes.large_fire_volume}</li>
-<li hidden id = "fire2-volume">${mixes.campfire_volume}</li>
-<li hidden id = "forest-volume">${mixes.forest_volume}</li>
-<li hidden id = "river-volume">${mixes.river_volume}</li>
-<li hidden id = "wind-volume">${mixes.strong_wind_volume}</li>
-<li hidden id = "wind2-volume">${mixes.light_wind_volume}</li>
-<li hidden id = "thunder-volume">${mixes.thunder_volume}</li>
-<li hidden id = "wave-volume">${mixes.wave_volume}</li>
-<li hidden id = "coffee-volume">${mixes.coffee_shop_volume}<li>
-<li hidden id = "bird-volume">${mixes.bird_volume}</li>
     `
    
    mixUl.appendChild(mixLi)
 
 }
+
 function mixList(mixes){
        let miUl=document.getElementById("mixes")
          

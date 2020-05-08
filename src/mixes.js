@@ -4,6 +4,7 @@ function renderMixForm() {
   let form = document.createElement("form")
   form.id = "mix-form"
 
+  
   form.innerHTML = `
 
     <label>Mix name: </label>
@@ -12,6 +13,7 @@ function renderMixForm() {
   `
   
   form_container.append(form)
+  form.reset()
 }
 
 //
@@ -47,6 +49,7 @@ function saveNewMix() {
         Object.assign(new_mix, {[audio_name] : volume_input})
       }
     })
+    const mix_list = document.getElementById('user-mix-display')
 
     fetch(`${url}/mixes`, {
       method: 'POST',
@@ -64,6 +67,15 @@ function saveNewMix() {
 
 } 
 
+
+function addNewMixToList () {
+  
+  const mix_list = document.getElementById('user-mix-display')
+
+  mix_list.innerHTML = ''
+
+  fetchSavedMixes()
+}
 // 
 
 // click save 
