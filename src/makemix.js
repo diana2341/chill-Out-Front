@@ -300,9 +300,22 @@ miUl.addEventListener("click",function(event){
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
+console.log(audio[0].volume=rain)
+console.log(audio[1].volume=bird)
+ console.log(audio[2].volume=thunder)
+ console.log(audio[3].volume=fire)
+ console.log(audio[4].volume=thunder)
+ console.log(audio[5].volume=wave)
+ console.log(audio[6].volume=rain)
+ console.log(audio[7].volume=rain)
+console.log(audio[8].volume=rain)
+console.log(audio[9].volume=rain)
+console.log(audio[10].volume=rain)
+console.log(audio[11].volume=rain)
 
- newArray=Array.from(audio)
- console.log( newArray)
+
+//  newArray=Array.from(audio)
+//  console.log( newArray)
   
 //      newArray.forEach(function(song){
 //    audio[0].volume=rain//rain

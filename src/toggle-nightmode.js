@@ -8,7 +8,7 @@ function toggleNightMode() {
 
     if (toggle.id === "background-toggle-day") {
       body.className = "body-night"
-      toggle.textContent = "Night Mode On"
+      toggle.textContent = "Night Mode On "
       toggle.id = 'background-toggle-night'
       
     } else if (toggle.id === "background-toggle-night") {
