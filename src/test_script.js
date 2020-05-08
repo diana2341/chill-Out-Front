@@ -221,13 +221,21 @@ function togglePlay(sound) {
 //     })
 
 function sliderMovesVolume () {
-    audio_collection = document.querySelectorAll('audio')
-    slider_collection = document.querySelectorAll('.volumeSlider')
+    // audio_collection = document.querySelectorAll('audio')
+    // slider_collection = document.querySelectorAll('.volumeSlider')
+    audio_containers = document.querySelectorAll('.audio-container')
 
-    slider_collection.forEach(slider => {
+    audio_containers.forEach(container => {
         // for each slider audio.volume = slider.value
+
+        let audioTag = container.children[0].children[1]
+        let volumeInput = container.children[0].children[2]
+
+        audioTag.volume = volumeInput.value
+
     });
 }
+
 
 
 
