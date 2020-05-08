@@ -84,33 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     renderMixForm()
     saveNewMix()
-    // fetchUserMixes()
 
     toggleNightMode()
-    // addListenerToMixList()
 
     fetchSavedMixes()
 
-    // imagePlayAudion()
-    // createMixForm()
-    // addMix()
-    // newMix()
-    // getMixes()
     audioList()
     frontTitle()
     stars()
 
 
-      //notes: !!!!! make  a funcition that is for all audio containers get audio vol / get slider vol / where those audioKey match  set audio.volume = slider.value !!!!!
-    
-
-
-
 })
 
-  // save volume of each sound 
-  // on load: find the sound from collection of sound and set volume
-  // create a const. similar to ambientICon []
 
 
 function clickIconToPlay () {
@@ -146,7 +131,6 @@ function clickIconToPlay () {
 
 function renderAudioContainers(){ 
 
-    // console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
@@ -158,7 +142,6 @@ function renderAudioContainers(){
 
         let volumeInput = audio_container.children[0].children[2]
         volumeInput.value = 0
-        // console.log(audio_container.children[0].children[2].value)
 
         let audioTag = audio_container.children[0].children[1]
         audioTag.volume = 0
@@ -166,11 +149,9 @@ function renderAudioContainers(){
 
 }
 
-//
-//
+
 
 function createAudioContainer(key, audio, image){
-    // let val = audio.volume = 0
     let sound_list = document.querySelector(".sound-list") 
     
     let sound_container = document.createElement("div")
@@ -190,7 +171,6 @@ function createAudioContainer(key, audio, image){
 
 function togglePlay(sound) {
     if (sound.paused) {
-        // sound.currentTime = 0;
 
         sound.play();
     }
@@ -200,50 +180,10 @@ function togglePlay(sound) {
 };
 
 
-// click save 
-// capture volume number of each slider 
-// keys of body need to correspond to backend table 
-// post the data to our mix table 
-// that creates new mix record (instance)
-
-// click load 
-// look the mix_id - bind the mix-id to the dom NEED TO KNOW MIX ID
-// like a collection_select  - value= mix_id  // or it shows up on page with a play button. // store mix_id on the button somewhere
-// fetch the mix record from backend - comes in as json 
-// run volume adjuster method on click of play. would be in the .then callback. 
-
-
-// //==================================================================================
-
-
-// document.addEventListener("click", (event) => {
-//         if (event.target === img[0]) {
-//             togglePlay(audio[0])   
-//         }
-//         if (event.target === img[1]) {
-//             togglePlay(audio[1])   
-//         }
-//         if (event.target === img[2]) {
-//             togglePlay(audio[2])   
-//         }
-//         if (event.target === img[3]) {
-//             togglePlay(audio[3])   
-//         }
-//         if (event.target === img[4]) {
-//             togglePlay(audio[4])   
-//         }
-//         if (event.target === img[5]) {
-//             togglePlay(audio[5])   
-//         }
-//     })
-
 function sliderMovesVolume () {
-    // audio_collection = document.querySelectorAll('audio')
-    // slider_collection = document.querySelectorAll('.volumeSlider')
     audio_containers = document.querySelectorAll('.audio-container')
 
     audio_containers.forEach(container => {
-        // for each slider audio.volume = slider.value
 
         let audioTag = container.children[0].children[1]
         let volumeInput = container.children[0].children[2]
@@ -261,7 +201,6 @@ function sliderMovesVolume () {
 function volume() {
 
     document.addEventListener("input", (event) => {
-    // console.log("clicked")
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
@@ -315,8 +254,7 @@ function volume() {
     })
 }
 
-//
-//
+
 
 function playPause(){
 
@@ -327,7 +265,6 @@ function playPause(){
 
         let pauseButton = document.getElementById("pause")
         let playButton = document.getElementById("play") 
-        // console.log(event.target)
         if(event.target === playButton) {
         Array.from(audio).forEach(function(song){
             song.play()

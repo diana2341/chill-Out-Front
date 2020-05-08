@@ -1,6 +1,4 @@
-// make a div container 
-// make input field 
-// fetch post to users
+
 
 const url = 'http://localhost:3000/api/v1'
 
@@ -33,11 +31,6 @@ function loginSetup() {
   div.id = 'inner-login'
   login_container.append(div)
 
-  // const h1 = document.createElement('h1')
-  // h1.id = 'login-title'
-  // // if user exists say login else say create username
-  // h1.textContent = 'User Login'
-  // div.append(h1)
 
   const login_form = document.createElement('form')
   

@@ -15,26 +15,17 @@ function renderSavedMixes (mixes) {
 
   mixes.forEach(mix => {
 
-    // create li set attributes
     const li = document.createElement('li')
-    // li.className
     li.dataset.mixId = mix.id
 
     li.dataset.userId = mix.user_id
-    // li.textContent = mix.mix_name
 
     li.innerHTML=`
     <br>
       ${mix.mix_name}
       <button class="play-saved-mix">Play</button>
       `
-    // create play button append to li
-    // let play_saved_mix_button = document.createElement('button')
-    // play_saved_mix_button.className = "play-saved-mix"
-    // play_saved_mix_button.textContent = "Play"
-    // li.append(play_saved_mix_button)
-
-    // append li to list
+    t
     mix_list.append(li)
 
   })
@@ -42,22 +33,8 @@ function renderSavedMixes (mixes) {
 }
 
 
-// function listMixes(mix){
-//   let mixUl = document.getElementById("mixes")
   
-//      let mixLi = document.createElement("li")
 
-//      mixLi.dataset.id = mix.id
-
-//      mixLi.innerHTML=`
-    
-//       title:${mix.mix_name}
-//       <button class ="uploadedMixes" >play</button>
-//       `
-     
-//      mixUl.appendChild(mixLi)
-  
-//   }
 
 function addListenerToMixList () {
   const mix_list = document.getElementById('mixesLi')
@@ -281,15 +258,3 @@ function nightSoundVolume(mix) {
   soundTag.play()
 }
 
-// t.float "light_rain_volume", default: 0.0
-    // t.float "heavy_rain_volume", default: 0.0
-    // t.float "large_fire_volume", default: 0.0
-    // t.float "campfire_volume", default: 0.0
-    // t.float "forest_volume", default: 0.0
-    // t.float "river_volume", default: 0.0
-    // t.float "strong_wind_volume", default: 0.0
-    // t.float "light_wind_volume", default: 0.0
-    // t.float "thunder_volume", default: 0.0
-    // t.float "wave_volume", default: 0.0
-    // t.float "coffee_shop_volume", default: 0.0
-    // t.float "bird_volume", default: 0.0

@@ -5,9 +5,6 @@ function resetButtonSetup() {
 
   controls_container.addEventListener('click', (e) => {
     
-    // if (e.target.id === 'save') {
-    //   // console.log('i save stuff:')
-    // }
     
     if (e.target.id === 'reset') {
       console.log('i reset all the volumes to zero:' )
@@ -15,8 +12,6 @@ function resetButtonSetup() {
       let sliders = document.querySelectorAll('.volumeSlider')
       let audios = document.querySelectorAll("audio")
       
-      // console.log('volume sliders:', sliders)
-
       sliders.forEach(slider => {
         slider.value = 0
 
@@ -36,15 +31,3 @@ function resetButtonSetup() {
 
 }
 
-// playPause()
-// function resetButton() {
-//   let controls_containter = document.querySelector('')
-
-//   controls_containter.addEventListener('click', (e) => {
-    
-
-//     if ()
-
-//   })
-
-// }
