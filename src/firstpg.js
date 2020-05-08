@@ -55,6 +55,8 @@ function frontTitle(){
 
 function stars(){
   let log_container=document.querySelector(".container")
+
+  let login=document.querySelector(".login_container")
 let star= document.createElement("span")
 star.innerHTML=`
   <div class="animation-wrapper">
@@ -65,5 +67,6 @@ star.innerHTML=`
 </div>
 `
 log_container.appendChild(star)
+// login.appendChild(star)
 ;
 } 

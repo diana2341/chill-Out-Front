@@ -3,11 +3,12 @@ function renderMixForm() {
 
   let form = document.createElement("form")
   form.id = "mix-form"
+  form.autocomplete="off"
 
   
   form.innerHTML = `
 
-    <input id="mix-title-input" type="text" name="mix-name" placeholder="your mix name here">
+    <input id="mix-title-input" type="text" name="mix-name" placeholder=" Your mix name here">
     <input id="save-mix" type="submit" value="save">
   `
       // <label>Mix name: </label>
