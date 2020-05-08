@@ -78,54 +78,183 @@ function addListenerToMixList () {
 }
 
 function playMix (mix) {
+  birdVolume(mix)
+  lightRainVolume(mix)
+  heavyRainVolume(mix)
+  largeFireVolume(mix)
+  campFireVolume(mix)
+  forestVolume(mix)
+  riverVolume(mix)
+  strongWindVolume(mix)
+  lightWindVolume(mix)
+  thunderVolume()
+  waveVolume(mix)
+  coffeeShopVolume(mix)
+}
 
-  console.log("mix in the playMix==",mix)
-  // console.log(mix.id)
-  // console.log('clicked')
-  // console.log("selected mix ==",mix)
-  // console.log("bird_volume", mix.bird_volume)
-  
-  let bird_volume_container = document.querySelector('[data-audio-key="bird_volume"]')
-  let sliderTag = bird_volume_container.children[0].children[2]
-  let soundTag = bird_volume_container.children[0].children[1]
-  // let slider = parseFloat(bird_volume_container.children[0].children[2])
-  // let sound = parseFloat(bird_volume_container.children[0].children[1])
-  
-  console.log("before slider",sliderTag)
-  console.log("before sound",soundTag)
-  // audioTag.volume is audio vol
-  // volumeInputTag.value = slider vol
+function birdVolume (mix) {
 
-  // console.log(mix.bird_volume)
+  let audio_container = document.querySelector('[data-audio-key="bird_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
   sliderTag.value = mix.bird_volume
   sliderMovesVolume()
-  sound = mix.bird_volume
-  console.log("audio",soundTag.volume)
-  console.log("slider",sliderTag)
+  soundTag.play()
+}
 
-  // let sound_list = document.querySelector(".sound-list")  
+function lightRainVolume (mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="light_rain_volume"]')
   
-  // renderAudioContainers()
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
 
-
-  // get bird_volume audio_container to start
+  sliderTag.value = mix.light_rain_volume
+  sliderMovesVolume()
+  soundTag.play()
 }
 
 
-// if (e.target.id === 'reset') {
-//   console.log('i reset all the volumes to zero:' )
-  
-//   let sliders = document.querySelectorAll('.volumeSlider')
-//   let audios = document.querySelectorAll("audio")
-  
-//   // console.log('volume sliders:', sliders)
+function heavyRainVolume(mix) {
 
-//     sliders.forEach(slider => {
-//     slider.value = 0
+  let audio_container = document.querySelector('[data-audio-key="heavy_rain_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
 
-//     audios.forEach(audio => {
-//         audio.volume = 0
-//     });
-    
-//   });
-// }
+  sliderTag.value = mix.heavy_rain_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function largeFireVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="large_fire_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.large_fire_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+function campFireVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="campfire_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.campfire_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function forestVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="forest_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.forest_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function riverVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="river_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.river_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function strongWindVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="strong_wind_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.strong_wind_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function lightWindVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="light_wind_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.light_wind_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function thunderVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="thunder_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.thunder_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function waveVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="wave_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.wave_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+function coffeeShopVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="coffee_shop_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.coffee_shop_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+
+
+// t.float "light_rain_volume", default: 0.0
+    // t.float "heavy_rain_volume", default: 0.0
+    // t.float "large_fire_volume", default: 0.0
+    // t.float "campfire_volume", default: 0.0
+    // t.float "forest_volume", default: 0.0
+    // t.float "river_volume", default: 0.0
+    // t.float "strong_wind_volume", default: 0.0
+    // t.float "light_wind_volume", default: 0.0
+    // t.float "thunder_volume", default: 0.0
+    // t.float "wave_volume", default: 0.0
+    // t.float "coffee_shop_volume", default: 0.0
+    // t.float "bird_volume", default: 0.0
