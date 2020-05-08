@@ -8,7 +8,7 @@ function audioList(){
    <input type="checkbox" id="slide" name="" value="" />
    <div class="container">
 
-       <label for="slide" class="toggle">☰</label>
+       <label for="slide" class="toggle">☰ <p id="saved"> ↖ Audio saved! Checkout these Mixes ♫</p> </label> 
        <nav class="sidebar"> 
 
        <ul id="mixesLi">
@@ -55,6 +55,8 @@ function frontTitle(){
 
 function stars(){
   let log_container=document.querySelector(".container")
+
+  let login=document.querySelector(".login_container")
 let star= document.createElement("span")
 star.innerHTML=`
   <div class="animation-wrapper">
@@ -65,5 +67,6 @@ star.innerHTML=`
 </div>
 `
 log_container.appendChild(star)
+// login.appendChild(star)
 ;
 } 

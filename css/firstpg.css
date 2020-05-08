@@ -149,11 +149,11 @@ h1 span:nth-child(12) { animation-delay: .11s; }
   /* editing input field */
   #mix-title-input{
     border-radius: 20px;
-    background: rgba(15, 17, 11, 0.219);
-    padding: 20px;
-    width: 200px;
+    background: rgba(15, 17, 11, 0.082);
+    border-radius: 10px;
+     width: 200px;
     height: 30px;
-    border: 2px solid rgb(22, 26, 17);
+    border: 2px solid rgb(9, 10, 7);
 
   }
 
