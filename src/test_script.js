@@ -21,7 +21,7 @@ const soundDictionary = {
     },
     strong_wind_volume: {
         // too strong 
-        image: "images/strong-wind.png",
+        image: "images/strongwind.png",
         audio: "audio/wind-strong.mp3"
     },
     forest_volume: {
@@ -50,21 +50,23 @@ const soundDictionary = {
     coffee_shop_volume: {
         image: "images/cafe.png",
         audio: "audio/coffee.mp3"
-    }
-
+    },
+    cat_purring_volume:{
+        image:"images/cat.png",
+        audio:"audio/Cat-purring-sound.wav"
+},
+night_sound_volume:{
+  image: " images/nighttime.png",
+audio:"audio/Summer-insect-sounds-night.mp3"
+},
+wind_chime_volume:{
+    image: "images/windchime.png",
+    audio:"audio/Wind-chimes-sound.mp3"
 }
-// cat_purring_volume:{
-// images/cat.png,
-// audio/Cat-purring-sound.wav
-// },
-// night_sound_volume:{
-//     images/night.png
-// audio/Summer-insect-sounds-night.mp3
-// },
-// wind_chime_noises:{
-//     images/windchime.png
-// audio/Wind-chimes-sound.mp3
-// }
+}
+
+
+
 
 
 
@@ -299,6 +301,15 @@ function volume() {
         }
         if(event.target === slider[11]) {
             audio[11].volume = event.target.value    
+        }
+        if(event.target === slider[12]) {
+            audio[12].volume = event.target.value    
+        }
+        if(event.target === slider[13]) {
+            audio[13].volume = event.target.value    
+        }
+        if(event.target === slider[14]) {
+            audio[14].volume = event.target.value    
         }
 
     })

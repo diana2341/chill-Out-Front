@@ -54,7 +54,7 @@ function frontTitle(){
 
 
 function stars(){
-  let log_container=document.getElementsByClassName("login_container")[0]
+  let log_container=document.querySelector(".container")
 let star= document.createElement("span")
 star.innerHTML=`
   <div class="animation-wrapper">

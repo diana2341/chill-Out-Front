@@ -90,6 +90,9 @@ function playMix (mix) {
   thunderVolume(mix)
   waveVolume(mix)
   coffeeShopVolume(mix)
+  catPurVolume(mix)
+  windChimeVolume(mix)
+  nightSoundVolume(mix)
 }
 
 function birdVolume (mix) {
@@ -244,7 +247,39 @@ function coffeeShopVolume(mix) {
   sliderMovesVolume()
   soundTag.play()
 }
+function catPurVolume(mix) {
 
+  let audio_container = document.querySelector('[data-audio-key="cat_purring_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.cat_purring_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+function windChimeVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="wind_chime_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.wind_chime_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
+function nightSoundVolume(mix) {
+
+  let audio_container = document.querySelector('[data-audio-key="night_sound_volume"]')
+  
+  let sliderTag = audio_container.children[0].children[2]
+  let soundTag = audio_container.children[0].children[1]
+
+  sliderTag.value = mix.night_sound_volume
+  sliderMovesVolume()
+  soundTag.play()
+}
 
 // t.float "light_rain_volume", default: 0.0
     // t.float "heavy_rain_volume", default: 0.0
