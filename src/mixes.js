@@ -7,11 +7,11 @@ function renderMixForm() {
   
   form.innerHTML = `
 
-    <label>Mix name: </label>
     <input id="mix-title-input" type="text" name="mix-name" placeholder="your mix name here">
     <input id="save-mix" type="submit" value="save">
   `
-  
+      // <label>Mix name: </label>
+
   form_container.append(form)
   form.reset()
 }
@@ -61,7 +61,6 @@ function saveNewMix() {
     })
     .then(r => r.json())
     .then(addNewMixToList)
-    
     .catch(err => console.log("error:", err))
     form.reset()
   })
@@ -71,7 +70,7 @@ function saveNewMix() {
 
 function addNewMixToList () {
   
-  const mix_list = document.getElementById('user-mix-display')
+  const mix_list = document.getElementById('mixesLi')
 
   mix_list.innerHTML = ''
 

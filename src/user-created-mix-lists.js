@@ -11,7 +11,7 @@ function fetchSavedMixes () {
 
 function renderSavedMixes (mixes) {
 
-  let mix_list = document.getElementById('user-mix-display')
+  let mix_list = document.getElementById('mixesLi')
 
   mixes.forEach(mix => {
 
@@ -24,7 +24,7 @@ function renderSavedMixes (mixes) {
     // li.textContent = mix.mix_name
 
     li.innerHTML=`
-    
+    <br>
       ${mix.mix_name}
       <button class="play-saved-mix">Play</button>
       `
@@ -60,7 +60,7 @@ function renderSavedMixes (mixes) {
 //   }
 
 function addListenerToMixList () {
-  const mix_list = document.getElementById('user-mix-display')
+  const mix_list = document.getElementById('mixesLi')
   
 
   mix_list.addEventListener('click', (e) => {
@@ -87,7 +87,7 @@ function playMix (mix) {
   riverVolume(mix)
   strongWindVolume(mix)
   lightWindVolume(mix)
-  thunderVolume()
+  thunderVolume(mix)
   waveVolume(mix)
   coffeeShopVolume(mix)
 }

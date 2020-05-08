@@ -6,6 +6,9 @@ const url = 'http://localhost:3000/api/v1'
 
 
 function loginOverlaySetup() {
+  let login_container = document.querySelector('.login_container')
+
+  login_container.style.backgroundImage = "url(images/project bg.png) initial"
 
   document.addEventListener("submit", (event) => {
     let login_container = document.querySelector('.login_container')
@@ -30,21 +33,31 @@ function loginSetup() {
   div.id = 'inner-login'
   login_container.append(div)
 
-  const h1 = document.createElement('h1')
-  h1.id = 'login-title'
-  // if user exists say login else say create username
-  h1.textContent = 'User Login'
-  div.append(h1)
+  // const h1 = document.createElement('h1')
+  // h1.id = 'login-title'
+  // // if user exists say login else say create username
+  // h1.textContent = 'User Login'
+  // div.append(h1)
 
   const login_form = document.createElement('form')
   
   login_form.id = 'login-form'
+  login_form.setAttribute("autocomplete","off")
+
   login_form.innerHTML = `
-    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-    <input type="submit" value="Login" id="login-form-submit">
+  <div class="form__group field">
+
+    <input type="text" class="form__field" placeholder="Username" name="username" id="username-field"  >
+    <label for="username" class="form__label">Please Enter a Username</label>
+
+    <input type="submit" value="Login" id="login-form-submit" style="display: none">
+    </div>
+
   `
 
     div.append(login_form)
+
+    
 
 //////////////////////////////
 // add submit listener ///
@@ -85,7 +98,8 @@ function loginSetup() {
       const p = document.createElement('p')
 
       p.innerHTML = `
-        Welcome, ${user.username}
+      <h1 id= "currentUser">Welcome <strong>${user.username}</strong></h1>
+
       `
       welcomeUser.append(p)
 

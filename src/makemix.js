@@ -248,36 +248,49 @@ function listMixes (mixes) {
 	mixUl.appendChild(mixLi);
 }
 
-function mixList (mixes) {
-	let miUl = document.getElementById('mixes');
+function mixList(mixes){
+       let miUl=document.getElementById("mixes")
+         
+miUl.addEventListener("click",function(event){
+    let rain=parseFloat(document.getElementById("rain-volume").innerHTML)
+    let fire=parseFloat(document.getElementById("fire-volume").innerHTML)
+    let fire2=parseFloat(document.getElementById("fire2-volume").innerHTML)
+    let forest=parseFloat(document.getElementById("forest-volume").innerHTML)
+    let river=parseFloat(document.getElementById("river-volume").innerHTML)
+    let wind=parseFloat(document.getElementById("wind-volume").innerHTML)
+    let wind2=parseFloat(document.getElementById("wind2-volume").innerHTML)
+    let thunder=parseFloat(document.getElementById("thunder-volume").innerHTML)
+    let wave=parseFloat(document.getElementById("wave-volume").innerHTML)
+    let coffee=parseFloat(document.getElementById("coffee-volume").innerHTML)
+    let bird=parseFloat(document.getElementById("bird-volume").innerHTML)
 
-	miUl.addEventListener('click', function (event) {
-		let rain = parseFloat(document.getElementById('rain-volume').innerHTML);
-		let fire = parseFloat(document.getElementById('fire-volume').innerHTML);
-		let fire2 = parseFloat(document.getElementById('fire2-volume').innerHTML);
-		let forest = parseFloat(document.getElementById('forest-volume').innerHTML);
-		let river = parseFloat(document.getElementById('river-volume').innerHTML);
-		let wind = parseFloat(document.getElementById('wind-volume').innerHTML);
-		let wind2 = parseFloat(document.getElementById('wind2-volume').innerHTML);
-		let thunder = parseFloat(document.getElementById('thunder-volume').innerHTML);
-		let wave = parseFloat(document.getElementById('wave-volume').innerHTML);
-		let coffee = parseFloat(document.getElementById('coffee-volume').innerHTML);
-		let bird = parseFloat(document.getElementById('bird-volume').innerHTML);
+    let slider = document.getElementsByClassName("volumeSlider")
+    let audio = document.getElementsByTagName("audio") 
+console.log(audio[0].volume=rain)
+console.log(audio[1].volume=bird)
+ console.log(audio[2].volume=thunder)
+ console.log(audio[3].volume=fire)
+ console.log(audio[4].volume=thunder)
+ console.log(audio[5].volume=wave)
+ console.log(audio[6].volume=rain)
+ console.log(audio[7].volume=rain)
+console.log(audio[8].volume=rain)
+console.log(audio[9].volume=rain)
+console.log(audio[10].volume=rain)
+console.log(audio[11].volume=rain)
 
-		let slider = document.getElementsByClassName('volumeSlider');
-		let audio = document.getElementsByTagName('audio');
 
-		newArray = Array.from(audio);
-		console.log(newArray);
+//  newArray=Array.from(audio)
+//  console.log( newArray)
+  
+//      newArray.forEach(function(song){
+//    audio[0].volume=rain//rain
+//    audio[1].volume=bird//bird
+//    audio[2].volume=fire//fire
+//    audio[3].volume=thunder//thunder
+//    audio[4].volume=wave//waves
+//             // song.play()
 
-		//      newArray.forEach(function(song){
-		//    audio[0].volume=rain//rain
-		//    audio[1].volume=bird//bird
-		//    audio[2].volume=fire//fire
-		//    audio[3].volume=thunder//thunder
-		//    audio[4].volume=wave//waves
-		//             // song.play()
-
-		//     })
-	});
+//     }) 
+})
 }
