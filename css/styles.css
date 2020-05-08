@@ -14,17 +14,17 @@ input[type=range] {
     height: 0px;
     cursor: pointer;
     box-shadow: 0px 0px 0px #000000;
-    background: #C6C5D1;
+    background: rgb(81, 76, 139);
     /* border-radius: 50px; */
     border: 0px solid #000000;
   }
   input[type=range]::-webkit-slider-thumb {
     box-shadow: 0px 0px 0px #000000;
-    border: 1px solid #A19D9F;
+    border: 1px solid rgba(150, 140, 145, 0.356);
     height: 20px;
     width: 21px;
     border-radius: 23px;
-    background: #F5F5F5;
+    background: rgba(216, 206, 206, 0.315);
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8.5px;

@@ -87,7 +87,7 @@ function playMix (mix) {
   riverVolume(mix)
   strongWindVolume(mix)
   lightWindVolume(mix)
-  thunderVolume()
+  thunderVolume(mix)
   waveVolume(mix)
   coffeeShopVolume(mix)
 }

@@ -8,7 +8,7 @@ const soundDictionary = {
         audio: "audio/birds.fade.ogg"
     },
     large_fire_volume: {
-        image: "images/fire.png",
+        image: "images/regular-fire.png",
         audio: "audio/fire-large-flame.mp3"
     },
     thunder_volume: {
@@ -21,7 +21,7 @@ const soundDictionary = {
     },
     strong_wind_volume: {
         // too strong 
-        image: "images/wind-bold.png",
+        image: "images/strong-wind.png",
         audio: "audio/wind-strong.mp3"
     },
     forest_volume: {
@@ -36,10 +36,10 @@ const soundDictionary = {
     },
     campfire_volume: {
         image: "images/fire.png",
-        audio: "audio/campfire.mp3"
+        audio: "audio/campfire.mp3"//
     },
     river_volume: {
-        image: "images/river.png",
+        image: "images/riverWave.png",
         audio: "audio/river.mp3"
     },
     light_wind_volume: {
@@ -49,10 +49,22 @@ const soundDictionary = {
     },
     coffee_shop_volume: {
         image: "images/cafe.png",
-        audio: "audio/birds.fade.ogg"
+        audio: "audio/coffee.mp3"
     }
 
 }
+// cat_purring_volume:{
+// images/cat.png,
+// audio/Cat-purring-sound.wav
+// },
+// night_sound_volume:{
+//     images/night.png
+// audio/Summer-insect-sounds-night.mp3
+// },
+// wind_chime_noises:{
+//     images/windchime.png
+// audio/Wind-chimes-sound.mp3
+// }
 
 
 
@@ -84,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // getMixes()
     audioList()
     frontTitle()
+    // stars()
 
 
       //notes: !!!!! make  a funcition that is for all audio containers get audio vol / get slider vol / where those audioKey match  set audio.volume = slider.value !!!!!
