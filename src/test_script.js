@@ -8,7 +8,7 @@ const soundDictionary = {
         audio: "audio/birds.fade.ogg"
     },
     large_fire_volume: {
-        image: "images/fire.png",
+        image: "images/regular-fire.png",
         audio: "audio/fire-large-flame.mp3"
     },
     thunder_volume: {
@@ -21,7 +21,7 @@ const soundDictionary = {
     },
     strong_wind_volume: {
         // too strong 
-        image: "images/wind-bold.png",
+        image: "images/strongwind.png",
         audio: "audio/wind-strong.mp3"
     },
     forest_volume: {
@@ -36,10 +36,10 @@ const soundDictionary = {
     },
     campfire_volume: {
         image: "images/fire.png",
-        audio: "audio/campfire.mp3"
+        audio: "audio/campfire.mp3"//
     },
     river_volume: {
-        image: "images/river.png",
+        image: "images/riverWave.png",
         audio: "audio/river.mp3"
     },
     light_wind_volume: {
@@ -49,10 +49,24 @@ const soundDictionary = {
     },
     coffee_shop_volume: {
         image: "images/cafe.png",
-        audio: "audio/birds.fade.ogg"
-    }
-
+        audio: "audio/coffee.mp3"
+    },
+    cat_purring_volume:{
+        image:"images/cat.png",
+        audio:"audio/Cat-purring-sound.wav"
+},
+night_sound_volume:{
+  image: " images/nighttime.png",
+audio:"audio/Summer-insect-sounds-night.mp3"
+},
+wind_chime_volume:{
+    image: "images/windchime.png",
+    audio:"audio/Wind-chimes-sound.mp3"
 }
+}
+
+
+
 
 
 
@@ -70,26 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     renderMixForm()
     saveNewMix()
-    // fetchUserMixes()
 
     toggleNightMode()
 
+    fetchSavedMixes()
 
-    // imagePlayAudion()
-    // createMixForm()
-    // addMix()
-    // newMix()
-    // getMixes()
-
-    
-
+    audioList()
+    frontTitle()
+    stars()
 
 
 })
 
-  // save volume of each sound 
-  // on load: find the sound from collection of sound and set volume
-  // create a const. similar to ambientICon []
 
 
 function clickIconToPlay () {
@@ -112,7 +118,7 @@ function clickIconToPlay () {
             
             if (image_key === grandparent_key) {
                 const audio = audio_container.querySelector('audio')
-                console.log("tageted",audio)
+                // console.log("targeted",audio)
 
                 togglePlay(audio)
             }
@@ -125,23 +131,29 @@ function clickIconToPlay () {
 
 function renderAudioContainers(){ 
 
-    console.log('start')
     for (let key in soundDictionary) {
         let audio_key = key
         let audio_path = soundDictionary[key].audio
         let image_path = soundDictionary[key].image
-        
+
         createAudioContainer(audio_key, audio_path, image_path)
+
+        let audio_container = document.querySelector(`[data-audio-key="${audio_key}"]`)
+
+        let volumeInput = audio_container.children[0].children[2]
+        volumeInput.value = 0
+
+        let audioTag = audio_container.children[0].children[1]
+        audioTag.volume = 0
     }
 
 }
 
-//
-//
+
 
 function createAudioContainer(key, audio, image){
-
-    let sound_list = document.querySelector(".sound-list")  
+    let sound_list = document.querySelector(".sound-list") 
+    
     let sound_container = document.createElement("div")
 
     sound_container.className = "audio-container"
@@ -151,7 +163,7 @@ function createAudioContainer(key, audio, image){
         <div class="inner" >
             <img style="cursor:pointer" class="icon" src=${image}>
             <audio loop><source src=${audio}></audio>        
-            <input style="cursor:pointer" type="range" class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
+            <input style="cursor:pointer" type="range"  class="volumeSlider" min="0" max="1" step="0.01" style="cursor: pointer;">
         </div>
         `
     sound_list.appendChild(sound_container)
@@ -159,7 +171,6 @@ function createAudioContainer(key, audio, image){
 
 function togglePlay(sound) {
     if (sound.paused) {
-        // sound.currentTime = 0;
 
         sound.play();
     }
@@ -169,42 +180,18 @@ function togglePlay(sound) {
 };
 
 
-// click save 
-// capture volume number of each slider 
-// keys of body need to correspond to backend table 
-// post the data to our mix table 
-// that creates new mix record (instance)
+function sliderMovesVolume () {
+    audio_containers = document.querySelectorAll('.audio-container')
 
-// click load 
-// look the mix_id - bind the mix-id to the dom NEED TO KNOW MIX ID
-// like a collection_select  - value= mix_id  // or it shows up on page with a play button. // store mix_id on the button somewhere
-// fetch the mix record from backend - comes in as json 
-// run volume adjuster method on click of play. would be in the .then callback. 
+    audio_containers.forEach(container => {
 
+        let audioTag = container.children[0].children[1]
+        let volumeInput = container.children[0].children[2]
 
-// //==================================================================================
+        audioTag.volume = volumeInput.value
 
-
-// document.addEventListener("click", (event) => {
-//         if (event.target === img[0]) {
-//             togglePlay(audio[0])   
-//         }
-//         if (event.target === img[1]) {
-//             togglePlay(audio[1])   
-//         }
-//         if (event.target === img[2]) {
-//             togglePlay(audio[2])   
-//         }
-//         if (event.target === img[3]) {
-//             togglePlay(audio[3])   
-//         }
-//         if (event.target === img[4]) {
-//             togglePlay(audio[4])   
-//         }
-//         if (event.target === img[5]) {
-//             togglePlay(audio[5])   
-//         }
-//     })
+    });
+}
 
 
 
@@ -213,8 +200,7 @@ function togglePlay(sound) {
 
 function volume() {
 
-    document.addEventListener("input",function(event){
-    // console.log("clicked")
+    document.addEventListener("input", (event) => {
 
     let slider = document.getElementsByClassName("volumeSlider")
     let audio = document.getElementsByTagName("audio") 
@@ -255,12 +241,20 @@ function volume() {
         if(event.target === slider[11]) {
             audio[11].volume = event.target.value    
         }
+        if(event.target === slider[12]) {
+            audio[12].volume = event.target.value    
+        }
+        if(event.target === slider[13]) {
+            audio[13].volume = event.target.value    
+        }
+        if(event.target === slider[14]) {
+            audio[14].volume = event.target.value    
+        }
 
     })
 }
 
-//
-//
+
 
 function playPause(){
 
@@ -271,7 +265,6 @@ function playPause(){
 
         let pauseButton = document.getElementById("pause")
         let playButton = document.getElementById("play") 
-        // console.log(event.target)
         if(event.target === playButton) {
         Array.from(audio).forEach(function(song){
             song.play()
@@ -285,6 +278,63 @@ function playPause(){
         }) 
     }})
 }
+
+
+
+//reset button
+function resetButtonSetup() {
+  
+    let controls_container = document.querySelector('.play-controls')
+  
+    controls_container.addEventListener('click', (e) => {
+      
+      
+      if (e.target.id === 'reset') {
+        console.log('i reset all the volumes to zero:' )
+        
+        let sliders = document.querySelectorAll('.volumeSlider')
+        let audios = document.querySelectorAll("audio")
+        
+        sliders.forEach(slider => {
+          slider.value = 0
+  
+          audios.forEach(audio => {
+              audio.volume = 0
+          })
+          
+        })
+  
+      }
+  
+      if (e.target.id === 'preset') {
+        console.log('oh hey some #presets:')
+      }
+  
+    })
+  
+  }
+  // toggle button night mode & day
+  function toggleNightMode() {
+    const toggle = document.querySelector('.toggle-button')
+    toggle.textContent = "Night Mode On"
+  
+    const body = document.querySelector('body')
+  
+    toggle.addEventListener('click', (e) => {
+  
+      if (toggle.id === "background-toggle-day") {
+        body.className = "body-night"
+        toggle.textContent = "Night Mode On "
+        toggle.id = 'background-toggle-night'
+        
+      } else if (toggle.id === "background-toggle-night") {
+        
+        body.className = "body-day"
+        toggle.textContent = "Day Mode On"
+        toggle.id = 'background-toggle-day'
+      } 
+    })
+  }
 
 
 

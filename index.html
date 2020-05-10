@@ -7,39 +7,60 @@
 
     <script src="https://kit.fontawesome.com/5059a7a4e4.js" crossorigin="anonymous"></script>
 
+
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="css/login.css" rel="stylesheet" type="text/css">
     <link href="css/background-animation.css" rel="stylesheet" type="text/css">
-    <link href="css/toggle-button.css" rel="stylesheet" type="text/css">
-    <!-- <link href="css/makemix.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/firstpg.css" rel="stylesheet" type="text/css">
 
     
-    <script src="src/index.js"  ></script>
 
-    <!-- <script src="src/script.js"  ></script> -->
-    <!-- <script src="src/makemix.js"  ></script> -->
-    <!-- <script src="src/user-created-mix-lists.js"  ></script> -->
+    <script src="src/user-created-mix-lists.js"  ></script>
     <script src="src/test_script.js"  ></script>
     <script src="src/mixes.js"  ></script>
-
     <script src="src/welcome_user.js"  ></script>
-    <script src="src/toggle-nightmode.js"  ></script>
-    <script src="src/resetButtonSetup.js"  ></script>
+
 
     
 </head>
 
 <body class="body-night">
+    
     <div class="login_container" id =></div>
 
 
-    <div id="root">
+    <div  id="root">
         <div id="app-container">
             <div class="background-animation">
+                
+                <div class="container">
+    
+
+    
+                    <div class="bird-container bird-container--one">
+                        <div class="bird bird--one"></div>
+                    </div>
+                    
+                    <div class="bird-container bird-container--two">
+                        <div class="bird bird--two"></div>
+                    </div>
+                    
+                    <div class="bird-container bird-container--three">
+                        <div class="bird bird--three"></div>
+                    </div>
+                    
+                    <div class="bird-container bird-container--four">
+                        <div class="bird bird--four"></div>
+                    </div>
+                    
+                </div>
+                <!-- new -->
     
             </div>
             <div class="header" >
                 <div class="right-container">
+
+                    
                     <button class="toggle-button" id="background-toggle-night"></button>
                 </div>
                 <div class="left-container">
@@ -47,15 +68,15 @@
                 </div>
             </div>
             <div class="title center">
-                <h1 >Illucid Beats</h1>
-                <p > tagline</p>
+                <!-- <h1>Illucid Beats</h1> -->
+                <!-- <p>concentration is king</p> -->
 
             </div>
             <div class="play-controls" >
                 <div class="inner-controls">
-                    <button id='play'>play</button>
-                    <button id='pause'>pause</button>
-                    <button id="reset">reset</button>
+                    <button id='play'>▶</button>
+                    <button id='pause'><b>||</b></button>
+                    <button id="reset"><b>↻</b> </button>
                 </div>  
             </div>
             <div class="button-bar center">
@@ -67,8 +88,10 @@
                 </div>
             </div>
             <div class="user-created-mix-display">
+                <!-- <h2>User Created Mixes</h2> -->
                 <ul id="user-mix-display">
                 </ul>
+
 
             </div>
             <div class="sound-list">

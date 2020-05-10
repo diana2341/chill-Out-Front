@@ -1,11 +1,12 @@
-// make a div container 
-// make input field 
-// fetch post to users
+
 
 const url = 'http://localhost:3000/api/v1'
 
 
 function loginOverlaySetup() {
+  let login_container = document.querySelector('.login_container')
+
+  login_container.style.backgroundImage = "url(images/project bg.png) initial"
 
   document.addEventListener("submit", (event) => {
     let login_container = document.querySelector('.login_container')
@@ -30,25 +31,26 @@ function loginSetup() {
   div.id = 'inner-login'
   login_container.append(div)
 
-  // const h1 = document.createElement('h1')
-  // h1.id = 'login-title'
-  // if user exists say login else say create username
-  // h1.textContent = 'User Login'
-  // div.append(h1)
 
   const login_form = document.createElement('form')
   
   login_form.id = 'login-form'
+  login_form.setAttribute("autocomplete","off")
+
   login_form.innerHTML = `
-    <input type="text" name="username" id="username-field" class="login-form-field" >
-    <label for="text" class="label-name">
-    <span class="content-name">
-      username
-    </span>
-  </label>
+  <div class="form__group field">
+
+    <input type="text" class="form__field" placeholder="Username" name="username" id="username-field"  >
+    <label for="username" class="form__label">Please Enter a Username</label>
+
+    <input type="submit" value="Login" id="login-form-submit" style="display: none">
+    </div>
+
   `
 
     div.append(login_form)
+
+    
 
 //////////////////////////////
 // add submit listener ///
@@ -89,15 +91,102 @@ function loginSetup() {
       const p = document.createElement('p')
 
       p.innerHTML = `
-        Welcome, ${user.username}
+      <h1 id= "currentUser">Welcome <strong>${user.username}</strong></h1>
+
       `
       welcomeUser.append(p)
 
     })
     .catch(err => console.log("error:", err))
+
   })
 }
 
+// =============================first pge setiings==================================
+
+
+// adds bg animation
+function addBackground(){
+  let bg=document.querySelector(".background-animation")
+  let img= document.createElement("div")
+  
+    
+  bg.appendChild(img)
+
+}
+
+function audioList(){
+  let menu=document.querySelector(".user-created-mix-display")
+   let innermenu=document.createElement("div")
+   innermenu.id="music-list"
+   
+   innermenu.innerHTML=`
+
+   <input type="checkbox" id="slide" name="" value="" />
+   <div class="container">
+
+       <label for="slide" class="toggle">☰ <p id="saved"> ↖ Audio saved! Checkout these Mixes ♫</p> </label> 
+       <nav class="sidebar"> 
+
+       <ul id="mixesLi">
+       
+       </ul>
+       
+       </nav>
+   </div>
+
+`
+menu.appendChild(innermenu)
+}
+
+
+
+function frontTitle(){
+  let titlesec=document.querySelector(".login_container")
+  let header=document.createElement("h1")
+  header.innerHTML=`
+  <div class="titleName">
+  <div class="name">
+    <span class="i">I</span>
+    <span class="l">L</span>
+    <span class="l2">L</span>
+    <span class="u">U</span>
+    <span class="c">C</span>
+    <span class="i">I</span>
+    <span class="d">D</span>
+
+    <span class="space">&nbsp;</span>
+    <span class="b">B</span>
+    <span class="e">E</span>
+    <span class="a">A</span>
+    <span class="t">T</span>
+    <span class="s">S</span>
+  </div>
+</div>
+  `
+  titlesec.appendChild(header)
+  
+}
+
+
+
+function stars(){
+  let log_container=document.querySelector(".container")
+
+  let login=document.querySelector(".login_container")
+let star= document.createElement("span")
+star.innerHTML=`
+  <div class="animation-wrapper">
+<div class="particle particle-1"></div>
+<div class="particle particle-2"></div>
+<div class="particle particle-3"></div>
+<div class="particle particle-4"></div>
+</div>
+`
+log_container.appendChild(star)
+// login.appendChild(star)
+;
+} 
 
 
 
