@@ -65,9 +65,7 @@ height: 120%;
     background: linear-gradient(var(--color-day-orange), var(--color-sky-yellow));
 }
 
-/* --color-day-orange: #FDA263;
---color-sky-yellow: rgb(214, 155, 78);
---color-night-blue: #545d9b; */
+
 
 :root {
     --color-sky-light: #545d9b;
@@ -91,6 +89,7 @@ height: 120%;
     visibility: hidden;
 
 }
+
 
 
 
@@ -185,12 +184,12 @@ button {
 
 
 .center {
-    /* margin: 0; */
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%; */
-    /* -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 
@@ -346,4 +345,5 @@ button {
   #saved{
     visibility: hidden;
   }
+
 
