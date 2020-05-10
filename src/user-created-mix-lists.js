@@ -25,7 +25,7 @@ function renderSavedMixes (mixes) {
       ${mix.mix_name}
       <button class="play-saved-mix">Play</button>
       `
-    t
+    
     mix_list.append(li)
 
   })

@@ -281,6 +281,63 @@ function playPause(){
 
 
 
+//reset button
+function resetButtonSetup() {
+  
+    let controls_container = document.querySelector('.play-controls')
+  
+    controls_container.addEventListener('click', (e) => {
+      
+      
+      if (e.target.id === 'reset') {
+        console.log('i reset all the volumes to zero:' )
+        
+        let sliders = document.querySelectorAll('.volumeSlider')
+        let audios = document.querySelectorAll("audio")
+        
+        sliders.forEach(slider => {
+          slider.value = 0
+  
+          audios.forEach(audio => {
+              audio.volume = 0
+          })
+          
+        })
+  
+      }
+  
+      if (e.target.id === 'preset') {
+        console.log('oh hey some #presets:')
+      }
+  
+    })
+  
+  }
+  // toggle button night mode & day
+  function toggleNightMode() {
+    const toggle = document.querySelector('.toggle-button')
+    toggle.textContent = "Night Mode On"
+  
+    const body = document.querySelector('body')
+  
+    toggle.addEventListener('click', (e) => {
+  
+      if (toggle.id === "background-toggle-day") {
+        body.className = "body-night"
+        toggle.textContent = "Night Mode On "
+        toggle.id = 'background-toggle-night'
+        
+      } else if (toggle.id === "background-toggle-night") {
+        
+        body.className = "body-day"
+        toggle.textContent = "Day Mode On"
+        toggle.id = 'background-toggle-day'
+      } 
+    })
+  }
+
+
+
 
 
 
