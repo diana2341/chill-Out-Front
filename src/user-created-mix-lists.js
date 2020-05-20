@@ -1,4 +1,5 @@
 function fetchSavedMixes () {
+  console.log(url)
   fetch(`${url}/mixes`)
   .then(r => r.json())
   .then(mixes => {
