@@ -2,7 +2,8 @@
 // make input field 
 // fetch post to users
 
-const url = 'http://localhost:3000/api/v1'
+// const url = 'http://localhost:3000/api/v1'
+const url = 'https://illucid-beats-api.herokuapp.com/'
 
 
 function loginOverlaySetup() {
