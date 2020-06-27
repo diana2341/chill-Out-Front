@@ -1,5 +1,5 @@
 function fetchSavedMixes () {
-  fetch(`${url}/mixes`)
+  fetch(`http://localhost:3000/api/v1/mixes`)
   .then(r => r.json())
   .then(mixes => {
 

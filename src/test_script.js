@@ -1,67 +1,68 @@
+
 const soundDictionary = {
     light_rain_volume: {
         image: "images/rainy.png",
-        audio: "audio/light-rain.mp3"
+        audio: "audio/second-audio/light-rain.mp3"
     }, 
     bird_volume: {
         image: "images/bird.png",
-        audio: "audio/birds.fade.ogg"
+        audio: "audio/second-audio/birds.fade.ogg"
     },
     large_fire_volume: {
         image: "images/regular-fire.png",
-        audio: "audio/fire-large-flame.mp3"
+        audio: "audio/second-audio/fire-large-flame.mp3"
     },
     thunder_volume: {
         image: "images/thunder-cloud.png",
-        audio: "audio/thunder.fade.ogg"
+        audio: "audio/second-audio/thunder.fade.ogg"
     },
     wave_volume: {
         image: "images/wave.png",
-        audio: "audio/ocean-wave.mp3"
+        audio: "audio/second-audio/ocean-wave.mp3"
     },
     strong_wind_volume: {
         // too strong 
         image: "images/strongwind.png",
-        audio: "audio/wind-strong.mp3"
+        audio: "audio/second-audio/wind-strong.mp3"
     },
     forest_volume: {
         // also pretty loud windy more than forest
         image: "images/forest.png",
-        audio: "audio/forest-windy-bird.mp3"
+        audio: "audio/second-audio/forest-windy-bird.mp3"
     },
     heavy_rain_volume: {
         // like this one
         image: "images/thunder.png",
-        audio: "audio/rain-concrete.mp3"
+        audio: "audio/second-audio/rain-concrete.mp3"
     },
     campfire_volume: {
         image: "images/fire.png",
-        audio: "audio/campfire.mp3"//
+        audio: "audio/second-audio/campfire.mp3"//
     },
     river_volume: {
         image: "images/riverWave.png",
-        audio: "audio/river.mp3"
+        audio: "audio/second-audio/river.mp3"
     },
     light_wind_volume: {
         // i like this one
         image: "images/wind-simple.png",
-        audio: "audio/rain-light-in-nature.mp3"
+        audio: "audio/second-audio/rain-light-in-nature.mp3"
     },
     coffee_shop_volume: {
         image: "images/cafe.png",
-        audio: "audio/coffee.mp3"
+        audio: "audio/second-audio/coffee.mp3"
     },
     cat_purring_volume:{
         image:"images/cat.png",
-        audio:"audio/Cat-purring-sound.wav"
+        audio:"audio/second-audio/Cat-purring-sound.wav"
 },
 night_sound_volume:{
   image: " images/nighttime.png",
-audio:"audio/Summer-insect-sounds-night.mp3"
+audio:"audio/second-audio/Summer-insect-sounds-night.mp3"
 },
 wind_chime_volume:{
     image: "images/windchime.png",
-    audio:"audio/Wind-chimes-sound.mp3"
+    audio:"audio/second-audio/Wind-chimes-sound.mp3"
 }
 }
 
@@ -152,6 +153,7 @@ function renderAudioContainers(){
 
 
 function createAudioContainer(key, audio, image){
+
     let sound_list = document.querySelector(".sound-list") 
     
     let sound_container = document.createElement("div")
@@ -169,7 +171,26 @@ function createAudioContainer(key, audio, image){
     sound_list.appendChild(sound_container)
 }
 
+
 function togglePlay(sound) {
+ 
+    function loopIt(){
+        var player = null;
+    
+        if(current_player == sound){
+            player = sound;
+            current_player = sound;
+        }
+        else{
+            player = sound;
+            current_player = sound;
+        }
+    
+        player.play();
+    
+        setTimeout(loopIt, 5333); //5333 is the length of the audio clip in milliseconds.
+    }
+
     if (sound.paused) {
 
         sound.play();
