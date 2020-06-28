@@ -1,5 +1,5 @@
 function fetchSavedMixes () {
-  fetch(`http://localhost:3000/api/v1/mixes`)
+  fetch(`https://illucid-backend.herokuapp.com/mixes`)
   .then(r => r.json())
   .then(mixes => {
 

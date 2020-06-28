@@ -1,6 +1,6 @@
 
 
-const url = 'http://localhost:3000/api/v1'
+const url = 'https://illucid-backend.herokuapp.com/'
 
 
 function loginOverlaySetup() {
