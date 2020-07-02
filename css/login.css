@@ -51,6 +51,7 @@
   padding: 15px 0 0;
   margin-top: 10px;
   width: 25%;/*change size of line */
+z-index:999
   
 }
 .form__field {
@@ -118,4 +119,5 @@
 .titleName{
   position: relative;
   padding-top: 100px;
+
 }

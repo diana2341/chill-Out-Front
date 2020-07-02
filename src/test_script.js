@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     audioList()
     frontTitle()
     stars()
+    starstwo()
 
 
 })
