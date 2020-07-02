@@ -183,7 +183,7 @@ star.innerHTML=`
 <div class="particle particle-4"></div>
 </div>
 `
-log_container.appendChild(star)
+log_container.appendChild(star);
 ;
 } 
 function starstwo(){
