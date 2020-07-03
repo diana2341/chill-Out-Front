@@ -27,12 +27,13 @@ input[type=range] {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8.5px;
+    
   }
   .slidecontainer{
     height: auto;
+    
 
   }
-
 
 
 
