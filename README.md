@@ -1,5 +1,5 @@
 # Illucid Beats
-![Screenshot](./images/readme.png
+![Screenshot](./images/readme.png)
 
 
 ⭐️⭐️You can checkout the deployed version of this application here on [Heroku](https://illucid--beats.herokuapp.com/)⭐️⭐️
