@@ -1,6 +1,6 @@
 
 
-const url = 'http://localhost:3000/api/v1'
+const url = 'https://illucid-backend.herokuapp.com/'
 
 
 function loginOverlaySetup() {
@@ -183,10 +183,24 @@ star.innerHTML=`
 <div class="particle particle-4"></div>
 </div>
 `
-log_container.appendChild(star)
-// login.appendChild(star)
+log_container.appendChild(star);
 ;
 } 
+function starstwo(){
+  let log_container=document.querySelector(".container")
 
+  let login=document.querySelector(".login_container")
+let star= document.createElement("span")
+star.innerHTML=`
+  <div class="animation-wrapper">
+<div class="particle particle-1"></div>
+<div class="particle particle-2"></div>
+<div class="particle particle-3"></div>
+<div class="particle particle-4"></div>
+</div>
+`
+login.appendChild(star)
+;
+} 
 
 

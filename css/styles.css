@@ -27,9 +27,11 @@ input[type=range] {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -8.5px;
+    
   }
   .slidecontainer{
     height: auto;
+    
 
   }
 
@@ -38,8 +40,7 @@ input[type=range] {
 
 
 
-
-
+/*  */
 
 html, body {
 margin: 0;

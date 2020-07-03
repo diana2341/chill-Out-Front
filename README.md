@@ -1,12 +1,30 @@
+# Illucid Beats
+![Screenshot](./images/readme.png)
 
 
-# illucid-beats-front
+⭐️⭐️You can checkout the deployed version of this application here on [Heroku](https://illucid--beats.herokuapp.com/)⭐️⭐️
 
-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+📹📹You can checkout the application DEMO here on [YoutTube](https://www.youtube.com/watch?v=pOq3eoo0Mjs&t=17s) 📹📹
 
-sound files from https://www.soundjay.com/
 
-# iterate through through volume sound and set the volume to that. 
-# how do i find the right sound and right volume?
+This is a sound machine used to reduce stress, increase concentration or enable the ability to sleep better with ambient noises. Users can make a mix of ambient noises and listen to others creations.
+## Installation and Setup Instructions
+Clone the project into local
 
-# make function for each volume. it will set the volume and then you function
+Install all the npm packages. Go into the project folder and type the following command to install all npm packages
+ 
+Installation:
+
+`npm install`   
+
+To Start Server:
+
+`npm start`  
+
+To Visit App:
+
+`localhost:3000/`
+
+This was a 1 week long project built during my third module at Flatiron School . The goals were to use technologies learned up. In this application for the front end , Vanilla Javascript and pure CSS was used for the frontend and Rails API with postgres was used for the [Backend](https://github.com/diana2341/illucid_beats_back_end)
+
+

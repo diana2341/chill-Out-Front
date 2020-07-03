@@ -195,7 +195,7 @@ function addMix () {
 		let volume3 = (audio[3].volume = slider[4].value); //thunder
 		let volume4 = (audio[4].volume = slider[5].value); //waves
 
-		fetch('http://localhost:3000/api/v1/mixes', {
+		fetch('https://illucid-backend.herokuapp.com/mixes', {
 			method: 'POST',
 			body: JSON.stringify({
 				mix_name,
@@ -226,7 +226,7 @@ function addMix () {
 
 //==========get users mixess///
 function getMixes () {
-	fetch('http://localhost:3000/api/v1/mixes').then((resp) => resp.json()).then((data) => {
+	fetch('https://illucid-backend.herokuapp.com/mixes').then((resp) => resp.json()).then((data) => {
 		mixList(data);
 		data.forEach(function (mixes) {
 			listMixes(mixes);
