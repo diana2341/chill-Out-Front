@@ -236,11 +236,11 @@ button {
     position: absolute;
     margin: 0;
     top: 200px;
-    left: 42%;
+    left: 44%;
 }
 
 .inner-controls {
-
+    
 }
 
 .button-bar {
@@ -256,14 +256,7 @@ button {
 
 }
 
-.sound-list {
-    /* width: 500px; */
-    position: absolute;
-    
-    /* display: flex;
-    align-items: flex-start;
-    justify-content: center; */
-}
+
 
 .audio-container{
     
@@ -286,8 +279,36 @@ button {
 /* ///==================================================== */
 
 .sound-list{
-    position:absolute; 
-    left:300px;
-  max-width: 900px;
+    /* position:absolute;  */
+    /* left:300px; */
+    /* max-width: 900px; */
 }
 
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+    width: 20%;
+}
+
+.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.top-row {
+    align-items: center;
+}
