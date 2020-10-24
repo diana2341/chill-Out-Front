@@ -1,7 +1,7 @@
 /* 
 #login-title {
   position: absolute;
-  margin-left: auto;
+  margin-left: //????????/;
   margin-right: auto;
   left: 0;
   right: 0;
@@ -50,7 +50,7 @@
 
   padding: 15px 0 0;
   margin-top: 10px;
-  width: 25%;/*change size of line */
+  width: 35%;/*change size of line */
 z-index:999;
   
 }
@@ -62,7 +62,7 @@ z-index:999;
   border-bottom: 2px solid #4e4c4c;
   outline: 0;
   font-size: 1.3rem;
-  color:black
+  color:black;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -74,6 +74,7 @@ z-index:999;
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
+  z-index: -1;
 }
 .form__label {
   position: absolute;
@@ -106,18 +107,142 @@ z-index:999;
 
 /* =====new===== */
 .login_container{
-  height:100vh;
   background: url("https://external-preview.redd.it/1ZBAIokLtVcHkjHFryTz9zsOgq8B33bn-6SwZwkmrDg.png?auto=webp&s=4b5062c0c6339591198df367deced85fba8eac92") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position:fixed;
-    width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  /* background-attachment: scroll; */
+  background-position: 50% 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  z-index: 0;
+
+
+
+
 
 }
+
 .titleName{
   position: relative;
   padding-top: 100px;
 
+
 }
+@media only screen and (max-width:1024px) {
+  .titleName,.name{
+    position: relative;
+    top: 60px;
+    left: -90px;
+
+  
+  }
+  .sound-list{
+    margin-left: -100px;
+    top: 40%;
+  }
+  .play-controls{
+    left: 410px;
+  }
+
+  
+}
+@media only screen and (max-width:768px) {
+#save-mix-form{
+   position: relative;
+   left: 200px;
+
+ }
+ .play-controls{
+  left: 480px;
+}
+ 
+  .name>span {
+  font-size: 60px;
+
+ }
+ #currentUser{
+   left: 200px;
+ }
+ .toggle-button{
+   position: relative;
+   left: 300px;
+ }
+ .name{
+   left: -50px;
+ }
+ .sound-list{
+  /* margin-left: -100px; */
+  top: 25%;
+}
+}
+@media only screen and (max-width:540px) {
+  .inner-controls{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .play-controls{
+    left: 380px;
+  }
+  .name>span {
+  font-size: 50px;
+
+ }
+ .name{
+   left: -50px;
+ }
+ .sound-list{
+  margin-left: -100px;
+  top: 25%;
+  
+}
+.form__group{
+  width: 60%;
+}
+.sound-list{
+width: 100%;
+}
+}
+
+@media only screen and (max-width:414px) {
+  #save-mix-form{
+    top: 150px;
+  }
+  #save-mix{
+position: relative;
+    top: -180px;
+    left: 220px;
+  }
+  .play-controls{
+    left: 330px;
+  }
+}
+@media only screen and (max-width:320px) {
+#save-mix-form{
+  left: 250px;
+}
+.toggle-button{
+  position: relative;
+  left: 500px;
+}
+#currentUser{
+  left: 280px;
+}
+}
+
+/* @media only screen and (max-width:411px) {
+  form{
+    top: 150px;
+  }
+  #save-mix{
+position: relative;
+    top: -180px;
+    left: 220px;
+  }
+  .play-controls{
+    left: 330px;
+  }
+} */

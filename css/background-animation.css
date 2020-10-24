@@ -56,11 +56,11 @@
     animation-iteration-count: infinite;
   }
   .bird-container--one {
-    animation-duration: 15s;
+    animation-duration: 10s;
     animation-delay: 0;
   }
   .bird-container--two {
-    animation-duration: 16s;
+    animation-duration: 11s;
     animation-delay: 1s;
   }
   .bird-container--three {
@@ -68,7 +68,7 @@
     animation-delay: 9.5s;
   }
   .bird-container--four {
-    animation-duration: 16s;
+    animation-duration: 13s;
     animation-delay: 10.25s;
   }
   @keyframes fly-cycle {
@@ -99,7 +99,7 @@
       transform: translateY(0vh) translateX(110vw) scale(0.6);
      }
     100% {
-      transform: translateY(0vh) translateX(110vw) scale(0.6);
+      transform: translateY(0vh) translateX(310vw) scale(0.6);
      }
   }
   @keyframes fly-right-two {

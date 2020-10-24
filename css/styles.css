@@ -1,6 +1,16 @@
 
 /* range sliders */
+html {
+  min-height: 100%;
 
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
 input[type=range] {
     height: 27px;
     margin:  0;
@@ -29,11 +39,11 @@ input[type=range] {
     margin-top: -8.5px;
     
   }
-  .slidecontainer{
+  /* .slidecontainer{
     height: auto;
     
 
-  }
+  } */
 
 
 
@@ -42,19 +52,19 @@ input[type=range] {
 
 /*  */
 
-html, body {
-margin: 0;
-height: 120%;
 
-    background: linear-gradient(var(--color-sky-light), var(--color-sky-dark));
-}
 
 .body-night {
+  position: relative;
     margin: 0;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(4, 0, 5);
-    background: linear-gradient(var(--color-night-blue), var(--color-sky-yellow));
+    background: linear-gradient(#002b38, #02938b);
+ 
+
+
+    /* background: linear-gradient(var(--color-night-blue), var(--color-sky-yellow)); */
 }
 
 
@@ -84,6 +94,7 @@ height: 120%;
 --color-night-blue: #002b38;
 
 }
+
 
 #root {
  
@@ -209,7 +220,7 @@ button {
     position: absolute;
     margin: 0;
     top: 200px;
-    left: 42%;
+    left: 615px;
 }
 
 
@@ -225,16 +236,21 @@ button {
 
 
 
-.sound-list {
+/* .sound-list {
     position: absolute;
  
-}
+} */
 
 .audio-container{
     
     display: inline-block;
     padding: 1em;
+  
 }
+.sound-list{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
 
 
 .icon{
@@ -249,7 +265,7 @@ button {
 /* ///==================================================== */
 
 .sound-list{
-    position:absolute; 
+  position: relative;
     left:300px;
   max-width: 900px;
 }
@@ -332,11 +348,15 @@ button {
   .toggle-button{
       width: 100px;
       height: 30px;
-      border:none;
-      border:solid 2px black;
+      border:solid 2px white;
       border-radius: 5px;
       background: rgba(233, 212, 19, 0.068);
       font-size: 13px;
+      color: white;
+      height: 40px;
+      
+      text-align: center;
+      
   }
 
   /* menu list display */
