@@ -2,7 +2,7 @@
 ![Screenshot](./images/readme.png)
 
 
-⭐️⭐️You can checkout the deployed version of this application here on [Heroku](https://illucid--beats.herokuapp.com/)⭐️⭐️
+⭐️⭐️You can checkout the deployed version of this application here on [Netlify](https://illucid-beats.netlify.app/)⭐️⭐️
 
 📹📹You can checkout the application DEMO here on [YoutTube](https://www.youtube.com/watch?v=pOq3eoo0Mjs&t=17s) 📹📹
 
