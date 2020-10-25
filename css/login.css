@@ -210,7 +210,7 @@ display:block;}}
   /* margin-left: -100px; */
   top: 25%;
 }
-}
+
 @media only screen and (max-width:540px) {
  #app-container,.login_container{
     display: none
