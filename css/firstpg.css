@@ -3,7 +3,8 @@
 
 body{
   overflow: hidden;
-  overflow-y: hidden;align-items: center;
+  overflow-y: scroll;
+  align-items: center;
   /*  */
   }
 

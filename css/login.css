@@ -38,6 +38,10 @@
 }
  */
 
+button:hover{
+  display: inline-block;  
+}   
+
 
  .form__group {
   margin: 0;
@@ -196,7 +200,9 @@ left: -15%;
  .toggle-button{
    position: relative;
    left: 300px;
- }
+   z-index: 999;
+pointer-events: fill; 
+display:block;}}
  .name{
    left: -50px;
  }

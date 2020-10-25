@@ -348,9 +348,14 @@ button {
       font-size: 13px;
       color: white;
       height: 40px;
-      
+      pointer-events: fill;
       text-align: center;
+      z-index: 999;
+      display:block;}
       
+  }
+  .background-toggle-day{
+    color: black;
   }
 
   /* menu list display */
