@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     frontTitle()
     stars()
     starstwo()
+    starsMobile()
 
 
 })

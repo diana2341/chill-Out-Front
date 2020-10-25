@@ -202,5 +202,21 @@ star.innerHTML=`
 login.appendChild(star)
 ;
 } 
+function starsMobile(){
+  let log_container=document.querySelector(".container")
+
+  let login=document.querySelector(".mobile")
+let star= document.createElement("span")
+star.innerHTML=`
+  <div class="animation-wrapper">
+<div class="particle particle-1"></div>
+<div class="particle particle-2"></div>
+<div class="particle particle-3"></div>
+<div class="particle particle-4"></div>
+</div>
+`
+login.appendChild(star)
+;
+} 
 
 
