@@ -42,7 +42,9 @@ button:hover{
   display: inline-block;  
 }   
 
-
+label.form__label{
+  width: 1980px;
+}
  .form__group {
   margin: 0;
  
